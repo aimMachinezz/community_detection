@@ -1,0 +1,38 @@
+change_id,filename,author,patch_set,id,comment_type,line,in_reply_to,updated,message,unresolved,quarter
+21225,tempest/services/compute/json/networks_client.py,5803,4,AAAAM3%2F%2FI%2Bw%3D,Line,82,,2013-02-05 20:44:54,All rest call should return with the response.,False,9
+20824,nova/servicegroup/drivers/matchmaker.py,1711,2,AAAAM3%2F%2Blts%3D,Line,38,,2013-02-26 16:41:27,seems like bad syntax..,False,9
+20824,nova/servicegroup/drivers/matchmaker.py,67,2,AAAAM3%2F%2FQ%2Bw%3D,Line,54,,2013-01-30 23:07:53,"why cant you just use:
+
+ importutils.import_object(CONF.servicegroup_matchmaker_driver)",False,9
+21836,openstack_dashboard/api/nova.py,4978,2,AAAAM3%2F%2Bj5Q%3D,Line,364,,2013-02-27 10:20:47,"I didn't comment on it yesterday, but here it is just in case: I'm assuming you have the tenant_id as a second argument only for testing purposes while you play with how to expand the scope of server_list().
+
+When the design solidifies a bit though, tenant_id will have to have another position as other calling functions may expect search_opts to be in 2nd position (and also search_opts was completely removed as a named argument, it'll need to come back).",False,9
+21836,openstack_dashboard/dashboards/admin/projects/views.py,4978,2,AAAAM3%2F%2Bj5E%3D,Line,194,,2013-02-27 10:20:47,"You've got lines with dangling whitespace in some files -- you might want to add the following to your ~/.emacs so you can see trailing whitespaces while developing and can get rid of them before submitting.
+
+(setq-default show-trailing-whitespace t)",False,9
+21836,openstack_dashboard/dashboards/admin/projects/workflows.py,4978,1,AAAAM3%2F%2B9Hw%3D,Line,415,,2013-02-13 10:42:21,"This should be:
+
+default_steps = (DeleteProjectInfo,)
+
+to be considered a tuple of steps. Otherwise the parenthesis are kinda ignored. The workflow main class requires the default_steps to be iterable.
+
+>>> test = (""test"")
+>>> type(test)
+<type 'str'>
+>>> test2 = (""test"",)
+>>> type(test2)
+<type 'tuple'>",False,9
+21225,tempest/services/compute/json/networks_client.py,5803,5,AAAAM3%2F%2FIzk%3D,Line,5,,2013-02-05 22:35:46,"Tempest coding guide (HACKING.rst) discourages class import, just only module (or package) recommended.
+
+from tempest.common import rest_client
+
+
+class NetworksClient(rest_client.RestClient):
+
+This rule not applied project wide jet.
+This recommendation related to module reload capabilities and to the namespace usage.",False,9
+19958,/COMMIT_MSG,5174,1,AAAAM3%2F%2FhBU%3D,Line,10,,2013-01-17 18:57:34,"Also add a reference to bp: Partially implements bp nova-v3-api 
+
+and a description of how make requests to it now, like:
+POST /quotas/ => create
+PUT /quotas/id =>update etc",False,9

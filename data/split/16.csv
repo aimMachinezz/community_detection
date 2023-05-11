@@ -1,0 +1,520 @@
+change_id,filename,author,patch_set,id,comment_type,line,in_reply_to,updated,message,unresolved,quarter
+105660,specs/juno/dhcp-relay.rst,748,10,5a890539_782cbf93,Line,174,,2014-12-04 03:01:14,tatore?,False,16
+105660,specs/juno/dhcp-relay.rst,2592,10,5a890539_c264b0e7,Line,198,,2014-11-08 22:27:41,Seems like functional testing is needed too.,False,16
+105660,specs/juno/dhcp-relay.rst,12912,10,5a890539_82a567b6,Line,171,5a890539_3836b7e7,2014-12-04 14:12:47,Yes.,False,16
+135916,specs/kilo/db-archiving.rst,1207,1,3a961159_5eeeef22,Line,87,3a961159_cd7ddb1d,2014-12-24 08:38:23,"Better stated as ""No performance hit from filtering out a potentially massive number of deleted records on every query""",False,16
+119469,openstack_dashboard/dashboards/identity/projects/views.py,10697,6,7a8c0949_0c1121ac,Line,185,7a8c0949_8cc43160,2014-11-06 20:17:57,"Hello Kamil, thanks for the review!
+The string above isn't in the scope of this patch. Since my objective with it isn't code standardization, I prefer not to change things that aren't strictly necessary to the feature proposed.",False,16
+119469,openstack_dashboard/dashboards/identity/projects/views.py,10697,6,7a8c0949_2936c4e7,Line,185,7a8c0949_8c1c31c3,2014-11-07 12:09:37,"There is no clear pattern in the file. I followed the main quotes used in this class (if you take a look in the complete class, the only string with double quotes is the one above).",False,16
+119469,openstack_dashboard/dashboards/identity/projects/views.py,13161,6,7a8c0949_8c1c31c3,Line,185,7a8c0949_0c1121ac,2014-11-07 08:01:22,So shouldn't you leave below line with double quotes too?,False,16
+139920,openstack_dashboard/dashboards/project/containers/tables.py,7012,2,3a961159_f4b49af3,Line,333,,2014-12-18 16:05:36,...mark this object with a deleted status...,False,16
+135916,specs/kilo/db-archiving.rst,5538,1,3a961159_6dbb07c4,Line,143,,2014-12-24 06:27:56,"Might be better for readability if it is specified what is this gerrit review about (say, 'Nova's spec for db archiving')",False,16
+105660,specs/juno/dhcp-relay.rst,1935,9,9aa7fdbe_cb74929e,Line,91,,2014-10-21 12:48:20,"Sorry for changing the vote, but I think this configuration should be at higher level as there are DHCP implementations that don't rely on DHCP agent. Probably in subnet data model.",False,16
+135916,specs/kilo/db-archiving.rst,5538,1,3a961159_cda4fba7,Line,88,,2014-12-24 06:27:56,"Also, it might be worth adding that while the db purging operation runs (either as manual execution or as a periodic process), the db performance might get affected, but can be negligible",False,16
+135916,specs/kilo/db-archiving.rst,5538,1,3a961159_cd7ddb1d,Line,87,,2014-12-24 06:27:56,"We will still need 'is_deleted' field, if db purging is an asynchronous operation, no?",False,16
+139920,openstack_dashboard/dashboards/project/access_and_security/keypairs/tables.py,7012,2,3a961159_142a062c,Line,28,,2014-12-18 16:05:36,"Please backup the key pair.  If it is not backed up, the instances using this key pair will not be accessible without setting a user and password.",False,16
+139920,openstack_dashboard/dashboards/project/access_and_security/keypairs/tables.py,9622,1,3a961159_012cd146,Line,26,,2014-12-08 22:12:00,"...key pair.  If not,",False,16
+105660,specs/juno/dhcp-relay.rst,261,10,5a890539_7162d4d9,Line,44,,2014-11-10 21:48:38,I demand this cloud looks like a proper cloud.,False,16
+105660,specs/juno/dhcp-relay.rst,8788,6,baa201ad_52712943,Line,67,,2014-10-13 10:01:59,"If the implementation will be dnsmasq based, can you include some example config file?",False,16
+139920,openstack_dashboard/dashboards/identity/domains/tables.py,9531,1,3a961159_8b6d3b35,Line,91,,2014-12-09 01:43:43,I am not sure what will cause.,False,16
+105660,specs/juno/dhcp-relay.rst,8788,6,baa201ad_32dbc51c,Line,97,,2014-10-13 10:01:59,How do we configure a DHCP relay for an specific agent/tenant network. Can you give some examples?,False,16
+139920,openstack_dashboard/dashboards/identity/groups/tables.py,9531,1,3a961159_cb774301,Line,62,,2014-12-09 01:43:43,I am not sure what will cause.,False,16
+139920,openstack_dashboard/dashboards/identity/groups/tables.py,9622,1,3a961159_015e91e6,Line,140,,2014-12-08 22:12:00,members*,False,16
+111011,toci_devtest.sh,6488,16,baa201ad_bb9109f3,Line,33,,2014-10-04 15:40:52,Missing bug #?,False,16
+140733,nova/virt/libvirt/sp.py,12988,2,3a961159_9f37714c,Line,39,3a961159_f360bb02,2014-12-15 13:23:10,"Oof, yes, this was left over from an initial do-nothing attempt that, well, did not really work since it did nothing :)  Thanks, removed in patchset 3.",False,16
+140733,nova/virt/libvirt/sp.py,1653,2,3a961159_f360bb02,Line,39,,2014-12-15 07:20:34,why pass?,False,16
+119469,/COMMIT_MSG,1941,4,baa201ad_8bd7b3ec,Line,12,,2014-10-03 04:32:14,Add the link to the BP,False,16
+119469,openstack_dashboard/dashboards/identity/projects/views.py,13325,5,baa201ad_7cfced72,Line,187,,2014-10-06 11:11:35,"Not imortant:  perhaps there is something I miss, but why did you replace here the double quotes to single quotes, if the above line was used double quotes?",False,16
+119469,openstack_dashboard/dashboards/identity/projects/views.py,10697,5,baa201ad_30a8c476,Line,187,baa201ad_7cfced72,2014-10-06 13:28:30,"There is no consistency on this file regarding the use of single/double quotes. See lines 40, 47, 53, 57, 192, 198 and so on.",False,16
+119469,openstack_dashboard/dashboards/identity/projects/views.py,13161,6,7a8c0949_8cc43160,Line,185,,2014-11-06 19:50:12,Can you change this double quotes into single one? Just like you did one line below.,False,16
+139920,openstack_dashboard/dashboards/identity/groups/tables.py,9531,1,3a961159_6b600f33,Line,140,3a961159_015e91e6,2014-12-09 01:43:43,Done,False,16
+105660,specs/juno/dhcp-relay.rst,8873,6,baa201ad_34bbbf73,Line,148,,2014-10-12 07:36:29,"DHCP agent configuration file? Is this a global change? Will all dnsmasq's be either default or relay?
+
+Can you talk about this in the alternatives section? Clearly the alternative is to add this via the API, per subnet?",False,16
+105660,specs/juno/dhcp-relay.rst,8873,6,baa201ad_14b6bb8a,Line,162,,2014-10-12 07:36:29,How will the Tempest test work? Are you going to simulate an external DHCP server somehow?,False,16
+139920,openstack_dashboard/dashboards/identity/projects/tables.py,7012,2,3a961159_5491ee98,Line,135,,2014-12-18 16:05:36,...if any resources of the tenant are still in use...,False,16
+105660,specs/juno/dhcp-relay.rst,9656,9,9aa7fdbe_55e10f99,Line,81,,2014-10-21 21:51:25,"Though uniqueness will still be there, the following proposal may make mac_address alterable: https://review.openstack.org/129085",False,16
+139920,openstack_dashboard/dashboards/identity/users/tables.py,9622,1,3a961159_6103d5b8,Line,127,,2014-12-08 22:12:00,"""... if the user still has resources in use.""",False,16
+139920,openstack_dashboard/dashboards/identity/users/tables.py,9531,1,3a961159_6edd21e0,Line,127,3a961159_6103d5b8,2014-12-11 09:26:30,Done,False,16
+139920,openstack_dashboard/dashboards/project/access_and_security/keypairs/tables.py,9531,1,3a961159_6e04414a,Line,26,3a961159_012cd146,2014-12-11 09:26:30,Done,False,16
+105660,specs/juno/dhcp-relay.rst,261,10,5a890539_51acf8ed,Line,60,,2014-11-10 21:48:38,"just for the sake of html rendering, can you move the above link to the refs section?",False,16
+139920,openstack_dashboard/dashboards/project/firewalls/tables.py,9531,1,3a961159_d61a866d,Line,74,,2014-12-09 01:43:43,ditto,False,16
+139920,openstack_dashboard/dashboards/project/firewalls/tables.py,9531,1,3a961159_7613925c,Line,51,,2014-12-09 01:43:43,I am not sure what will cause.,False,16
+139920,openstack_dashboard/dashboards/project/routers/extensions/routerrules/tables.py,9531,1,3a961159_eb2cffad,Line,45,,2014-12-09 01:43:43,I am not sure what will cause.,False,16
+139920,openstack_dashboard/dashboards/project/networks/tables.py,7012,2,3a961159_941b56c9,Line,46,,2014-12-18 16:05:36,...if there are any instances in the network...,False,16
+139920,openstack_dashboard/dashboards/project/networks/subnets/tables.py,9531,1,3a961159_0b194b88,Line,59,3a961159_61767540,2014-12-09 01:43:43,Done,False,16
+139920,openstack_dashboard/dashboards/project/networks/subnets/tables.py,9622,1,3a961159_61767540,Line,59,,2014-12-08 22:12:00,"""is in used"" --> ""are in use""",False,16
+105660,specs/juno/dhcp-relay.rst,12912,10,5a890539_8262c7aa,Line,106,5a890539_11d0b04f,2014-12-04 14:12:47,"In fact each instance of the relay needs an IP on a network that has routing to the DHCP server. This means for every namespace, we consume one IP on this management network. For this reason, the DHCP proposal [1] that Don Kehn made is preferable over this one.
+
+[1] https://blueprints.launchpad.net/neutron/+spec/dhcp-cpnr-integration",False,16
+105660,specs/juno/dhcp-relay.rst,261,10,5a890539_11d0b04f,Line,106,,2014-11-10 21:48:38,"can you clarify the purpose of this cidr? Is it a sort of ""alternative"" mgmt network for communicating with the external dhcp server? Can it be alternative if the dhcp server sits on the ""traditional"" management network?",False,16
+105660,specs/juno/dhcp-relay.rst,261,10,5a890539_f1ca44a0,Line,103,,2014-11-10 21:48:38,"I'd like more details on why the relay would need a different bridge.
+Is that a requirement or an option?",False,16
+105660,specs/juno/dhcp-relay.rst,748,10,5a890539_fd12615f,Line,87,,2014-12-04 03:01:14,"besides mark's point below, if we assume that this work is dependent on the pluggable IPAM and that the external IPAM system takes care of the IP,MAC assignment, I believe this statement is no longer accurate.",False,16
+105660,specs/juno/dhcp-relay.rst,261,10,5a890539_31ddac71,Line,93,,2014-11-10 21:48:38,is this a reference or a dependency (looks more like the former). Perhaps add it to the references section,False,16
+139920,openstack_dashboard/dashboards/project/databases/tables.py,7012,2,3a961159_f4357a46,Line,116,,2014-12-18 16:05:36,...All deleted databases are not recoverable...,False,16
+139920,openstack_dashboard/dashboards/project/loadbalancers/tables.py,9531,1,3a961159_560f7630,Line,152,,2014-12-09 01:43:43,ditto,False,16
+139920,openstack_dashboard/dashboards/project/loadbalancers/tables.py,9531,1,3a961159_360aea21,Line,130,,2014-12-09 01:43:43,ditto,False,16
+139920,openstack_dashboard/dashboards/project/loadbalancers/tables.py,9531,1,3a961159_1605ee10,Line,102,,2014-12-09 01:43:43,ditto,False,16
+139920,openstack_dashboard/dashboards/project/loadbalancers/tables.py,9531,1,3a961159_f6ff82ff,Line,75,,2014-12-09 01:43:43,I am not sure what will cause.,False,16
+105660,specs/juno/dhcp-relay.rst,12912,10,5a890539_82ed6727,Line,90,5a890539_eb366002,2014-12-04 14:12:47,The relay agent would set DHCP option 82 (circuit ID) based on the Neutron L2 segment.,False,16
+105660,specs/juno/dhcp-relay.rst,12912,10,5a890539_b841b40b,Line,90,5a890539_82ed6727,2014-12-04 14:57:02,"Ack. Actually it looks like we are using the link-selection sub-option for this. Because the relay IP in the tenant network is not routable for the DHCP server, the ""giaddr"" value is set to the IP in the management network, while the link-selection sub-option is set to the relay address in the tenant network. The server then uses the management IP of the relay agent to communicate with the agent, but the IP in the sub-option to determine the appropriate subnet for the address allocation.
+
+The fact that there is a relay agent *per network*, with a separate IP in the management network is how traffic is isolated between tenants.
+
+In the single-process model, with a single IP in the management network, it become necessary to use the vpn ID or circuit ID to differentiate, because address in the tenant network is not sufficient. That is, you could use the vpn ID or circuit ID to differentiate the tenant and specific tenant network.",False,16
+105660,specs/juno/dhcp-relay.rst,261,10,5a890539_eb366002,Line,90,,2014-12-02 19:53:39,"This is a comment that must be addressed. Can we send a unique id like the port_id on a DHCP request to help the external server discriminate, o will DHCP relay mode need to imply a restriction on MAC uniqueness?",False,16
+105660,specs/juno/dhcp-relay.rst,2592,10,5a890539_827388b0,Line,89,,2014-11-08 22:27:41,This is only true for a single network.  One can have duplicate macs in different networks.,False,16
+139920,openstack_dashboard/dashboards/project/firewalls/tables.py,9531,1,3a961159_b61dfa68,Line,98,,2014-12-09 01:43:43,ditto,False,16
+139920,openstack_dashboard/dashboards/project/routers/extensions/routerrules/tables.py,7012,2,3a961159_7477ca02,Line,44,,2014-12-18 16:05:36,"Should this have a ""."" on the end?",False,16
+105660,specs/juno/dhcp-relay.rst,261,10,5a890539_f17c0475,Line,68,,2014-11-10 21:48:38,"I agree that they're out, but they perhaps imply this blueprint has dependencies, which should be stated in the appropriate section so that reviewers can get the whole picture.
+
+(I get how all would work in your design because I've read all of your specs, no worries)",False,16
+105660,specs/juno/dhcp-relay.rst,261,10,5a890539_91bbc00d,Line,109,,2014-11-10 21:48:38,makes sense,False,16
+105660,specs/juno/dhcp-relay.rst,748,10,5a890539_5d55351c,Line,79,,2014-12-04 03:01:14,"Is this connectivity pre-provisioned? Also, how do we ensure isolation?",False,16
+140733,/COMMIT_MSG,12988,2,3a961159_dff57983,Line,9,3a961159_731beb80,2014-12-15 13:23:10,"Right, added a DocImpact line with no contents in patchset 3.  I'm not quite sure which pieces of documentation exactly mention the various volume drivers, though, so I could not provide guidelines here; a couple of quick searches on docs.openstack.org only came up with a couple of places where this option is mentioned as new in IceHouse and also a couple of reference lists for all the possible configuration options.",False,16
+140733,/COMMIT_MSG,1653,2,3a961159_731beb80,Line,9,,2014-12-15 07:20:34,Missing DocImpact,False,16
+140733,/COMMIT_MSG,12988,2,3a961159_bfa50da3,Line,7,3a961159_332ec3a5,2014-12-15 13:23:10,"The prefix and a brief description was added in patchset 3, thanks!
+
+However, I really do not understand what you mean about the blueprint - isn't the ""Implements: blueprint..."" line immediately after the ""Change-Id"" enough?  We do indeed have a BP, including a spec pending approval at https://review.openstack.org/#/c/115716/",False,16
+140733,/COMMIT_MSG,1653,2,3a961159_332ec3a5,Line,7,,2014-12-15 07:20:34,"Please add a prefix libvirt:
+
+Can you add a little meat to the commit message explaing what the SP driver is so that the layman can understand.
+
+In addition to this it looks like the commit message is missing a BP - I think that adding a new driver should at least have a BP",False,16
+105660,specs/juno/dhcp-relay.rst,748,10,5a890539_3836b7e7,Line,171,,2014-12-04 03:01:14,Perhaps John Belamaric took over? He's the one resurrecting: https://review.openstack.org/#/c/97967/,False,16
+105660,specs/juno/dhcp-relay.rst,748,10,5a890539_581aa36f,Line,134,5a890539_a267a4e9,2014-12-04 03:01:14,see my question line 79,False,16
+105660,specs/juno/dhcp-relay.rst,12912,10,5a890539_42c0df49,Line,134,5a890539_581aa36f,2014-12-04 14:12:47,"The tenant has no control over the IP in the management network. The relay will pickup the DHCP request from the isolated L2 segment, then unicast via the management network, setting the circuit-id to differentiate the segments. It's up to the receiving DHCP server to properly interpret the options.",False,16
+105660,specs/juno/dhcp-relay.rst,2592,10,5a890539_a267a4e9,Line,134,,2014-11-08 22:27:41,"There is a significant security impact here.  How do you intend to let the traffic escape the isolated segment?  As an operator, I'd want to know what security precautions are in place to preven t cross tenant traffic.",False,16
+139920,openstack_dashboard/dashboards/project/vpn/tables.py,9531,1,3a961159_4bd273d3,Line,145,,2014-12-09 01:43:43,ditto,False,16
+139920,openstack_dashboard/dashboards/project/vpn/tables.py,9531,1,3a961159_2bcd2732,Line,118,,2014-12-09 01:43:43,ditto,False,16
+139920,openstack_dashboard/dashboards/project/vpn/tables.py,9531,1,3a961159_cb4e63c1,Line,91,,2014-12-09 01:43:43,ditto,False,16
+139920,openstack_dashboard/dashboards/project/vpn/tables.py,9531,1,3a961159_ab511764,Line,64,,2014-12-09 01:43:43,I am not sure what will cause.,False,16
+105660,specs/juno/dhcp-relay.rst,261,10,5a890539_1147d020,Line,117,,2014-11-10 21:48:38,"I reckon the only use case for this would be differentiated service levels, but I do not see any reason for doing this kind of implementation right now.",False,16
+105660,specs/juno/dhcp-relay.rst,748,10,5a890539_7d7911c4,Line,69,5a890539_cb31a40c,2014-12-04 03:01:14,"you mean, the IPAM one is the parent spec, correct?",False,16
+139920,openstack_dashboard/dashboards/project/volumes/volumes/tables.py,9531,1,3a961159_6b4acf81,Line,64,,2014-12-09 01:43:43,"I will add text ""Cinder will remove all data stored in the volume.""",False,16
+135916,specs/kilo/db-archiving.rst,1207,1,3a961159_9e7db76f,Line,88,3a961159_cda4fba7,2014-12-24 08:38:23,"I think the purging operation will probably need to be smarter than a straight delete, because the first time it is run on an existing system that has many old records it is likely to cause significant issues.",False,16
+139920,openstack_dashboard/dashboards/project/routers/tables.py,7012,2,3a961159_3489c2ca,Line,37,,2014-12-18 16:05:36,"This should instead say:
+
+""Please note: deleting a router will remove all of its interfaces.""",False,16
+139920,openstack_dashboard/dashboards/project/routers/tables.py,9531,1,3a961159_ab22f7b6,Line,37,,2014-12-09 01:43:43,...are,False,16
+105660,specs/juno/dhcp-relay.rst,261,10,5a890539_71901496,Line,78,,2014-11-10 21:48:38,"If I were an english teacher I'd point out a typo in the line above.
+But I'm not either english or a teacher.",False,16
+110817,barbican/model/repositories.py,7136,24,baa201ad_ee845f0c,Line,575,,2014-10-08 14:58:43,"""This will filter deleted entities if there"" -> ""This will filter deleted entities if present""",False,16
+105660,specs/juno/dhcp-relay.rst,261,10,5a890539_cb31a40c,Line,69,,2014-12-02 19:53:39,So basically I would just put the pluggable IPAM blueprint as a dependency,False,16
+138588,neutron/api/rpc/handlers/l3_rpc.py,1561,4,3a961159_8c0ae725,Line,43,,2014-12-15 17:05:17,"Since you're adding some new methods, a version bump here is needed",False,16
+135916,specs/kilo/db-archiving.rst,5538,1,3a961159_4da3abb1,Line,46,,2014-12-24 06:27:56,"Okay, got it. So we're not talking about transferring row at the time of delete. Does going this way also look like an alternative?",False,16
+135877,openstack_dashboard/dashboards/admin/networks/subnets/workflows.py,12355,1,3a961159_758cc8d7,Line,37,3a961159_e089df6f,2014-12-23 09:33:53,I see origin code. But you can rewrite it. Please explain me: Why we do not  move this msg to 45line ? it would be like the rest of the code...,False,16
+135877,openstack_dashboard/dashboards/admin/networks/subnets/workflows.py,9531,1,3a961159_e089df6f,Line,37,3a961159_8e23f703,2014-12-23 01:09:32,"Please origin code see here:
+https://github.com/openstack/horizon/blob/master/openstack_dashboard/dashboards/project/networks/workflows.py#L154",False,16
+135877,openstack_dashboard/dashboards/project/networks/tests.py,9531,1,3a961159_63d88fef,Line,633,3a961159_5a561b2b,2014-12-23 13:15:58,This is under pep8 check. Maybe you can submit a bp or bug in launchpad to remove all backslashes.,False,16
+135877,openstack_dashboard/dashboards/project/networks/tests.py,9531,1,3a961159_e04e3f37,Line,633,3a961159_7aada930,2014-12-23 01:09:32,"This is ok, there is an example, please see Line 1939.",False,16
+135877,openstack_dashboard/dashboards/project/networks/tests.py,12825,1,3a961159_5a561b2b,Line,633,3a961159_e04e3f37,2014-12-23 09:10:43,"Yup, but it clearly don't follow OpenStack Style Guidelines (and look ugly) I have no idea why it was accepted.",False,16
+135877,openstack_dashboard/dashboards/admin/networks/subnets/workflows.py,9531,1,3a961159_a3eb57a2,Line,37,3a961159_758cc8d7,2014-12-23 13:15:58,I will remove this. It will inherit from net_workflows.CreateSubnetInfoAction.,False,16
+135877,openstack_dashboard/dashboards/admin/networks/subnets/workflows.py,12355,1,3a961159_8e23f703,Line,37,,2014-12-22 17:23:42,(nit) should be higher 45line,False,16
+135877,openstack_dashboard/dashboards/project/networks/workflows.py,12825,1,3a961159_9a2df5aa,Line,189,,2014-12-22 15:36:05,Use brackets to avoid backslash.,False,16
+135877,openstack_dashboard/dashboards/project/networks/workflows.py,9531,1,3a961159_e39abf12,Line,189,3a961159_3a514f62,2014-12-23 13:15:58,This is under pep8 check. Maybe you can submit a bp or bug in launchpad to remove all backslashes.,False,16
+135877,openstack_dashboard/dashboards/admin/networks/subnets/workflows.py,12825,1,3a961159_f7653245,Line,46,,2014-12-22 15:36:05,You can use 'else' clause here.,False,16
+135877,openstack_dashboard/dashboards/project/networks/workflows.py,9531,1,3a961159_a048b72d,Line,189,3a961159_9a2df5aa,2014-12-23 01:09:32,"Please see Line 184, or I will rewrite this to :
+if not ...
+   and ... :",False,16
+135877,openstack_dashboard/dashboards/project/networks/workflows.py,12825,1,3a961159_3704fd48,Line,189,3a961159_e39abf12,2014-12-23 16:03:18,"This tool is here only to help you and the others. Citing PEP8:
+
+""Long lines can be broken over multiple lines by wrapping expressions in parentheses. These should be used in preference to using a backslash for line continuation.""",False,16
+143815,openstack_dashboard/dashboards/project/volumes/volumes/tables.py,6763,2,3a961159_259d8bbc,Line,272,,2014-12-24 15:20:20,"we can not simply ignore the error, at least we should add some log for the exception.",False,16
+143917,/COMMIT_MSG,4656,2,3a961159_122feca8,Line,7,,2014-12-25 02:45:08,"Needs a better description than just ""DVR"" for the first line",False,16
+144152,horizon/workflows/base.py,12825,5,3a961159_5c405b07,Line,687,,2014-12-31 14:24:25,All import statements should be at the beginning of file and I don't think you can import anything from openstack_dashboard module in horizon module.,False,16
+144152,horizon/workflows/base.py,13086,5,3a961159_25c9b225,Line,687,,2014-12-31 21:42:35,I agree about the import statement. Can you shift the import statement to the beginning?,False,16
+144152,horizon/workflows/base.py,8040,5,3a961159_5fe68de9,Line,687,3a961159_5c405b07,2014-12-31 16:08:18,"Planned to do so, please read the commit message :). I'm waiting for all the 3 commits in https://blueprints.launchpad.net/horizon/+spec/move-policy-engine to land.",False,16
+135877,openstack_dashboard/dashboards/project/networks/tests.py,12825,1,3a961159_7aada930,Line,633,,2014-12-22 15:36:05,"Use brackets to avoid backslashes:
+
+    expected_msg = (""...""
+                    ""..."")",False,16
+128873,horizon/static/horizon/js/horizon.networktopology.js,9981,3,9aa7fdbe_4a77e402,Line,609,,2014-10-20 12:36:11,"each local variable should have a ""var"" declaraion.",False,16
+128873,horizon/static/horizon/js/horizon.networktopology.js,9981,3,9aa7fdbe_2a3c602f,Line,604,,2014-10-20 12:36:11,"It might be clearer if this function were named ""confirm_delete"".  It's hard coded to that function.  Or better still, I notice that the ""Delete Interface"" action still does not require confirmation.  Maybe you should pass in the action to perform after confirmation.",False,16
+135877,openstack_dashboard/dashboards/project/networks/workflows.py,12825,1,3a961159_3a514f62,Line,189,3a961159_a048b72d,2014-12-23 09:10:43,"Again, it clearly don't follow OpenStack Style Guidelines and I have no idea why it was accepted, but it's not really good argument to put even more code like this. Example you provided won't work without braces (or backslash).",False,16
+135877,openstack_dashboard/dashboards/admin/networks/subnets/workflows.py,12825,1,3a961159_b5a0f0f4,Line,46,3a961159_20ef671f,2014-12-23 09:10:43,"Ok, but whole _check_subnet_data looks identical to linked code, so I see no need to copy-paste it here and override definition inherited from net_workflows.CreateSubnetInfoAction.",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_6060ce01,Line,50,,2014-10-23 21:35:41,"We offer this today, I guess what you don't like is the fact that you need a driver to manage it?  I think there's some confusion here partially because I don't think you're at all proposing a replacement of Cinder's LVM implementation but actually using a third party san/storage device in a way that avoids the need for any driver in Cinder; is that accurate?
+
+Not saying that's a bad thing, just saying the conversation might be easier and make more sense if it were framed more accurately.",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_40482a87,Line,55,,2014-10-23 21:35:41,"It most certainly does... or an FC target or some sort of topology.  There's no elimination of a data path here, you have to have a data path somewhere.  
+
+I think you mean to say that you can have an I/O path independent of the Cinder Node.  Again, I point out that you can do that today, and the only driver that doesn't do that is the reference LVM implementation.",False,16
+131182,bin/cinder-manage,1207,2,9aa7fdbe_392ea1fb,Line,235,,2014-10-28 16:09:03,"I suspect many people trying this out (myself included) will only want to archive 'old' rows, for some definition of old, so adding a 'min days since last_updated' option here will make this easier for such people. Default it to 0 and you keep the current behaviour.",False,16
+131182,bin/cinder-manage,1736,2,9aa7fdbe_79e749ac,Line,235,9aa7fdbe_392ea1fb,2014-10-28 16:14:28,"Thanks Duncan, I'll do it in a next version. Now, I'm working on spec",False,16
+130228,ironic/api/controllers/v1/node.py,2889,4,5a890539_ccad109d,Line,830,,2014-11-25 00:48:04,"This means the node UUID can be specified in two places in the PUT command: the URL, and the BODY.
+
+This seems like an incorrect REST semantic to me.... WDYT?",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,10115,1,5a890539_d4a616c1,Line,162,9aa7fdbe_80af7229,2014-11-11 16:06:42,"I understand that all node have an access to all volumes(VG/LV). But I'm not sure why all tenants have an access to all volumes.
+I will update this entry.",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_80af7229,Line,162,,2014-10-23 21:35:41,All tenants/nodes now have access to all volumes... that's a significant sec impact IMO,False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,10115,1,5a890539_94c56e5d,Line,152,9aa7fdbe_a0a8f620,2014-11-11 16:06:42,I will update this entry.,False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_a0a8f620,Line,152,,2014-10-23 21:35:41,completely changes the data model I think.,False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_e0659e1e,Line,149,,2014-10-23 21:35:41,"Multiple:
+1. Attach external SAN device to Cinder node with a VG on it and use the model we currently have
+
+2. Add multi-attach support to Cinder
+
+3. Distribute your volumes across multiple smaller VG's on seperate cinder-volume nodes",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,10115,1,5a890539_f48232ff,Line,143,9aa7fdbe_006b82f2,2014-11-11 16:06:42,I will update this entry.,False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_006b82f2,Line,143,,2014-10-23 21:35:41,basicly every volume operation :),False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,10115,1,5a890539_f709542d,Line,134,9aa7fdbe_206c0608,2014-11-11 16:06:42,I understand your concern. I think we can reduce affect of contentions using multiple backends with same volume_backend_name.,False,16
+138588,neutron/agent/l3_agent.py,1561,4,3a961159_0f4c2976,Line,148,,2014-12-15 17:05:17,'1.5' here as well,False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_206c0608,Line,134,,2014-10-23 21:35:41,"Sounds like contention issues galore.  It's also easy to hand-wave over this and say ""we need a synch decorator"" implementing said decorator in a manner that works when you have 100's or 1000's of volumes shared across 100's of compute nodes gets a bit scary.",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_40710adf,Line,126,,2014-10-23 21:35:41,"Don't understand this exactly... but I will say I'm not a fan of assisted snapshot that we have today so using that as a use-case I don't get and certainly isn't going to win me over :)
+
+Moving control path back in to Nova or moving ad-hoc control path items based on driver or command to Nova (or anywhere) is a recipe for trouble IMHO.  Maintainability suffers, complexity increases and it's overall a bad design.
+
+I realize it's sometimes necessary, but I don't think it's ideal.",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,10115,1,5a890539_7703a4b8,Line,103,9aa7fdbe_807692d5,2014-11-11 16:06:42,"Not limited using a single VG. Using this proposal, we can also create multiple backends with multiple VGs using same volume_backend_name on single cinder node. In this case, operation or I/O workload are balanced to these backends.
+
+[LVM_shared1]
+volume_group=vg1
+volume_driver=cinder.volume.drivers.xx
+volume_backend_name=LVM_shared
+
+[LVM_shared2]
+volume_group=vg2
+volume_driver=cinder.volume.drivers.xx
+volume_backend_name=LVM_shared
+
+[LVM_shared3]
+volume_group=vg3
+volume_driver=cinder.volume.drivers.xx
+volume_backend_name=LVM_shared",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_807692d5,Line,103,,2014-10-23 21:35:41,"Let's say we do something like this... and let's say you're using the Volume Group on a Cinder node.  How does any of this change things (except possibly making them less performant and worse)?  You still have to export that device/VG to all of the compute nodes over some transport.
+
+As I mentioned before you also just put all your volumes in a single VG, which IMHO is probably not a very good idea.",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_a07f16aa,Line,95,,2014-10-23 21:35:41,"I see absolutely NO difference in what you're saying here and what we offer today, none at all.  This is exactly what we provide and how we provide it.",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_c07c1ab8,Line,82,,2014-10-23 21:35:41,"Sorry, this makes no sense... I don't see any distinction between your proposal, what cinder offers today and this statement.
+
+It makes no sense to me at all... sorry.",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_e04cbea0,Line,78,,2014-10-23 21:35:41,"Ummm... yeah!  That's the entire point here!  Self Serve, that's the idea, the intent and really part of the underlying mission not only for Cinder but really for all of OpenStack if you ask me.
+
+The idea is to get away from the need to request resources via storage admins, support tickets etc etc
+
+Also, this is the whole reason we have quotas!!!!",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_0052a23a,Line,60,,2014-10-23 21:35:41,"Sure, total aggregate I/O bandwidth, but you're still limited by whatever the bandwidth on your backend device.  Or depending on your cloud deployment, maybe it's the compute nodes or somewhere else.  Point being I'm not sure I agree with the statements here.",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_2043266d,Line,58,,2014-10-23 21:35:41,"still disagree on this one, you keep saying it so I'll keep responding to it :)
+
+Bottom line, if you can show me some apples to apples data demonstrating some significant performance benefits great, but the comparison you provided previously was a devstack running LVM on loopback files using the 1G nic compared to a FC device you attached to the compute nodes.
+
+That's hardly a fair comparison.  I also mentioned at the time that I'm fully intent on providing the capability to specify FC targets for the ref LVM driver in the current architecture.  Unfortunately the initial patch to start laying that ground work stalled in review and that effort has slipped to Kilo.",False,16
+128873,horizon/static/horizon/js/horizon.networktopology.js,10442,1,baa201ad_049efbb8,Line,615,,2014-10-17 06:54:46,"please remove the trailing white spaces, i am surprised how this got passed in pep8.",False,16
+135916,specs/kilo/db-archiving.rst,1207,1,3a961159_deabbfd3,Line,46,3a961159_4da3abb1,2014-12-24 08:38:23,"This method preserves the existing semantics - any busy cloud is going to have to have implemented some sort of deleted rows cleanup already, or be suffering nasty slowdown. 
+
+The aim of this just to provid a standard API for doing so, rather than the wheel being reinvented many times",False,16
+128873,horizon/static/horizon/js/horizon.networktopology.js,10442,1,baa201ad_c4e5d338,Line,612,,2014-10-17 06:54:46,forget to assign a value for 'name_string'.,False,16
+128873,/COMMIT_MSG,841,3,9aa7fdbe_20f641d8,Line,18,9aa7fdbe_aa9a1012,2014-10-20 13:20:27,"Changes related to patch sets are discouraged. Once the patch is merged, this information is not useful when you run ""git log"".
+Instead it is suggested to reply to review comments. Just  replying ""Done"" is useful for reviewers.",False,16
+143628,openstack_dashboard/api/neutron.py,12825,2,3a961159_ab167e56,Line,388,,2014-12-29 16:48:02,Function definition is not consistent with FloatingIpManager ABC.,False,16
+143628,openstack_dashboard/api/neutron.py,9531,1,3a961159_556a6c81,Line,395,,2014-12-23 09:09:18,...,False,16
+122464,nova/virt/xenapi/host.py,2835,5,7a8c0949_37ada189,Line,287,,2014-10-30 19:38:01,host's memory overhead doesn't count dom0 right?,False,16
+143628,openstack_dashboard/api/network_base.py,9531,1,3a961159_15fb84c1,Line,71,,2014-12-23 09:09:18,Updates a floating ip.,False,16
+143628,openstack_dashboard/api/network.py,12825,2,3a961159_0bba326e,Line,66,,2014-12-29 16:48:02,"Again, just use
+
+    return NetworkClient(request).floating_ips.allocate(pool, tenant_id)
+
+without condition above.",False,16
+143628,openstack_dashboard/api/network.py,12825,2,3a961159_eb9de60b,Line,51,,2014-12-29 16:48:02,"Why don't you just use
+
+    return NetworkClient(request).floating_ips.list(
+        all_tenants=all_tenants)
+
+without condition above.",False,16
+142986,climate/plugins/oshosts/host_plugin.py,7166,1,3a961159_6e144144,Line,71,,2014-12-19 09:06:38,"thanks for contributing. See the Jenkins results, you'll see that you need to adapt unittests",False,16
+142986,/COMMIT_MSG,7166,1,3a961159_ce17f543,Line,8,,2014-12-19 09:06:38,Please leave a blank line between L7 and L8 and provide a short explanation of what you're trying to do,False,16
+105660,Empty file,2592,10,5a890539_626e9ccb,File,-1,,2014-11-08 22:27:41,rerere,False,16
+143628,openstack_dashboard/api/neutron.py,12825,2,3a961159_4b68ba21,Line,391,,2014-12-29 16:48:02,"Code duplication in else clause can be avoided by using of previously prepared  tenant_id value:
+
+    tenant_id = tenant_id if tenant_id is not None else self.request.user.project_id",False,16
+141356,tests/unit/queues/transport/wsgi/test_v1_1.py,6413,2,3a961159_d0a5e304,Line,125,,2014-12-18 18:44:33,Why is this change needed?,False,16
+141356,tests/unit/queues/transport/wsgi/test_v1_0.py,6413,2,3a961159_909b5bc8,Line,112,,2014-12-18 18:44:33,Why is this change needed?,False,16
+141356,tests/unit/common/storage/test_utils.py,6549,2,3a961159_f7956733,Line,26,3a961159_d5b6b589,2014-12-19 05:34:38,"It's better to have IMO, it's duplicated with setUp() of base class.",False,16
+141356,tests/unit/common/storage/test_utils.py,6413,2,3a961159_d5b6b589,Line,26,,2014-12-18 18:44:33,Is removing the environment setup necessary?,False,16
+141356,/COMMIT_MSG,6549,4,3a961159_110978dd,Line,30,3a961159_872e2ef9,2014-12-30 04:07:14,Sure,False,16
+141356,/COMMIT_MSG,6676,4,3a961159_872e2ef9,Line,30,,2014-12-26 10:56:58,"Since we no longer maintain config options by ourselves and you're adding new options, please add commit tag: DocImpact",False,16
+135916,specs/kilo/db-archiving.rst,5538,1,3a961159_6d0a27d3,Line,24,,2014-12-24 06:27:56,"Better readability:
+Need to filter 'marked as deleted' rows in every query",False,16
+135916,specs/kilo/db-archiving.rst,5538,1,3a961159_ad108f00,Line,29,,2014-12-24 06:27:56,"typo: utilization, or un-utilization",False,16
+135916,specs/kilo/db-archiving.rst,5538,1,3a961159_ad27af61,Line,35,,2014-12-24 06:27:56,"Do you mean that for each 'delete volume' operation, copy row from one to another? Or are you saying that this should be done when the 'db purge' command is executed?",False,16
+135916,specs/kilo/db-archiving.rst,5538,1,3a961159_adac0fa0,Line,38,,2014-12-24 06:27:56,Are all these three ways going to be implemented under this spec?,False,16
+141356,tests/unit/queues/transport/wsgi/test_v1_0.py,6549,2,3a961159_77cfb756,Line,112,3a961159_909b5bc8,2014-12-19 05:34:38,"Because with osprofiler's wsgi middleware, empty result of '/v1/health' will be wrapped by webob.response.EmptyResponse, it's an iterator.
+
+The same reason for the change in v1.1 test case.",False,16
+122464,nova/virt/xenapi/host.py,782,5,7a8c0949_e1cc2c38,Line,287,7a8c0949_37ada189,2014-10-31 09:41:59,"right, thats just the xen overhead, I do dom0 below.",False,16
+122464,nova/virt/xenapi/host.py,2835,5,7a8c0949_d79e1d56,Line,294,,2014-10-30 19:38:01,You can run your compute in dom0?   (I think that's what this says),False,16
+122464,nova/virt/xenapi/host.py,782,5,7a8c0949_21d714c3,Line,294,7a8c0949_d79e1d56,2014-10-31 09:41:59,"yeah, its a kinda hidden feature.",False,16
+128873,/COMMIT_MSG,9981,3,9aa7fdbe_aa9a1012,Line,18,,2014-10-20 12:36:11,This shouldn't be in the commit comment.  It _always_ happens!,False,16
+128873,/COMMIT_MSG,841,3,9aa7fdbe_e046f922,Line,7,,2014-10-20 13:20:27,"This patch is specific to network topology panel. Could you add ""in Network Topology"" at the end of line?",False,16
+127968,git_review/cmd.py,1054,4,baa201ad_c91c876d,Line,725,,2014-10-13 16:57:28,"I could be wrong but I think that the following code will fix the problem while retaining the maximum amount of information in what is printed out for all OS's:
+
+ # get the correct system locale for encoding
+ import locale
+ locale.setlocale(locale.LC_ALL, '')
+ codepage = locale.getpreferredencoding()
+
+Then to print out:
+
+ output.encode(codepage, 'replace')",False,16
+127968,git_review/cmd.py,1054,4,baa201ad_89127f56,Line,721,,2014-10-13 16:57:28,"Don't believe the use of str is required here, also what did you switch from '%s' to '+' to concatenate the strings?",False,16
+127968,git_review/cmd.py,1054,3,baa201ad_2388d221,Line,725,,2014-10-13 16:14:39,"I could be wrong but I think that the following code will fix the problem while retaining the maximum amount of information for all OS's:
+
+ # get the correct system locale for encoding
+ import locale
+ locale.setlocale(locale.LC_ALL, '')
+ codepage = locale.getpreferredencoding()
+
+Then to print out:
+
+ output.encode(codepage, 'replace')",False,16
+127968,git_review/cmd.py,13610,2,baa201ad_dd4a8554,Line,719,baa201ad_ba7147e0,2014-10-13 15:07:25,"oh, thanks a lot for catching it. i guess i'm bit nervous as this is my first contribution, if you don't mind please review patch set 3",False,16
+127968,git_review/cmd.py,8124,2,baa201ad_ba7147e0,Line,719,,2014-10-13 14:55:39,"if os.name == ""nt"":",False,16
+127380,specs/juno/mapping-extension-refactor.rst,7987,1,baa201ad_c165d0af,Line,122,baa201ad_f5a2c0ac,2014-10-16 18:03:59,"That's correct, the above is just removing the mapping and not the resource as a whole.",False,16
+127380,specs/juno/mapping-extension-refactor.rst,7787,1,baa201ad_f5a2c0ac,Line,122,,2014-10-15 09:43:27,"Won't there still be some kind of gp.L3_POLICIES, gp.L2_POLICIES, and gp.ENDPOINT_GROUPS endpoints, but they just won't map directly to routers, network_ids, and subnets directly?
+
+i.e. users still need a way to specify that they want a set of endpoints to be in a group and that a group needs to have L2 connectivity, etc.",False,16
+127380,specs/juno/mapping-extension-refactor.rst,7987,1,baa201ad_816f4891,Line,84,baa201ad_f52d6047,2014-10-16 18:03:59,Policy Target Group,False,16
+127380,specs/juno/mapping-extension-refactor.rst,7787,1,baa201ad_f52d6047,Line,84,,2014-10-15 09:43:27,PTG?,False,16
+127380,specs/juno/mapping-extension-refactor.rst,7987,1,baa201ad_61742468,Line,76,baa201ad_b569188e,2014-10-16 18:03:59,Software defined software definition! :),False,16
+127380,specs/juno/mapping-extension-refactor.rst,7787,1,baa201ad_b569188e,Line,76,,2014-10-15 09:43:27,We write another declarative language on top of this to abstract it even further ;-),False,16
+127380,specs/juno/mapping-extension-refactor.rst,7987,1,baa201ad_614d043e,Line,70,baa201ad_355608cf,2014-10-16 18:03:59,Done,False,16
+127380,specs/juno/mapping-extension-refactor.rst,7787,1,baa201ad_355608cf,Line,70,,2014-10-15 09:43:27,"I don't think ""in the implementation"" is needed here.",False,16
+127380,specs/juno/mapping-extension-refactor.rst,7987,1,baa201ad_4143a012,Line,56,baa201ad_f53800a2,2014-10-16 18:03:59,"The implicit mapping driver is supposed to be the entity which takes care of that.
+At the current stage, all it does is to put the EPG with blank L2_Context in a default one. More sophisticated scheduling capabilities can be achieved in K.
+
+If the cloud administrator doesn't want to leverage these capabilities, she could run GBP without implicit mapping.",False,16
+127380,specs/juno/mapping-extension-refactor.rst,7787,1,baa201ad_f53800a2,Line,56,,2014-10-15 09:43:27,Can L2_domain be left blank? Let's say the user doesn't care about having L2 connectivity. There should be a way for them to specify that so the backend can choose to spread them across networks wherever there is available space and provide only L3 connectivity.,False,16
+127380,specs/juno/mapping-extension-refactor.rst,7987,1,baa201ad_c144f048,Line,47,baa201ad_f583a053,2014-10-16 18:03:59,Done,False,16
+127380,specs/juno/mapping-extension-refactor.rst,7787,1,baa201ad_f583a053,Line,47,,2014-10-15 09:43:27,"Add one more.
+
+""A user cares more about restricting connectivity rather than specifying the method used to restrict the connectivity.""",False,16
+126640,/COMMIT_MSG,13325,2,baa201ad_734c9d77,Line,10,,2014-10-10 09:54:01,"Despite the existence of the link to the implemented blueprint, I think it would be 
+better to give a more detailed description of what and why you are changing in this fix.",False,16
+126625,ironic/common/disk_partitioner.py,6618,2,9aa7fdbe_f103d70a,Line,138,,2014-10-22 17:29:49,"I'm not that familiar with this code, but I am concerned about changing the default from msdos to gpt. I don't see that this change is backwards compatible (yet) :-(",False,16
+128873,horizon/static/horizon/js/horizon.networktopology.js,10442,1,baa201ad_243dbf8f,Line,608,,2014-10-17 06:54:46,variable not used anywhere.,False,16
+139920,openstack_dashboard/dashboards/admin/volumes/volume_types/tables.py,9531,1,3a961159_6b89efea,Line,50,,2014-12-09 01:43:43,I am not sure what will cause. But volume type can be recreated easily.,False,16
+139920,openstack_dashboard/dashboards/project/routers/ports/tables.py,7012,2,3a961159_f45ada81,Line,55,,2014-12-18 16:05:36,...associated with an instance...,False,16
+90498,ceilometer/compute/virt/libvirt/inspector.py,8276,6,baa201ad_649b4766,Line,183,1abeadc6_6678ea2b,2014-10-17 07:10:08,Done,False,16
+135877,openstack_dashboard/dashboards/admin/networks/subnets/workflows.py,12825,1,3a961159_adca1618,Line,46,3a961159_3ef7475b,2014-12-29 14:44:23,"Yes, that's the point, this code is inherited, but because check_private=False whole condition will be false and exception won't be thrown.",False,16
+138409,turbo_hipster/lib/utils.py,7069,5,3a961159_cb5583c7,Line,443,,2014-12-09 01:09:49,"If we don't need to log this, maybe it's better to execute the command just here instead of using execute_to_log?",False,16
+135877,openstack_dashboard/dashboards/admin/networks/subnets/workflows.py,9531,1,3a961159_3ef7475b,Line,46,3a961159_37fb1dc2,2014-12-26 06:55:46,"Your example will inherit the code
+if (check_private and not subnet.is_private() and
+                    getattr(settings, ""RESTRICT_PRIVATE_NET_CIDR"", True))...
+So it will restrict administrator to create network.",False,16
+138409,turbo_hipster/lib/utils.py,13413,5,3a961159_1e917599,Line,443,3a961159_cb5583c7,2014-12-09 13:55:40,"That would mean ""rewriting"" the execute_to_log function. In fact, I find it quite valuable that the command invocation and the actual output of these commands is logged by the default logger; one would have to reimplement this to achieve feature parity.
+
+Or maybe I'm just missing how the logging module works. Do you have a specific advice? I'll be happy to implement it, but I need further directions here.",False,16
+90498,/COMMIT_MSG,8276,6,baa201ad_4498036a,Line,9,1abeadc6_51f8efc2,2014-10-17 07:10:08,Done,False,16
+121906,contrib/devbox/manage-devbox.sh,7549,11,baa201ad_57bb700e,Line,44,,2014-10-16 09:39:08,nothing happens -> nothing will happen,False,16
+121906,contrib/devbox/manage-devbox.sh,7549,11,baa201ad_b7d65c4d,Line,43,,2014-10-16 09:39:08,mismatching in tenses (we create and send),False,16
+135916,specs/kilo/db-archiving.rst,5538,1,3a961159_adb16fe1,Line,145,,2014-12-24 06:27:56,ditto,False,16
+121906,contrib/devbox/manage-devbox.sh,7549,11,baa201ad_57e4503b,Line,42,,2014-10-16 09:39:08,"sleep -> Sleep
+to be ready to be send  -> to be ready to send",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_a0563628,Line,44,,2014-10-23 21:35:41,"""directly from their own I/O path"" I don't see how that's any different than what we do currently from the compute node's perspective?",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_c0533a37,Line,36,,2014-10-23 21:35:41,"Well, sure if you only have a single Cinder-Volume node, see my previous comment",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_e033de11,Line,34,,2014-10-23 21:35:41,"So aggregating to your backend that's exported to all of the compute nodes just seems to move the problem if you ask me.
+
+I still say you could create multiple VG's on your backend device (ie many smaller VG's as opposed to fewer larger VG's), mount those individual VG's to a Cinder node and use them in todays current architecture efficiently.",False,16
+121906,contrib/devbox/manage-devbox.sh,7549,11,baa201ad_d76be0b6,File,-1,,2014-10-16 09:39:08,"Please, add license header",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,10115,1,5a890539_979c906b,Line,31,9aa7fdbe_203a46e7,2014-11-11 16:06:42,"As for SCSI target, I think it is better for users to give choices whether to use SCSI target(tgtd/LIO) or not for the data path depending on their requirements. Current LVM driver only support SCSI target(tgtd/LIO) for the data path. I believe users who migrate from baremetal environment prefer issuing I/O to backend storage without tgtd/LIO SCSI target.
+
+As for your indication of security, I understand your concern. In my proposal, all node have an access permission to all volumes(VG/LV). It should be written in security impact.",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,6772,3,3a961159_e67034a6,Line,171,3a961159_30738081,2014-12-22 02:26:03,"Intel have been working on getting this up and voting on Nova:
+
+https://wiki.openstack.org/wiki/ThirdPartySystems/Intel-PCI-CI",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,6873,3,3a961159_30738081,Line,171,,2014-12-18 22:24:44,"What's the progress on this?  Lots of people in suits at the summit session on NFV promised to help with lots of this stuff but so far I haven't heard of much, at least in nova, maybe most of the effort on CI is in neutron right now?  Would be good to get some details in the mailing list so people know where this is going (and tag for nova, not just [nfv]).",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,6685,3,3a961159_342542c2,Line,156,,2014-12-18 16:09:17,Make it a little more specific?,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,6685,3,3a961159_94535638,Line,85,,2014-12-18 16:09:17,do you want to mention that the device will be freed? Is there any extra change needed for detach?,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,6685,3,3a961159_345e2246,Line,77,,2014-12-18 16:09:17,Nit: to a pci request. The API to create a PCI request already exists.,False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_203a46e7,Line,31,,2014-10-23 21:35:41,"I'm still unclear of the difference here, regardless of how you do this there is some sort of initiator/target topology that MUST exist and be implemented.  Whether it's FC or iSCSI you're still adding a transport layer connecting the storage device to all of the compute nodes.
+
+the ""target stopping accidentally"" doesn't really hold much weight with me.  So, what if the backend device's target ""stops"" accidentally; same problem. 
+
+It's great that ""yes"" you can have a single export to a backend device that provides access to every volume on said device.  This however raises security concerns IMHO.  Let's say you use CHAP; well you now have a common CHAP account for every tenant and volume on the backing device.",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,6685,3,3a961159_147126e0,Line,74,,2014-12-18 16:09:17,Nit: things that need to be addressed,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,6685,3,3a961159_54848eb0,Line,47,,2014-12-18 16:09:17,Clarification: would the VM boot at all?,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,6685,3,3a961159_14d5a6b8,Line,37,,2014-12-18 16:09:17,Nit: s/directly/direct,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,12175,2,3a961159_58f79c8c,Line,157,,2014-12-17 05:28:52,need to be more detail,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,12175,2,3a961159_3803b074,Line,156,,2014-12-17 05:28:52,need to be more detail,False,16
+139920,openstack_dashboard/dashboards/admin/aggregates/tables.py,9531,1,3a961159_0bdeab11,Line,26,,2014-12-09 01:43:43,I think that aggregate can be recreated. I'm not sure what will cause while deleting aggregate.,False,16
+129267,specs/storyboard_story_types.rst,308,2,5a890539_b044401c,Line,78,5a890539_c56af51a,2014-11-27 09:09:03,"Goal is not to exclude non-code-based groups (heck, I even filed the story on supporting that use case). ""master"" is just a way of saying ""current dev cycle"".",False,16
+137634,/COMMIT_MSG,13718,12,5a890539_db06a3cd,Line,18,,2014-12-03 19:34:17,Update this to describe the comma separated format,False,16
+139920,openstack_dashboard/dashboards/admin/flavors/tables.py,9531,1,3a961159_6bed6fc3,Line,31,,2014-12-09 01:43:43,Flavor can be recreated.,False,16
+136027,/COMMIT_MSG,7069,2,5a890539_6da7ccbc,Line,13,,2014-12-03 12:16:53,Do you know why it is lost after the first exception? Perhaps we should find this out before we retry an event lots of times.,False,16
+136027,/COMMIT_MSG,7562,2,5a890539_9f7dc7e9,Line,13,5a890539_6da7ccbc,2014-12-04 11:11:57,"Well, in my case it's a strange reply from gerrit.
+
+When a new event enters _handleEvent its details are queried in gerrit (using function _getChange). For some reason the change from the event might not be found at the moment:
+
+Traceback (most recent call last):
+  File ""/usr/local/lib/python2.7/dist-packages/zuul/trigger/gerrit.py"", line 108, in run
+    class Gerrit(object):
+  File ""/usr/local/lib/python2.7/dist-packages/zuul/trigger/gerrit.py"", line 98, in _handleEvent
+    def run(self):
+  File ""/usr/local/lib/python2.7/dist-packages/zuul/trigger/gerrit.py"", line 368, in _getChange
+    else:
+  File ""/usr/local/lib/python2.7/dist-packages/zuul/trigger/gerrit.py"", line 400, in updateChange
+
+Exception: Change 1191,1 not found
+
+If zuul would try to fetch that data again it succeeds, a valid data is returned.
+
+But with the exception the event is lost and it won't be requested again, until a new patchset or comment are added.",False,16
+136027,/COMMIT_MSG,7069,2,5a890539_a24ee893,Line,13,5a890539_9f7dc7e9,2014-12-04 11:49:22,"Right, so I think we should try and determine why this is. I haven't seen any patches miss out being queued in openstack's gerrit. Perhaps it's a network thing?
+
+If it is a network issue, seems like the better place for a TTL might be in getChange.",False,16
+136027,/COMMIT_MSG,7562,2,5a890539_6d7951c4,Line,13,5a890539_a24ee893,2014-12-04 12:25:51,"It's not a network issue. Here is a message received from gerrit when the exception occurs:
+
+2014-11-20 12:39:48,265 DEBUG gerrit.Gerrit: Received data from Gerrit query:
+{u'rowCount': 0, u'runTimeMilliseconds': 1, u'type': u'stats'}",False,16
+137634,doc/source/zuul.rst,7069,10,5a890539_2a884a21,Line,89,,2014-12-03 11:47:13,This should be wrapped to 70cols,False,16
+137634,doc/source/zuul.rst,7069,10,5a890539_6a7ed21c,Line,90,,2014-12-03 11:47:13,I'm uncertain what the key is used for here,False,16
+137970,specs/kilo/instance-network-aggregate-meter.rst,8290,2,5a890539_55a245fc,Line,12,,2014-12-05 02:29:18,"*compatibility* aside, I prefer the alternative proposal, but this need more review suggestion :)",False,16
+136653,oslo/messaging/_executors/impl_aioeventlet.py,8415,7,3a961159_c6d5d11c,Line,60,5a890539_f6543bff,2014-12-23 13:42:33,Agreed with Victor about storing even loop.,False,16
+136653,oslo/messaging/_executors/impl_aioeventlet.py,9107,7,5a890539_f6543bff,Line,60,5a890539_d8894927,2014-12-04 08:54:22,"The executor may be built in a different thread than the thread used to run the executor. test_executor exactly does that. It's even worse: the thread which will run the executor does not exist yet when the executor is created.
+
+In trollius, all functions implictly retrieve the event loop using trollius.get_event_loop() if the loop parameter is not set (which is the most common case). For example, the trollius.async() function is common and is rarely used with the loop parameter set.
+
+I prefer to store the event loop instead of calling get_event_loop() at each call to _coroutine_wrapper(). It should be more efficient, and it helps also to detect bugs when trollius is in debug mode. For example, it should raise an exception if _coroutine_wrapper() is called in the ""wrong"" thead (a thread different than the thread running the executor).",False,16
+136653,oslo/messaging/_executors/impl_aioeventlet.py,1297,7,5a890539_d8894927,Line,60,,2014-12-03 19:11:28,Is this the generally agreed pattern for getting an event loop vs. just taking it from the constructor as a constructor parameter?,False,16
+136653,oslo/messaging/_executors/impl_aioeventlet.py,1297,4,5a890539_8af94cca,Line,59,,2014-12-03 01:14:33,Ditto here. If some other library/program/application is using trollius along with oslo.messaging doesn't this break that other user?,False,16
+136653,oslo/messaging/_executors/impl_aioeventlet.py,9107,4,5a890539_f41b85c8,Line,51,5a890539_2a7a1888,2014-12-03 13:59:46,"I focused on the Oslo Messaging repository: the only user of the aioeventlet executor is the test_executor if I understood correctly and this test uses a thread.
+
+You are right that it's better to setup and run the event loop in the application.
+
+I discussed with Mehdi and he agrees. I posted a new patch which doesn't run the event loop anymore. It includes instead a comment explaining how to setup and run the aioeventlet event loop.",False,16
+136653,oslo/messaging/_executors/impl_aioeventlet.py,1297,4,5a890539_2a7a1888,Line,51,,2014-12-03 01:06:02,"Isn't this sort of a bad thing for a library like oslo.messaging to do (to set global state in some other library)?
+
+Maybe it should just abort at this point instead of trying to initialize trollius with an eventloop.",False,16
+137970,specs/kilo/instance-network-aggregate-meter.rst,8290,2,5a890539_d519d57a,Line,77,,2014-12-05 02:29:18,"though this change will cause compatibility problem, but it is valuable, the old metrics is hard to identify what the metrics be metered.",False,16
+121906,contrib/devbox/manage-devbox.sh,7549,11,baa201ad_7714f4e8,Line,200,,2014-10-16 09:39:08,I suppose we should run update_settings to add murano data to the horizon settings file,False,16
+135877,openstack_dashboard/dashboards/admin/networks/subnets/workflows.py,9531,1,3a961159_40f2b306,Line,63,3a961159_3a7081a3,2014-12-23 01:09:32,"Please see origin code here:
+https://github.com/openstack/horizon/blob/master/openstack_dashboard/dashboards/project/networks/workflows.py#L193",False,16
+135877,openstack_dashboard/dashboards/admin/networks/subnets/workflows.py,12825,1,3a961159_3a7081a3,Line,63,,2014-12-22 15:36:05,"Previous two condition sequences can be restructured:
+
+    if not no_gateway:
+        if gateway_ip:
+            if netaddr.IPAddress(gateway_ip).version is not ip_version:
+                ...
+        else:
+            if not is_create:
+                ...",False,16
+138409,turbo_hipster/lib/utils.py,7069,5,3a961159_8b729b7a,Line,435,,2014-12-09 01:09:49,local_config could be renamed to 'scp_config'.,False,16
+139920,openstack_dashboard/dashboards/admin/flavors/tables.py,7012,2,3a961159_f409fa2c,Line,32,,2014-12-18 16:05:36,...if you know the flavor's original...,False,16
+135877,openstack_dashboard/dashboards/admin/networks/subnets/workflows.py,9531,1,3a961159_20ef671f,Line,46,3a961159_f7653245,2014-12-23 01:09:32,"Please origin code see here:
+https://github.com/openstack/horizon/blob/master/openstack_dashboard/dashboards/project/networks/workflows.py#L179",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,10115,1,5a890539_173b403b,Line,44,9aa7fdbe_a0563628,2014-11-11 16:06:42,"From the compute node's perspective, the difference is whether to use SCSI target(tgtd/LIO) or not. I believe it is better to provide choices for users based on users requirements.",False,16
+129352,specs/kilo/lvm-driver-for-shared-storage.rst,2243,1,9aa7fdbe_805db249,Line,47,,2014-10-23 21:35:41,"Still not getting the ""own I/O"" statements; but regardless.  the ""Every LV on teh VG visible on each control and compute"" may or may not be an advantage.  Some would argue it's a disadvantage.
+
+Again, IMHO we'd be better with our current architecture and doing things like multi-attach support.",False,16
+90498,/COMMIT_MSG,8276,6,baa201ad_2495bf32,Line,7,1abeadc6_f1565bcd,2014-10-17 07:10:08,Done,False,16
+135877,openstack_dashboard/dashboards/admin/networks/subnets/workflows.py,9531,1,3a961159_e309df95,Line,46,3a961159_b5a0f0f4,2014-12-23 13:15:58,"Inherited every function except this, because no need to restrict administrator creating network input. See the difference between this file line 60 and this patch project/networks/workflows.py line 189.",False,16
+138409,turbo_hipster/lib/utils.py,13413,5,3a961159_1e6335dd,Line,435,3a961159_8b729b7a,2014-12-09 13:55:40,Done,False,16
+135877,openstack_dashboard/dashboards/admin/networks/subnets/workflows.py,9531,1,3a961159_70d641f3,Line,46,3a961159_adca1618,2014-12-29 15:29:47,Done,False,16
+136027,zuul/trigger/gerrit.py,7562,4,3a961159_ef264415,Line,111,3a961159_067d401c,2014-12-22 10:02:04,Ok,False,16
+136027,zuul/trigger/gerrit.py,7069,4,3a961159_067d401c,Line,111,,2014-12-22 03:19:35,This is a workaround for an issue communicating with gerrit. We should add a comment here to note the issue.,False,16
+136027,zuul/trigger/gerrit.py,7562,4,3a961159_cf0ee88b,Line,22,3a961159_c67fb815,2014-12-22 10:02:04,"Oops, sorry.",False,16
+136027,zuul/trigger/gerrit.py,7069,4,3a961159_c67fb815,Line,22,,2014-12-22 03:19:35,"I think what we meant was for the retry amount to be a constant. eg:
+
+ZUUL_EVENT_FETCH_RETRIES = 5
+
+The dictionary name can just be entered.",False,16
+136027,zuul/trigger/gerrit.py,7562,2,5a890539_4d55751c,Line,44,5a890539_e25ab080,2014-12-04 12:25:51,Ok,False,16
+136027,zuul/trigger/gerrit.py,7069,2,5a890539_e25ab080,Line,44,5a890539_7f61fb37,2014-12-04 11:49:22,A constant is a good idea. I think to also indicate this is an internal mechanism it should be prefixed by an underscore. ie: '_zuulTimeToLive',False,16
+136027,zuul/trigger/gerrit.py,7562,2,5a890539_7f61fb37,Line,44,5a890539_7c2ca902,2014-12-04 11:11:57,"Yes, I think, but would it be reasonable?",False,16
+136027,zuul/trigger/gerrit.py,6133,2,5a890539_7c2ca902,Line,44,,2014-12-04 10:42:15,could we make that a constant?,False,16
+135877,openstack_dashboard/dashboards/admin/networks/subnets/workflows.py,12825,1,3a961159_37fb1dc2,Line,46,3a961159_e309df95,2014-12-23 16:03:18,"Ok missed this correlation, but still you can avoid copy-paste by adding another parameter to _check_subnet_data in project/networks/workflows.py that will allow to disable this additional check. Example:
+
+# project/networks/workflows.py
+    def _check_subnet_data(self, cleaned_data, is_create=True,
+                           check_private=True):
+        ...
+        if cidr:
+            ...
+            if (check_private and not subnet.is_private() and
+                    getattr(settings, ""RESTRICT_PRIVATE_NET_CIDR"", True)):
+                ...
+                
+# admin/networks/subnets/workflows.py
+    def _check_subnet_data(self, cleaned_data, is_create=True,
+                           check_private=False):
+        super(CreateSubnetInfoAction, self)._check_subnet_data(
+            cleaned_data, is_create, check_private
+        )",False,16
+129267,specs/storyboard_story_types.rst,9717,2,5a890539_e5f2919a,Line,43,,2014-11-26 23:28:26,"One way, yes, but this can also be accomplished with tags.",False,16
+129267,specs/storyboard_story_types.rst,9717,2,5a890539_c56af51a,Line,78,,2014-11-26 23:28:26,"I agree with mike and yolanda about binding a story type to a branch or git repository. We already support one group that has no git repository (ux), and we are very likely to start supporting others (win the enterprise, etc). By forcing each project to use git, we exclude these groups, which is unacceptable.
+
+This feature also presupposes that storyboard has some way of associating a versioned source repository with a project, story, or task. At the moment we do not yet have any such concept, so until we agree on how, and where, and in what way those things are linked, this entire specification is building on vaporware.",False,16
+129267,specs/storyboard_story_types.rst,9717,2,5a890539_05479dbd,Line,38,,2014-11-26 23:28:26,This may also be handled via tags.,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,14131,1,3a961159_a756ca04,Line,48,3a961159_581b6e80,2014-12-16 06:28:33,"Yongli He, Thank you for your explanation.",False,16
+129267,specs/storyboard_story_types.rst,308,2,5a890539_105354e3,Line,38,5a890539_05479dbd,2014-11-27 09:09:03,See 'Alternatives' section below on why tags may not be appropriate here.,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,6772,1,3a961159_170f0189,Line,48,,2014-12-13 19:46:18,"This last sentence, I suspect, is meant to be the crux of the problem description (rest is basically a refresher on current state as of Juno) - it needs to be expanded to explain exactly why interface-attach is not working for these ports today.",False,16
+90498,doc/source/measurements.rst,8276,9,9aa7fdbe_1b6c519c,Line,121,9aa7fdbe_b088c4e8,2014-10-20 11:05:46,Done,False,16
+139920,openstack_dashboard/dashboards/admin/networks/tables.py,7012,2,3a961159_543c8ebf,Line,35,,2014-12-18 16:05:36,...if any instances are in this network...,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,7543,1,3a961159_18572627,Line,47,3a961159_6eea4bdc,2014-12-15 06:28:46,"the normal pci allocation already finished after the server boot up,  the nova attach interface, is hotplug a interface to the existing server.
+
+if the port to be hotplugged for this server is ""direct' or 'macvtap',  it just not work because no pci device allocated for this.
+
+we need  translating the port to pci request in the 'nova attach-interface' API stage, and allocating the pci devices  on host to supporting the hotplug a SRIOV port.",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,14131,1,3a961159_04731ce8,Line,47,3a961159_18572627,2014-12-16 06:28:33,"Yongli He, Thank you for your explanation.",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,7,1,3a961159_6eea4bdc,Line,47,,2014-12-12 15:34:30,I have no idea what this last sentence is trying to say. Could you rephrase it?,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,7,1,3a961159_4ee02ffa,Line,29,,2014-12-12 15:34:30,s/dynamicly/dynamically/,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,14131,1,3a961159_64306008,Line,21,3a961159_2edda342,2014-12-16 06:28:33,Done in V2.,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,7,1,3a961159_2edda342,Line,21,,2014-12-12 15:34:30,"Here and throughout, please replace ""a living VM"" with ""an active VM"" :)",False,16
+133308,/COMMIT_MSG,6854,1,5a890539_e5c0d17e,Line,9,,2014-11-10 08:29:49,"the commit message seems misleading.
+how tweaking the sample would enable it default?",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,14131,1,3a961159_e45c504f,Line,11,3a961159_a144fa74,2014-12-16 06:28:33,Done in V2.,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,12175,1,3a961159_a144fa74,Line,11,,2014-12-08 07:36:13,no need this line.,False,16
+139626,specs/storyboard_task_milestone.rst,308,2,3a961159_ad07e416,Line,125,3a961159_6fcaa66f,2014-12-12 10:16:26,"Agreed, will add in next rev",False,16
+139626,specs/storyboard_task_milestone.rst,6133,2,3a961159_6fcaa66f,Line,125,,2014-12-10 10:11:50,Shall we have a expiration and creation date as well?,False,16
+139626,specs/storyboard_task_milestone.rst,12100,2,3a961159_2df05490,Line,69,3a961159_5201bb04,2014-12-12 10:32:42,"Of course, I should have checked that first. Apologies!",False,16
+139626,specs/storyboard_task_milestone.rst,308,2,3a961159_5201bb04,Line,69,3a961159_14404655,2014-12-12 10:16:26,"See ""Dependencies"" line 178 below. This builds on top of https://review.openstack.org/139613 ... I could rebase this one on top of it if you think that would help.",False,16
+90498,doc/source/measurements.rst,8276,9,9aa7fdbe_30c1342f,Line,121,9aa7fdbe_d5245ac8,2014-10-20 11:05:46,"ok, I will fix it.",False,16
+90498,doc/source/measurements.rst,9562,9,9aa7fdbe_f0696c26,Line,122,,2014-10-20 10:46:55,s/user/you/,False,16
+139920,openstack_dashboard/dashboards/admin/volumes/volume_types/extras/tables.py,9531,1,3a961159_0b130bb9,Line,23,,2014-12-09 01:43:43,I am not sure what will cause.,False,16
+139920,openstack_dashboard/dashboards/admin/volumes/volume_types/extras/tables.py,7012,2,3a961159_d4779e9d,Line,24,,2014-12-18 16:05:36,"Should be ""delete"" instead of ""deleted"" and ""specs"" instead of ""space""",False,16
+139626,specs/storyboard_task_milestone.rst,12100,2,3a961159_14404655,Line,69,,2014-12-10 16:28:45,"Can you explain what a ""task area"" is? I can't see any model for this in the api, and no mention of it in the UI. Is it a project, or project group, or a new concept?",False,16
+139920,openstack_dashboard/dashboards/admin/volumes/volume_types/qos_specs/tables.py,9531,1,3a961159_2b18c7d2,Line,35,,2014-12-09 01:43:43,I am not sure what will cause.,False,16
+139920,openstack_dashboard/dashboards/admin/volumes/volume_types/qos_specs/tables.py,7012,2,3a961159_74626ad9,Line,35,,2014-12-18 16:05:36,"""space"" should be ""specs""",False,16
+90498,doc/source/measurements.rst,8276,9,9aa7fdbe_7b0abdd3,Line,122,9aa7fdbe_f0696c26,2014-10-20 11:05:46,Done,False,16
+90498,doc/source/measurements.rst,9562,9,9aa7fdbe_d0daa8e8,Line,123,,2014-10-20 10:46:55,"in *the* image, ...
+
+s/windows/Windows/",False,16
+90498,doc/source/measurements.rst,8276,9,9aa7fdbe_5b2c194b,Line,123,9aa7fdbe_d0daa8e8,2014-10-20 11:05:46,Done,False,16
+138588,neutron/api/rpc/handlers/l3_rpc.py,7183,4,3a961159_08868365,Line,43,3a961159_8c0ae725,2014-12-18 03:36:25,I didn't find any usage of update_router_state in L3 agent. Maybe version 1.4 is not called or I miss something here?,False,16
+139920,openstack_dashboard/dashboards/admin/networks/subnets/tables.py,9531,1,3a961159_8b3ffb24,Line,36,3a961159_21c46d91,2014-12-09 01:43:43,Done,False,16
+90498,doc/source/measurements.rst,3012,9,9aa7fdbe_d5245ac8,Line,121,,2014-10-20 10:17:06,To enable?,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,7543,1,3a961159_581b6e80,Line,48,3a961159_170f0189,2014-12-15 06:28:46,"refer to my reply to Jay Pipes, hope it's a little clear.",False,16
+90498,doc/source/measurements.rst,9562,9,9aa7fdbe_b088c4e8,Line,121,,2014-10-20 10:46:55,*you* need,False,16
+129267,specs/storyboard_story_types.rst,12100,1,5a890539_ef6f2bfa,Line,79,,2014-11-24 17:13:54,"I would want to relax this requirement, as it would make it difficult for users with multiple products based on the same code. For example, community edition and enterprise edition branches might have different features, but both consume the master branch, so it's possible that you might want to land a feature in just the enterprise edition branch.",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,12175,2,3a961159_38ec90c7,Line,51,,2014-12-17 05:28:52,"and allocate, ..... on host to support ...",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,12175,2,3a961159_98f10498,Line,50,,2014-12-17 05:28:52,s/need translating/need to translate,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,12175,2,3a961159_38b570cd,Line,47,,2014-12-17 05:28:52,not works because no pci device allocated for it yet.,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,12175,2,3a961159_18ab548a,Line,44,,2014-12-17 05:28:52,Nova attach interface api hotplug an interface to an existing server.,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,14131,1,3a961159_04215cb4,Line,126,3a961159_0ec1c753,2014-12-16 06:28:33,"Just an additional pci request will be called, that will bring slightly performance impact.
+Done in V2",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,7,1,3a961159_0ec1c753,Line,126,,2014-12-12 15:34:30,"This isn't actually true. Nova already calls Neutron to get the port binding information for any vNIC, so I don't see there being any additional call needed.",False,16
+138588,neutron/agent/l3_agent.py,1561,4,3a961159_cf3221f2,Line,142,,2014-12-15 17:05:17,"The server side needs a version bump for this, and then this should be set to '1.5'",False,16
+138588,neutron/agent/l3_agent.py,7183,4,3a961159_4ee173fd,Line,142,3a961159_cf3221f2,2014-12-18 03:36:25,I can certainly change to 1.5 here but I didn't find any use of version 1.4 in L3 agent.,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,14131,1,3a961159_a7088a29,Line,72,3a961159_733a0b9a,2014-12-16 06:28:33,"Yongli He, Thank you for your explanation.",False,16
+90498,ceilometer/compute/virt/libvirt/inspector.py,8276,6,baa201ad_84a58ba3,Line,185,1abeadc6_b1df830c,2014-10-17 07:10:08,Done,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,14131,1,3a961159_07d95e83,Line,72,3a961159_37295de6,2014-12-16 06:28:33,revise it in V2.,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,6772,1,3a961159_37295de6,Line,72,,2014-12-13 19:46:18,"My re-collection (and it's been a while) is that interface-attach does not currently work with ports that are associated with a SR-IOV VF, that is you must create the port and attach it at boot - you can't attach it later. I can't however recall WHY this is the case, and this spec doesn't in it's current form do a lot to remind me :)",False,16
+139920,openstack_dashboard/dashboards/admin/networks/agents/tables.py,9531,1,3a961159_0b05cb79,Line,33,,2014-12-09 01:43:43,I am not sure what will cause. Some network or router related to the DHCP agents may let user can not delete the agents.,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,7543,1,3a961159_733a0b9a,Line,72,3a961159_37295de6,2014-12-15 06:28:46,"we are not create the port, we just converting the port to pci request as needed, and allocate pci devices.  -:)",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,7,1,3a961159_eebd5bd9,Line,71,,2014-12-12 15:34:30,"I don't understand why anything needs to change in Nova, actually. When creating a new port in Neutron, the port should be able to be specified as belonging to a SR-IOV VF and not a ""normal"" vNIC. The port binding information returned from Neutron to Nova should already contain information about the type of port (including PCI device information) and this information should trigger behaviour in libvirt's VIF classes. I don't see why there needs to be any change in Nova's existing attach_interface APIs.",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,7,1,3a961159_ceeb3fda,Line,68,,2014-12-12 15:34:30,"What does ""and we will create a normal interface without ""physical_network"""" mean?",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,14131,1,3a961159_674ce277,Line,66,3a961159_aef0b3c9,2014-12-16 06:28:33,Done,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,7,1,3a961159_8ee5b70a,Line,54,,2014-12-12 15:34:30,"Users of a cloud system should not want or need to know anything about the underlying physical hardware; knowing anything about the underlying hardware goes against the whole idea of virtualization, IMO. Users of cloud systems should only speak or think in terms of the abstract: tiers of network performance. So, the use case here should be more along the lines of:
+
+Alice wants certain virtual machines to have access to faster networking interfaces. She configures her virtual machine instance as normal. After launch, Alice wishes to add a new network interface to her virtual machine that has better performance than the network interface already on her VM. She calls an API to attach a new network interface, passing in some tag that indicates a better tier of performance for the interface.",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,7,1,3a961159_aef0b3c9,Line,66,,2014-12-12 15:34:30,s/need to initially created to get/needed to initially create/,False,16
+139920,openstack_dashboard/dashboards/admin/networks/ports/tables.py,7012,2,3a961159_54356ed9,Line,34,,2014-12-18 16:05:36,...associated with an instance...,False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,7543,1,3a961159_b3c9d3ad,Line,71,3a961159_eebd5bd9,2014-12-15 06:28:46,"this description is not right for the interface attach, refer my comments above, i think this chapter need revised a lot.",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,7543,1,3a961159_73eccb2a,Line,64,,2014-12-15 06:28:46,"for attach interface there is only 2 thing need to be addressed:
+
+first one is converting the port/network information from  attach interface API to pci_request, which already had API (network/neutron v2 API).  
+
+the second thing is alloc the pci device on the host (nova/compute/manager), then the task finished,  libvirt already supporting generating the pci xml for server.",False,16
+139910,specs/kilo/approved/sriov-interface-attach-detach.rst,14131,1,3a961159_c75bd62c,Line,54,3a961159_8ee5b70a,2014-12-16 06:28:33,Done,False,16
+139920,openstack_dashboard/dashboards/admin/networks/subnets/tables.py,9622,1,3a961159_21c46d91,Line,36,,2014-12-08 22:12:00,is ==> are,False,16

@@ -1,0 +1,170 @@
+change_id,filename,author,patch_set,id,comment_type,line,in_reply_to,updated,message,unresolved,quarter
+62494,swift/common/middleware/containeralias.py,7847,16,AAAAWH%2F%2FCPA%3D,Line,126,,2014-03-20 19:21:13,msg gets lost from response if request is a HEAD,False,13
+72407,/COMMIT_MSG,1653,8,AAAAVX%2F%2FoX8%3D,Line,9,,2014-03-02 11:07:33,use => uses,False,13
+62494,swift/common/middleware/containeralias.py,7847,16,AAAAWH%2F%2FCPQ%3D,Line,140,,2014-03-20 19:21:13,msg gets lost from response if request is a HEAD,False,13
+73387,nova/virt/driver.py,7746,2,AAAAUX%2F%2BtxU%3D,Line,665,AAAAUX%2F%2B0cM%3D,2014-02-19 16:19:15,"OK, will change to return True by default.",False,13
+66882,tempest/scenario/test_specified_host_boot.py,5689,6,AAAAUH%2F%2BsTc%3D,Line,57,AAAAUH%2F%2BsYI%3D,2014-01-23 04:43:03,Thanks. I'll remove them.,False,13
+66882,tempest/scenario/test_specified_host_boot.py,6167,8,AAAAUH%2F9wlE%3D,Line,56,,2014-02-04 09:25:02,This condition seems we cannot specify all compute nodes. Is it the specification?,False,13
+69255,lib/rpc_backend,1561,1,AAAAUH%2F%2BQ2s%3D,Line,147,,2014-01-28 15:29:50,"Couple of things:
+
+1) Should we really restart it every  iteration of the loop?  If all is well, it should be up and running after the original restart.
+
+2) I would add some sort of eventual ""screw it, i give up"" condition here and just fail with a helpful message.",False,13
+73387,nova/virt/driver.py,1779,3,AAAAVX%2F%2F6oM%3D,Line,665,,2014-02-27 12:04:00,"Why are you adding a public virt driver API method for this ?  Nothing outside the libvirt driver is using this, so making it a public API is pointless and just pollutes the namespace.",False,13
+72407,/COMMIT_MSG,7730,8,AAAAVn%2F%2F8yc%3D,Line,9,AAAAVX%2F%2FoX8%3D,2014-03-03 08:34:02,Done,False,13
+72407,nova/compute/manager.py,1561,8,AAAAVn%2F%2F%2FFg%3D,Line,3636,,2014-03-02 23:28:59,Why change it back here?  Should it just stay as the original image id?,False,13
+72407,nova/compute/manager.py,7730,8,AAAAVn%2F%2F8yE%3D,Line,3622,AAAAVX%2F%2FoX4%3D,2014-03-03 08:34:02,"sure, i'm going to change it.",False,13
+62494,swift/common/middleware/containeralias.py,7847,10,AAAAVn%2F%2FgWA%3D,Line,79,AAAAVn%2F%2FhQ0%3D,2014-03-05 18:03:45,"ignore, comment in wrong place",False,13
+62494,swift/common/middleware/containeralias.py,7847,10,AAAAVn%2F%2FgTM%3D,Line,85,,2014-03-05 18:03:45,add  'not objname' condition here,False,13
+62494,swift/common/middleware/containeralias.py,7847,10,AAAAVn%2F%2Fhxo%3D,Line,85,,2014-03-05 17:20:04,why not also on PUT?,False,13
+62494,swift/common/middleware/containeralias.py,6968,10,AAAAVn%2F%2FaYo%3D,Line,85,AAAAVn%2F%2FgTM%3D,2014-03-06 08:46:11,"Oh, I just forgot the PUT, thanks - I'm always using POST to change metadata. I'll also include the 'not objname'.",False,13
+62494,swift/common/middleware/containeralias.py,7847,10,AAAAVn%2F%2FiiI%3D,Line,115,,2014-03-05 17:20:04,"I was surprised to see 'x-container-alias: /AUTH_test/container_name/object_name' returned in response to an object request I made - only because when the object name is appended its no longer the x-container-alias value I provided, and its really an object-alias. I'm not saying that is wrong, and I understand its usefulness, I just wonder if a different response header name would be less confusing? I don't know...just x-alias maybe??
+
+Also, if container c1 is redirected to c2, and c2 is redirected to c3, then when I do a HEAD on c1 I get x-container-alias:c2 because the middleware has overwritten the x-container-alias:c3 metadata returned from c2. So I am not seeing the complete metadata from c2.
+
+The alternative would be for the middleware to leave the actual metadata from c2 unchanged (x-container-alias:c3 metadata) AND add a different header (such as x-alias:c2) telling me the request was redirected.",False,13
+62494,swift/common/middleware/containeralias.py,6968,10,AAAAVn%2F%2FaZM%3D,Line,115,AAAAVn%2F%2FiiI%3D,2014-03-06 08:46:11,"I like the idea to just use a different header. This will catch both issues and inform the user that the request was redirected without overwriting any existing metadata.
+
+I would suggest to use 'X-Alias-Redirected' to make it clear to the user that there is a redirection in place?",False,13
+62494,swift/common/middleware/containeralias.py,2649,11,AAAAVn%2F%2FSCc%3D,Line,49,,2014-03-07 03:30:27,X-Alias-Redirected?,False,13
+62494,swift/common/middleware/containeralias.py,7847,16,AAAAWH%2F%2FCGw%3D,Line,123,,2014-03-20 19:21:13,"Hmmm, what about if the container has user metadata? Are we happy to 'hide' that by aliasing or should that be treated in the same way as object content? i.e should there be a test here for user metadata in the container info? At least metadata does not show up as byte count in the container listings.",False,13
+72407,nova/compute/manager.py,1653,8,AAAAVX%2F%2FoX4%3D,Line,3622,,2014-03-02 11:07:33,"could you change this to shelved_image_ref 
+it would make the code easier to understand",False,13
+73387,/COMMIT_MSG,7677,1,AAAAUX%2F%2FVHg%3D,Line,14,AAAAUX%2F%2FVQI%3D,2014-02-13 22:35:47,or Closes-Bug: #1270305 (really it just needs a colon),False,13
+72407,nova/tests/compute/test_shelve.py,7730,6,AAAAUX%2F%2BZuk%3D,Line,210,AAAAUX%2F%2BZ5g%3D,2014-02-21 11:45:59,"oh yes your are right, sometimes we want to do too much ;)",False,13
+72407,nova/tests/compute/test_shelve.py,5511,6,AAAAUX%2F%2BZ5g%3D,Line,210,,2014-02-21 11:25:28,"Well you don't really need this, right... mox will automatically make sure that the arguments are checked.",False,13
+73387,nova/virt/driver.py,6802,2,AAAAUX%2F%2B0cM%3D,Line,665,,2014-02-18 20:18:49,"What happens when this method is not overridden by subclasses? Constructs of the form
+> if self.check_can_resize(instance):
+won't work correctly since None evaluates to False.",False,13
+72407,nova/tests/compute/test_shelve.py,5511,6,AAAAUX%2F%2BZ5I%3D,Line,186,,2014-02-21 11:25:28,Also unnecessary - see below,False,13
+72407,nova/compute/manager.py,6450,10,AAAAVn%2F%2Faz8%3D,Line,3639,AAAAVn%2F%2FbGo%3D,2014-03-06 07:17:35,I think it doesn't matter because the change is just to the local instance object. Nothing is saved in the db until later when the image property has been reset.,False,13
+72407,nova/compute/manager.py,6062,10,AAAAVn%2F%2Fatk%3D,Line,3639,AAAAVn%2F%2Faz8%3D,2014-03-06 07:35:43,"make sense to me ,thanks",False,13
+72407,nova/compute/manager.py,6062,10,AAAAVn%2F%2FbGo%3D,Line,3639,,2014-03-06 06:22:37,"One question:
+
+if something failed here, the instance's image_ref was not reset ,right?",False,13
+72407,nova/compute/manager.py,7730,8,AAAAVn%2F%2F8w8%3D,Line,3636,AAAAVn%2F%2F%2FFg%3D,2014-03-03 08:34:02,Actually we want the instance always refer to the original image. the shelved_image is deleted.,False,13
+73387,/COMMIT_MSG,7746,1,AAAAUX%2F%2FQUk%3D,Line,14,AAAAUX%2F%2FVHg%3D,2014-02-14 14:06:04,Done,False,13
+73387,/COMMIT_MSG,7677,1,AAAAUX%2F%2FVQI%3D,Line,14,,2014-02-13 22:21:57,"Should read:
+""Closes: bug #1270305""",False,13
+76197,git_review/cmd.py,8124,1,AAAAVX%2F%2Ft2c%3D,Line,396,,2014-02-28 20:03:38,It seems strange to specify the default query status filter in .gitreview which stores gerrit repo information not query ones.,False,13
+59578,/COMMIT_MSG,1501,10,AAAAWH%2F%2BK44%3D,Line,21,,2014-03-28 16:50:59,Since its now possible that a user doesn't get the default security group I think there must be a DocImpact,False,13
+81410,trove/tests/unittests/guestagent/test_api.py,6162,8,AAAAWH%2F%2BbH4%3D,Line,308,AAAAWH%2F%2BbQw%3D,2014-03-26 21:28:31,"Yep, I was considering that.  I opted to wait for Nikhil to finish his stuff.",False,13
+81410,trove/tests/unittests/guestagent/test_api.py,6156,8,AAAAWH%2F%2BbQw%3D,Line,308,,2014-03-26 21:17:06,"Nikhil is replacing Mockito with Mock, might be good to get ahead of the curve.",False,13
+66882,tempest/scenario/test_specified_host_boot.py,6167,6,AAAAUH%2F%2BsWY%3D,Line,49,,2014-01-23 04:15:04,"just one idea.
+
+How about setting """" as default config value?
+
+If """", it tries to get all compute hosts and boot a server on each host.
+
+        params = {'binary': 'nova-compute', 'state': 'up'}
+        resp, services = self.client.list_services(params)
+
+We could check all compute hosts work.",False,13
+66882,tempest/scenario/test_server_basic_ops.py,5803,12,AAAAWH%2F%2F%2B8o%3D,Line,225,,2014-03-12 14:58:21,"If you would create subclass instead af new test method, they would be able to run in parallel.",False,13
+59578,nova/network/neutronv2/api.py,4395,9,AAAAWH%2F%2Bk74%3D,Line,640,AAAAWH%2F%2B12Y%3D,2014-03-25 19:28:32,"I know though above it does .get('blah', None) so I used the same convention as was there.",False,13
+59578,nova/network/neutronv2/api.py,1653,9,AAAAWH%2F%2B12Y%3D,Line,640,,2014-03-23 14:39:03,by default the port.get should return None,False,13
+59578,nova/network/neutronv2/api.py,4395,5,AAAAWH%2F%2FSg0%3D,Line,313,AAAAWH%2F%2FZAE%3D,2014-03-18 20:52:59,Done,False,13
+66882,tempest/scenario/test_specified_host_boot.py,5689,6,AAAAUH%2F%2BElA%3D,Line,49,AAAAUH%2F%2BG24%3D,2014-01-30 13:20:07,"I think it's not good that the default config is 'checking all nodes' because Tempest already has 169 config values and most of Tempest users (including me) don't understand all the config values. I think this default value should be a fool proof.
+Do testers always really want to check all compute nodes?",False,13
+59578,nova/network/neutronv2/api.py,6598,5,AAAAWH%2F%2FZAE%3D,Line,313,,2014-03-18 07:36:26,"Code is quite obvious, comment is not adding any info",False,13
+73387,nova/virt/driver.py,7746,3,AAAAVX%2F%2FvZg%3D,Line,665,AAAAVX%2F%2F6oM%3D,2014-02-28 16:38:50,Done,False,13
+81410,trove/guestagent/datastore/mysql/manager.py,6162,4,AAAAWH%2F%2Bvf8%3D,Line,206,AAAAWH%2F%2Bw04%3D,2014-03-24 17:27:34,"Yo Denis,
+
+This is work in progress :)",False,13
+81410,trove/guestagent/datastore/mysql/manager.py,8415,4,AAAAWH%2F%2Bw04%3D,Line,206,,2014-03-24 14:55:23,please follow new way of rising exceptions if operation is not supported,False,13
+59578,nova/network/neutronv2/api.py,4395,3,AAAATn%2F9AVY%3D,Line,175,AAAATn%2F93yU%3D,2014-01-08 21:26:19,Sorry Matt I miss read your comment before. I'll refactor this so we don't need to pass port_security_enabled to this method.,False,13
+66882,tempest/scenario/test_server_basic_ops.py,7,12,AAAAWH%2F%2Fx7c%3D,Line,60,,2014-03-13 21:12:00,"Although I think this is an important test, I do not believe it is a ""basic ops"" test for compute :) I would rather actually see an entirely new set of test cases that stresses cross-AZ behaviour.",False,13
+66882,tempest/scenario/test_server_basic_ops.py,5689,11,AAAAVn%2F%2Fk54%3D,Line,52,AAAAVn%2F%2Fuso%3D,2014-03-05 09:54:26,Thanks. I'll fix in the next patch set.,False,13
+66882,tempest/scenario/test_server_basic_ops.py,7350,11,AAAAVn%2F%2Fuso%3D,Line,52,,2014-03-04 12:59:01,"Grammar enhancement : ""This test boots an instance on specific compute nodes.""",False,13
+59578,nova/network/neutronv2/api.py,1653,4,AAAAUX%2F%2FIuQ%3D,Line,267,,2014-02-16 13:25:51,This code needs to be rebased - please see https://github.com/openstack/nova/commit/9b6b874b23dab5ae6ccecae18c5d5664c4951d80,False,13
+53322,tempest/cli/simple_read_only/test_trove.py,8293,1,AAAATn%2F9BcE%3D,Line,76,,2014-01-08 16:40:16,"Are you sure that tempest community will accept this ""not list method"" in CLI part?",False,13
+66882,tempest/scenario/test_specified_host_boot.py,6167,6,AAAAUH%2F%2BG24%3D,Line,49,AAAAUH%2F%2BsM0%3D,2014-01-30 03:02:14,"I'd prefer that default value is """" and this test checks all compute nodes if the value.
+
+I guess the az names of environments, which have 1,000 compute nodes, would be changed to the other value from ""nova"".
+So current default value 'nova,nova' would not work on such environments.",False,13
+66882,tempest/scenario/test_specified_host_boot.py,5689,6,AAAAUH%2F%2BsVE%3D,Line,49,AAAAUH%2F%2BsWY%3D,2014-01-23 04:43:03,"I'm worried about ""checking all compute hosts work"" because if the target cloud have 1000 nodes, this test will check the 1000 nodes.  I think it's not an expected behaviour for cloud testers.
+But I think ""checking all compute node"" is an interesting option. How about having a special value for the config such as ""ALL-NODES"" that is for ""checking all compute node"".",False,13
+59578,nova/exception.py,6598,5,AAAAWH%2F%2F14Y%3D,Line,617,,2014-03-18 07:36:26,nit: in order,False,13
+82627,src/main/java/hudson/plugins/gearman/GearmanProxy.java,6987,1,AAAAWH%2F%2BmZk%3D,Line,124,AAAAWH%2F%2BnyE%3D,2014-03-25 16:33:12,Done,False,13
+82627,src/main/java/hudson/plugins/gearman/GearmanProxy.java,2475,1,AAAAWH%2F%2BnyE%3D,Line,124,,2014-03-25 14:19:52,I would bump it as the info level or even error level just like the message below.,False,13
+76197,git_review/cmd.py,8124,4,AAAAWH%2F%2ByFM%3D,Line,57,,2014-03-24 12:00:17,I prefer not to allow users to specify to request by default all changes which is costly,False,13
+59578,nova/exception.py,4395,5,AAAAWH%2F%2FShE%3D,Line,617,AAAAWH%2F%2F14Y%3D,2014-03-18 20:52:59,Done,False,13
+59578,nova/exception.py,1653,9,AAAAWH%2F%2B12o%3D,Line,617,,2014-03-23 14:39:03,this should be consistent with the message below,False,13
+76197,git_review/cmd.py,8124,4,AAAAWH%2F%2Bu08%3D,Line,57,AAAAWH%2F%2BxGU%3D,2014-03-24 18:44:37,fine for me,False,13
+66882,tempest/scenario/test_specified_host_boot.py,5689,6,AAAAUH%2F%2BsM0%3D,Line,49,AAAAUH%2F%2BsVE%3D,2014-01-23 05:37:43,"Or if specified """", that means ""checking all compute nodes""?",False,13
+76197,git_review/cmd.py,10534,4,AAAAWH%2F%2BxGU%3D,Line,57,AAAAWH%2F%2ByFM%3D,2014-03-24 14:24:00,"well, my idea was to allow simple default queries like ""status:open -is:reviewed"" to prevent rewalking and reevaluating over a lot of changes that have already some initial feedback.
+Ultimately though users can create default queries to their hearts delight very simple with their own scripts anyway ...",False,13
+66882,tempest/scenario/test_specified_host_boot.py,6167,6,AAAAUH%2F%2BsYI%3D,Line,57,,2014-01-23 04:15:04,"unnecessary to specify client, image and flavor because they are default value of create_server().",False,13
+66882,tempest/scenario/test_multiple_az_ops.py,6167,13,AAAAWH%2F%2B0F4%3D,Line,1,,2014-03-24 04:55:27,need to update the copyright.,False,13
+66882,tempest/scenario/test_multiple_az_ops.py,5689,13,AAAAWH%2F%2BriU%3D,Line,1,AAAAWH%2F%2B0F4%3D,2014-03-25 04:37:09,"oops, thanks for pointing out :-). I'll update it in the next patch-set.",False,13
+81410,trove/common/apischema.py,6156,8,AAAAWH%2F%2BbLQ%3D,Line,446,,2014-03-26 21:17:06,One thing to consider is whether you want to allow additional properties and to explicitly call it out.,False,13
+81410,trove/common/apischema.py,6162,8,AAAAWH%2F%2BbHQ%3D,Line,446,AAAAWH%2F%2BbLQ%3D,2014-03-26 21:28:31,"I was considering adding ""additionalProperties"": True
+I'm talking with Ops to see what they may or may not want but it wouldn't hurt.",False,13
+66882,tempest/scenario/test_specified_host_boot.py,6167,6,AAAAUH%2F9xe8%3D,Line,49,AAAAUH%2F9xrY%3D,2014-02-04 04:26:09,"Sorry for my wrong info. I got it.
+
+seems better to filter them in Tempest side as you said.",False,13
+66882,tempest/scenario/test_specified_host_boot.py,5689,6,AAAAUH%2F9xrY%3D,Line,49,AAAAUH%2F%2BsWY%3D,2014-02-04 03:10:57,"IIUC, we can't use {'state': 'up'} of the params now. Nova doesn't use the parameter (services.py only get 'host' and 'binary').
+
+https://github.com/openstack/nova/blob/master/nova/api/openstack/compute/contrib/services.py#L80
+
+I think it's necessary to create a filter for that by Tempest-self.",False,13
+59578,nova/exception.py,4395,9,AAAAWH%2F%2Bk6U%3D,Line,617,AAAAWH%2F%2B12o%3D,2014-03-25 19:28:32,Done changing port_security_enabled=false to port_security_enabled set to False as done below as well.,False,13
+73387,nova/virt/driver.py,7746,3,AAAAVX%2F%2F6aE%3D,Line,665,AAAAVX%2F%2F6oM%3D,2014-02-27 12:34:45,This was actually suggested by another reviewer but it seems like a good idea to me also. Other hypervisors existing or future may want to perform this check.,False,13
+62494,swift/common/middleware/containeralias.py,7847,16,AAAAWH%2F%2FCPs%3D,Line,141,,2014-03-20 19:21:13,"This is a privacy leak - if the container exists but I do not have permission to access it I get a 403, if it does not exist I get a 409. That means I can probe another user's account to see what container names (do not) exist.
+
+In previous patch I think I always got a 403 if I was not permitted access - if container existed or not.
+
+Maybe a better approach would be to allow the request to proceed, if it fails and it is a container request then map response code to a 409 'Alias container is inaccessible - it may be missing or you may not have permission to access it.'",False,13
+73387,nova/virt/libvirt/driver.py,7746,1,AAAAUX%2F%2FQD0%3D,Line,4687,AAAAUX%2F%2FQII%3D,2014-02-14 14:38:59,"ah, yes, that makes sense. thanks!",False,13
+62494,swift/common/middleware/containeralias.py,597,9,AAAAUX%2F%2BdC0%3D,Line,117,,2014-02-21 03:14:24,"IMHO, pointless. The target can be deleted any time, resulting in the situation you're trying to prevent here.
+
+Below there's a check for loops, which also can be defeated, but works as a useful advance warning to someone who's making an honest mistake. This one, however, may make sense to allow.",False,13
+62494,swift/common/middleware/containeralias.py,7847,7,AAAAUH%2F%2FROc%3D,Line,111,,2014-01-15 16:51:40,I think you need to test for 200 <= status <300,False,13
+73387,nova/virt/libvirt/driver.py,6873,4,AAAAWH%2F%2BsOo%3D,Line,4771,AAAAWH%2F%2BtpE%3D,2014-03-25 02:06:27,"Yeah, totally agree there, just not sure how you figure it out at the start is all.",False,13
+73387,nova/virt/libvirt/driver.py,7746,4,AAAAWH%2F%2BtpE%3D,Line,4771,AAAAWH%2F%2B2q4%3D,2014-03-24 21:54:50,"I think it's safer to have it at the very start. At this point there are already directories, ssh connections, etc. to clean up. Best not to get involved at all if we know we can't finish this operation.",False,13
+73387,nova/virt/libvirt/driver.py,6873,4,AAAAWH%2F%2B2q4%3D,Line,4771,,2014-03-22 23:18:47,Is this where you want the lvm check?,False,13
+73387,nova/virt/libvirt/driver.py,7746,4,AAAAWH%2F%2Btrk%3D,Line,4715,AAAAWH%2F%2B2rA%3D,2014-03-24 21:54:50,Good question. Working now on figuring it out.,False,13
+73387,nova/virt/libvirt/driver.py,6873,4,AAAAWH%2F%2B2rA%3D,Line,4715,AAAAVn%2F%2Fsgk%3D,2014-03-22 23:18:47,So booting from volume?  Is there a way to check if booting from image or booting from volume?,False,13
+73387,nova/virt/libvirt/driver.py,1779,4,AAAAVn%2F%2Fsgk%3D,Line,4715,,2014-03-04 16:22:24,I believe it is possible to boot a guest with does not use any glance image - ie exclusively uses cinder for disks. In such a case this check would be incorrect.,False,13
+73387,nova/virt/libvirt/driver.py,7746,3,AAAAVX%2F%2FvZw%3D,Line,4690,AAAAVX%2F%2F6ng%3D,2014-02-28 16:38:50,"Sorry, I didn't get your point the first time. I am reverting the implementation to a single in-line check.",False,13
+62494,swift/common/middleware/containeralias.py,9205,2,AAAAUH%2F%2Fs9M%3D,Line,95,,2014-01-09 13:19:29,"Any POST to container will enter both here and into condition in line 59. It will do twice get_container_info for example.  There are more duplicate code.
+
+In addition, any PUT to create any new container - container_info here will return status 404, since container is not yet exists.",False,13
+62494,/COMMIT_MSG,597,9,AAAAUX%2F%2BdGE%3D,Line,9,,2014-02-21 03:14:24,"""a container""",False,13
+59578,nova/tests/network/test_neutronv2.py,1501,4,AAAAUH%2F98fY%3D,Line,810,,2014-01-31 19:50:55,"Minor point but I think the test would be clearer to read if you explicltly passed in ""None"" as the value for ""security_groups_on_ports"" rather than letting it default - which means you have to look to see what the deafult is.",False,13
+59578,nova/tests/network/test_neutronv2.py,4395,4,AAAAWH%2F%2F8T0%3D,Line,810,AAAAUH%2F98fY%3D,2014-03-12 19:39:43,Done,False,13
+59578,nova/tests/network/test_neutronv2.py,4395,4,AAAAWH%2F%2F8Tk%3D,Line,820,AAAAUH%2F98e4%3D,2014-03-12 19:39:43,Done,False,13
+73387,nova/virt/libvirt/driver.py,6062,1,AAAAUX%2F%2FSaw%3D,Line,4687,,2014-02-14 07:37:17,"instead of doing this here
+I think a virt check like 
+
+check_can_resize may be defined, generally it will return pass
+for libvirt, it can do the check you added 
+it will make the logic more clear",False,13
+62494,swift/common/middleware/containeralias.py,7847,10,AAAAVn%2F%2FhzM%3D,Line,46,,2014-03-05 17:20:04,I wasn't expecting this behaviour i.e. that if container c1 is redirected to c2 then DELETE c1 will actually delete c2. I was expecting it to behave like a symlink i.e. that DELETE c1 would leave c2 in place and just delete c1.,False,13
+62494,swift/common/middleware/containeralias.py,6968,10,AAAAVn%2F%2FaUw%3D,Line,46,AAAAVn%2F%2FhzM%3D,2014-03-06 08:46:11,"Yes, that makes much more sense to me, I'll change that.",False,13
+59578,nova/tests/network/test_neutronv2.py,1501,4,AAAAUH%2F98e4%3D,Line,820,,2014-01-31 19:50:55,Since security_groups_on_ports=None is one of two equally valid conditions I don't really see why this should merits a default value,False,13
+73387,nova/virt/libvirt/driver.py,7730,3,AAAAU3%2F%2Fm0A%3D,Line,4689,,2014-02-25 17:46:49,"Actually other drivers (cf: xenapi) uses the exception ResizeError, don't you think this one could be better?",False,13
+73387,nova/virt/libvirt/driver.py,6062,1,AAAAUX%2F%2FQII%3D,Line,4687,AAAAUX%2F%2FQUo%3D,2014-02-14 14:27:18,"yes nova/virt/driver, I understand other hypervisor drivers might support LVM
+so the check in nova/virt/driver can pass
+
+libvirt inherit that function and do you check , raise exception if it's needed 
+
+other hypervisors may inherit or not  inherit the function ,up to them to decide whether it's supported or not",False,13
+73387,nova/virt/libvirt/driver.py,6802,2,AAAAUX%2F%2B0bo%3D,Line,3983,,2014-02-18 20:18:49,Seems like this condition is inverted -- check_can_resize should be true for everything except LVM.,False,13
+62494,swift/common/middleware/containeralias.py,7847,10,AAAAVn%2F%2FhQ0%3D,Line,79,,2014-03-05 17:20:04,"if objname or not container:
+
+otherwise if i accidentally include x-container-alias header with an *object* POST then the request fails to be redirected.",False,13
+73387,nova/virt/libvirt/driver.py,7746,2,AAAAUX%2F%2Btwc%3D,Line,3983,AAAAUX%2F%2B0bo%3D,2014-02-19 16:19:15,That's what it does:),False,13
+73387,nova/virt/libvirt/driver.py,6802,2,AAAAUX%2F%2B0dw%3D,Line,4690,,2014-02-18 20:18:49,Should not refer to LVM directly but use CONF.libvirt.images_type in case other types are also not supported.,False,13
+73387,nova/virt/libvirt/driver.py,7746,2,AAAAUX%2F%2Btsk%3D,Line,4690,AAAAUX%2F%2B0dw%3D,2014-02-19 16:19:15,Done,False,13
+73387,nova/virt/libvirt/driver.py,7730,3,AAAAU3%2F%2F2Xw%3D,Line,3983,,2014-02-24 14:19:39,actually there are other cases that the disk cannot be resized.,False,13
+73387,nova/virt/libvirt/driver.py,7746,3,AAAAU3%2F%2Fwo8%3D,Line,3983,AAAAU3%2F%2F2Xw%3D,2014-02-25 15:53:30,"Yes, I see from your patch that resizing down also does not work. However, this is exactly why this architecture was introduced. All of the conditions preventing resizing can be collected here and each hypervisor can provide its own check, keeping migrate_disk_and_power_off() logic clean.",False,13
+73387,nova/virt/libvirt/driver.py,7730,3,AAAAU3%2F%2F2Xk%3D,Line,4689,,2014-02-24 14:19:39,Not sure is good to rease a not implmented error. the instance will be in error.,False,13
+73387,nova/virt/libvirt/driver.py,7746,1,AAAAUX%2F%2FQUo%3D,Line,4687,AAAAUX%2F%2FSaw%3D,2014-02-14 14:06:04,"Sorry, could you please clarify. When you say virt check, do you mean nova/virt/driver? Other virtualization drivers may support LVM migration so this does not seem right.",False,13
+73387,nova/virt/libvirt/driver.py,7746,3,AAAAU3%2F%2FlqA%3D,Line,4689,AAAAU3%2F%2Fm0A%3D,2014-02-25 19:28:01,"Yes, good point. Will change.",False,13
+73387,nova/virt/libvirt/driver.py,7746,3,AAAAU3%2F%2FlHk%3D,Line,4689,AAAAU3%2F%2Fm0A%3D,2014-02-25 20:29:36,"exception.ResizeError causes instance to go to Error status, which, I think, is not what we want.",False,13
+73387,nova/virt/libvirt/driver.py,1779,3,AAAAVX%2F%2F6ng%3D,Line,4690,,2014-02-27 12:04:00,"This is bad design - you're oisolating logic about what can & can't by resized in a helper method, but then this exception method you're raising is making assumptions that check_can_resize is only considering CONF.libvirt.images_type. Since the helper method is merely 1 single line, just inline it here.",False,13
+73387,nova/virt/libvirt/driver.py,6062,3,AAAAU3%2F%2F54g%3D,Line,4690,,2014-02-24 06:26:27,"code looks good to me , my opinion is to keep this kind of check in compute layer... maybe another expert can give more accurate and different opinion... look forward to see",False,13
+73387,nova/virt/libvirt/driver.py,7746,3,AAAAU3%2F%2Fn8Y%3D,Line,4690,AAAAU3%2F%2F54g%3D,2014-02-25 15:53:30,"I think, sahid may be right about this not being possible while other drivers support the operation but, yeah, it would be nice if someone with more experience weighed in on this.",False,13
+73387,nova/virt/libvirt/driver.py,7746,3,AAAAVX%2F%2F6Ws%3D,Line,4690,AAAAVX%2F%2F6ng%3D,2014-02-27 12:34:45,"Actually, there are other conditions that may prevent the instance from being resized, e.g., downsizing the disk. But, you have a point about the error message. Perhaps can_resize should return reason for failure?",False,13
+73387,nova/virt/libvirt/driver.py,7746,3,AAAAU3%2F%2Fn%2FM%3D,Line,4689,AAAAU3%2F%2F2Xk%3D,2014-02-25 15:53:30,Just retested to be sure -- the instance continues to run normally.,False,13

@@ -1,0 +1,814 @@
+change_id,filename,author,patch_set,id,comment_type,line,in_reply_to,updated,message,unresolved,quarter
+85225,trove/guestagent/strategies/upgrade/pip.py,8415,1,AAAAWH%2F9eEI%3D,Line,54,,2014-04-04 09:56:05,translation is expected,False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,8415,1,AAAAWH%2F9eEE%3D,Line,56,,2014-04-04 09:56:05,translation is expected,False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,5,1ae5cdf2_2314d24b,Line,83,1ae5cdf2_00119151,2014-06-12 17:11:23,"Yes, and so does the secret_store.py module as I mentioned above.",False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,6162,1,AAAAWH%2F9ZFk%3D,Line,56,AAAAWH%2F9eEE%3D,2014-04-04 20:39:48,Done,False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,8415,4,AAAAWH%2F9TQ0%3D,Line,87,,2014-04-07 09:17:48,"i'd suggest to use 
+
+{'package' : ' '.join(packages)}
+
+instead of
+
+{'package': package}",False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,6162,1,AAAAWH%2F9ZF0%3D,Line,54,AAAAWH%2F9eEI%3D,2014-04-04 20:39:48,Done,False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,8415,4,AAAAWH%2F9TPw%3D,Line,91,,2014-04-07 09:17:48,"utils.execute(cmd=cmd, shell=True)",False,14
+47937,doc/source/review-security.rst,5263,17,1ae5cdf2_f12c634c,Line,66,1ae5cdf2_bf72d847,2014-06-27 19:01:23,Agreed. Nobody should need to be able to push any tags to projects in the security gerrit.,False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,5,1ae5cdf2_e31d8a74,Line,82,1ae5cdf2_20bbed0f,2014-06-12 17:11:23,"Agreed. So per your comment above, CryptoPluginManager would be found in the interfaces/crypto.py module above I'd think.",False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,8415,1,AAAAWH%2F9eEU%3D,Line,52,,2014-04-04 09:56:05,"take a look at previous comments, it would be easier to use ""execute_with_timeout"", because it'll give you an ability to check the stdin and stdout within one call.
+And, of course, it's safer than subprocess",False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,6162,1,AAAAWH%2F9ZGo%3D,Line,43,AAAAWH%2F9eFM%3D,2014-04-04 20:39:48,Done,False,14
+85225,trove/guestagent/strategies/upgrade/__init__.py,8415,1,AAAAWH%2F9eGg%3D,Line,28,,2014-04-04 09:56:05,translation is required,False,14
+85225,trove/guestagent/strategies/upgrade/__init__.py,6162,1,AAAAWH%2F9ZIM%3D,Line,28,AAAAWH%2F9eGg%3D,2014-04-04 20:39:48,Done,False,14
+98286,specs/juno/restructure-for-plugins.rst,9914,5,1ae5cdf2_00119151,Line,83,,2014-06-12 14:01:19,"dogtag also implements secret_generate interface - at least for symmetric keys right now.  We plan to implement asymmetric key generation in the future, and eventually certificates too.",False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,8415,4,AAAAWH%2F9TPs%3D,Line,109,,2014-04-07 09:17:48,"utils.execute(cmd=cmd, shell=True)",False,14
+98286,specs/juno/restructure-for-plugins.rst,9914,5,1ae5cdf2_20bbed0f,Line,82,,2014-06-12 14:01:19,"In line with the proposal above, CryptoPluginManager which would subclass common.PluginManager and would be used for the second level of stevedore would be defined here.",False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,5,1ae5cdf2_63225aba,Line,63,1ae5cdf2_8d1eba6e,2014-06-12 17:11:23,"This crypto.py interface is the lower-level HSM-style encrypt/decrypt interface, akin to the current plugins.py one. Dogtag only implements this interface because it was forced to do so to fit into the current 'crypto' structure. Dogtag really is more naturally fit into secret_store.py contract (which also has generate methods for example), and so would no longer implement this interface.",False,14
+85580,jenkins_jobs/builder.py,2475,1,AAAAW3%2F%2F7dQ%3D,Line,578,,2014-04-09 12:40:12,"My configuration generates 1391 jobs so every time one would run:
+
+ jenkins-jobs browse
+
+That will surely starve its computer :-)  You probably want to add some batch parameters to only open X jobs at a time with X being 20 by default or something like that.",False,14
+98286,specs/juno/restructure-for-plugins.rst,9914,5,1ae5cdf2_8d1eba6e,Line,63,,2014-06-12 14:01:19,"Why crypto.py?  Why not secret_generate.py perhaps?
+
+Recall that dogtag also implements this plugin.",False,14
+85580,jenkins_jobs/builder.py,2475,1,AAAAW3%2F%2F7h8%3D,Line,571,,2014-04-09 12:40:12,"You can pass the glob_name directly the to YamlParser.generateXML() then self.parser.jobs should hopefully have the list of generated (and filtered) jobs.
+
+To get all jobs, pass a filter of None and it will skip filtering entirely.",False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,6162,1,AAAAWH%2F9ZGc%3D,Line,52,AAAAWH%2F9eEU%3D,2014-04-04 20:39:48,Done,False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,8415,24,AAAAXH%2F%2FDIw%3D,Line,42,,2014-04-24 11:44:22,try-except is required with logging appropriate messages,False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,8415,24,AAAAXH%2F%2FBhQ%3D,Line,106,AAAAXH%2F%2FBwE%3D,2014-04-24 15:23:01,After small research i totally agreed with Robert.,False,14
+47937,modules/openstack_project/manifests/review_security.pp,6987,14,1ae5cdf2_6279f0fb,Line,1,,2014-06-09 21:51:44,should be review_security,False,14
+85580,jenkins_jobs/builder.py,2475,5,AAAAXH%2F%2F0Q8%3D,Line,586,,2014-04-17 08:14:16,"From a comment on patchset1:
+
+You can pass the glob_name directly the to YamlParser.generateXML() then self.parser.jobs should hopefully have the list of generated (and filtered) jobs.
+To get all jobs, pass a filter of None and it will skip filtering entirely.
+
+aka the method parameter 'glob_name' can default to None and generateXML() takes care of the filtering you copied below :D",False,14
+47937,modules/openstack_project/manifests/review_security.pp,6987,17,1ae5cdf2_395bbb2f,Line,102,1ae5cdf2_12fd5a6e,2014-06-16 18:04:58,"i don't think it matters now, but i think it might if there would ever be a feature to review by email.  i'll parameterize and change it to review-security@openstack.org",False,14
+59578,nova/network/neutronv2/api.py,4395,18,7adec928_f3f86f7e,Line,646,7adec928_65ef3888,2014-05-19 17:31:07,Done,False,14
+59578,nova/network/neutronv2/api.py,2592,18,7adec928_65ef3888,Line,646,,2014-05-09 20:45:27,None is the implied return value for .get(),False,14
+59578,nova/network/neutronv2/api.py,4395,18,7adec928_3ef045c8,Line,321,7adec928_85cb641d,2014-05-19 17:31:07,Done,False,14
+59578,nova/network/neutronv2/api.py,2592,18,7adec928_85cb641d,Line,321,,2014-05-09 20:45:27,replace with else:,False,14
+59578,nova/network/neutronv2/api.py,4395,18,7adec928_1ee54908,Line,319,7adec928_65c81823,2014-05-19 17:31:07,Done,False,14
+59578,nova/network/neutronv2/api.py,2592,18,7adec928_65c81823,Line,319,,2014-05-09 20:45:27,remove this line,False,14
+59578,nova/network/neutronv2/api.py,4395,18,7adec928_dedf6138,Line,312,7adec928_e5542856,2014-05-19 17:31:07,Done,False,14
+59578,nova/network/neutronv2/api.py,2592,18,7adec928_e5542856,Line,312,,2014-05-09 20:45:27,remove this line,False,14
+47937,modules/openstack_project/manifests/review_security.pp,6039,17,1ae5cdf2_12fd5a6e,Line,102,,2014-06-12 19:54:44,Do we want to use the same email address for both review and review_security?,False,14
+59578,nova/network/neutronv2/api.py,4395,10,AAAAWH%2F9aQQ%3D,Line,311,AAAAWH%2F9wXs%3D,2014-04-04 17:53:54,Done,False,14
+59578,nova/network/neutronv2/api.py,261,10,AAAAWH%2F9wXs%3D,Line,311,,2014-04-02 10:53:02,"security groups for nova are case-insensitive.
+Should the check be then:
+
+security_group['name'].lower() != 'default'
+
+I don't know if you want to handle this kind of situation, but it might be worth",False,14
+85225,trove/guestagent/upgrade/upgradeagent.py,8415,1,AAAAWH%2F9eDY%3D,Line,52,,2014-04-04 09:56:05,as i remember translation string expects the dict formatting,False,14
+85225,trove/guestagent/upgrade/upgradeagent.py,6162,1,AAAAWH%2F9ZEg%3D,Line,52,AAAAWH%2F9eDY%3D,2014-04-04 20:39:48,Done,False,14
+85225,trove/guestagent/upgrade/upgradeagent.py,8415,1,AAAAWH%2F9eDM%3D,Line,61,,2014-04-04 09:56:05,given restart actually stops the guest,False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,8415,24,AAAAXH%2F%2FDIY%3D,Line,110,,2014-04-24 11:44:22,try except required,False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,6162,24,AAAAXH%2F%2FBB8%3D,Line,106,AAAAXH%2F%2FBwE%3D,2014-04-24 16:29:35,"Thx for the example. I'll get it into the next set of changes.
+
+I chose 'pip show' because that's what someone on our side suggested.  I was initially thinking of something like what grapex brought up, writing the version to a file somewhere on the guest but I like what you proposed.",False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,8415,1,AAAAWH%2F9eFM%3D,Line,43,,2014-04-04 09:56:05,"restart expect the restart command not the ""stop""",False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,6162,24,AAAAXH%2F%2FBB4%3D,Line,106,AAAAXH%2F%2FBhQ%3D,2014-04-24 16:29:35,thx,False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,6268,24,AAAAXH%2F%2FBwE%3D,Line,106,,2014-04-24 14:55:45,"Don't use pip to do this. Instead do this:
+
+    import pkg_resources
+    pkg = pkg_resources.get_distribution(name)
+    return pkg.version",False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,8415,24,AAAAXH%2F%2FDIg%3D,Line,95,,2014-04-24 11:44:22,try except required,False,14
+85225,trove/guestagent/strategies/upgrade/pip.py,8415,24,AAAAXH%2F%2FDIo%3D,Line,48,,2014-04-24 11:44:22,try except required,False,14
+85225,trove/guestagent/upgrade/upgradeagent.py,6162,1,AAAAWH%2F9ZEc%3D,Line,61,AAAAWH%2F9eDM%3D,2014-04-04 20:39:48,Done,False,14
+85225,trove/guestagent/strategies/upgrade/base.py,8415,1,AAAAWH%2F9eFo%3D,Line,63,,2014-04-04 09:56:05,"Are there any strong points why do we need to use subprocess instead of the common ""execute_with_timeout"" ?",False,14
+85225,trove/guestagent/strategies/upgrade/base.py,694,22,AAAAXH%2F%2FHJA%3D,Line,70,,2014-04-23 22:55:03,"Again, I feel like all of these methods are too specific to pip and virtualenv. They should be moved to a subclass of this class which will then be the base class of those two strategies.",False,14
+85225,trove/guestagent/strategies/upgrade/base.py,8415,1,AAAAWH%2F9eGQ%3D,Line,68,,2014-04-04 09:56:05,translation string expect dict formatting,False,14
+85225,trove/guestagent/strategies/upgrade/base.py,694,21,AAAAXH%2F%2FHQ0%3D,Line,52,,2014-04-23 22:50:02,This method is only being used by the pip and virtualenv upgrade strategies. It would not be necessary if you were updating using Debian packages as they would update the guest itself and restart it automatically.,False,14
+85225,trove/guestagent/strategies/upgrade/base.py,694,21,AAAAXH%2F%2FHPw%3D,Line,58,,2014-04-23 22:50:02,"I don't like that we're relying on pip to tell us what version of the guest is running. What if our upgrade strategy screws up and leaves the old version running? In that case this method will end up telling us the wrong information.
+
+Instead the guest version should be hardcoded into the guest itself by the setup py or something. Additionally, we don't need the way to get the current version to be part of an ""upgrade"" strategy as it won't have anything to do with the upgrade process.",False,14
+59578,/COMMIT_MSG,4395,17,7adec928_bffc0140,Line,20,7adec928_d31aac16,2014-05-09 05:58:32,otherwise it leaves the security group on the port...,False,14
+59578,/COMMIT_MSG,748,17,7adec928_d31aac16,Line,20,,2014-05-09 00:35:50,and it fails otherwise?,False,14
+59578,/COMMIT_MSG,4395,10,AAAAWH%2F9aQw%3D,Line,21,AAAAWH%2F%2BK44%3D,2014-04-04 17:53:54,Done,False,14
+85225,trove/guestagent/strategies/upgrade/base.py,694,21,AAAAXH%2F%2FHPA%3D,Line,78,,2014-04-23 22:50:02,"Again, I feel like all of these methods are too specific to pip and virtualenv. They should be moved to a subclass of this class which will then be the base class of those two strategies.",False,14
+85225,trove/guestagent/strategies/upgrade/base.py,694,22,AAAAXH%2F%2FHJQ%3D,Line,46,,2014-04-23 22:55:03,This method shouldn't be in the abc class either since it is only used by the implementations. It and restart should actually be prefixed with an underscore to show that.,False,14
+85225,trove/tests/api/upgrade.py,8415,1,AAAAWH%2F9eCA%3D,Line,1,,2014-04-04 09:56:05,file should be empty,False,14
+85225,trove/tests/api/upgrade.py,6162,1,AAAAWH%2F9ZEA%3D,Line,1,AAAAWH%2F9eCA%3D,2014-04-04 20:39:48,"well I gotta write some tests here, so hopefully it won't be empty next time you see it.",False,14
+85225,trove/tests/api/upgrade.py,8415,24,AAAAXH%2F%2FDHY%3D,Line,16,,2014-04-24 11:44:22,import abc,False,14
+47937,modules/openstack_project/manifests/review.pp,6987,14,1ae5cdf2_8207dc80,Line,121,,2014-06-09 21:51:44,need to add this as a param above,False,14
+85225,trove/tests/api/upgrade.py,8415,24,AAAAXH%2F%2FDHE%3D,Line,23,,2014-04-24 11:44:22,@abc.abstractmethod,False,14
+85225,trove/tests/api/upgrade.py,8415,24,AAAAXH%2F%2FDG8%3D,Line,26,,2014-04-24 11:44:22,@abc.abstractmethod,False,14
+85225,trove/tests/api/upgrade.py,8415,24,AAAAXH%2F%2FDG4%3D,Line,29,,2014-04-24 11:44:22,@abc.abstractmethod,False,14
+85225,trove/tests/api/upgrade.py,8415,24,AAAAXH%2F%2FDG0%3D,Line,32,,2014-04-24 11:44:22,@abc.abstractmethod,False,14
+85225,trove/tests/api/upgrade.py,8415,24,AAAAXH%2F%2FDH4%3D,Line,40,,2014-04-24 11:44:22,pass is not required,False,14
+85225,trove/tests/api/upgrade.py,8415,24,AAAAXH%2F%2FDH0%3D,Line,47,,2014-04-24 11:44:22,pass is not required,False,14
+85225,trove/guestagent/strategies/upgrade/base.py,694,22,AAAAXH%2F%2FHJM%3D,Line,52,,2014-04-23 22:55:03,This method is only being used by the pip and virtualenv upgrade strategies. It would not be necessary if you were updating using Debian packages as they would update the guest itself and restart it automatically.,False,14
+85225,trove/tests/unittests/guestagent/test_upgrade.py,8415,24,AAAAXH%2F%2FDGs%3D,Line,21,,2014-04-24 11:44:22,"please use single import per line or use ""import mock""",False,14
+85225,trove/guestagent/strategies/upgrade/base.py,6162,22,AAAAXX%2F%2F%2BX4%3D,Line,52,AAAAXH%2F%2FHJM%3D,2014-04-24 23:21:26,Done,False,14
+47937,doc/source/review-security.rst,1,17,1ae5cdf2_df6fa45e,Line,122,,2014-06-18 21:53:46,its,False,14
+85225,trove/guestagent/strategies/upgrade/base.py,694,21,AAAAXH%2F%2FHQk%3D,Line,46,,2014-04-23 22:50:02,This method shouldn't be in the abc class either since it is only used by the implementations. It and restart should actually be prefixed with an underscore to show that.,False,14
+59578,nova/tests/network/test_neutronv2.py,5754,23,1ae5cdf2_2d5b7056,Line,978,,2014-06-24 07:06:55,"For all the new testcase, we decide to use mock instead of mox.",False,14
+59578,nova/tests/network/test_neutronv2.py,4395,20,3ae8d1ca_6a50bd5e,Line,895,5adbc538_1f5fde0f,2014-06-10 18:23:48,Done,False,14
+85225,trove/guestagent/strategies/upgrade/base.py,6162,8,AAAAW3%2F%2Fvc0%3D,Line,164,AAAAW3%2F%2F0f8%3D,2014-04-10 17:36:21,"well, I don't want to put this in remote.py right now because the methods there are generalized for remote services use by the customers tenant.
+
+In this case we trying to allow for an alternate private swift account that doesn't belong to the customer.",False,14
+85225,trove/guestagent/strategies/upgrade/base.py,6162,1,AAAAWH%2F9ZHE%3D,Line,68,AAAAWH%2F9eGQ%3D,2014-04-04 20:39:48,Done,False,14
+85225,trove/guestagent/strategies/upgrade/base.py,8415,8,AAAAW3%2F%2F0gE%3D,Line,111,,2014-04-10 07:42:02,better to raise TroveError with appropriate message,False,14
+85225,trove/guestagent/strategies/upgrade/base.py,8415,8,AAAAW3%2F%2F0f8%3D,Line,164,,2014-04-10 07:42:02,please move it to the remote.py,False,14
+85225,trove/guestagent/strategies/upgrade/base.py,694,38,9ad9bd40_d23fdb23,Line,33,,2014-05-02 21:22:32,NICE! Now this is simple. :),False,14
+85225,trove/guestagent/strategies/upgrade/base.py,8415,24,AAAAXH%2F%2FDI0%3D,Line,112,,2014-04-24 11:44:22,raise GuestError(),False,14
+85225,trove/guestagent/strategies/upgrade/base.py,6162,22,AAAAXX%2F%2F%2BLU%3D,Line,70,AAAAXH%2F%2FHJA%3D,2014-04-24 23:21:26,"yeah, I will move this :)",False,14
+85225,trove/guestagent/strategies/upgrade/base.py,6162,22,AAAAXX%2F%2F%2BYE%3D,Line,58,AAAAXH%2F%2FHJE%3D,2014-04-24 23:21:26,Done,False,14
+85225,trove/guestagent/strategies/upgrade/base.py,694,22,AAAAXH%2F%2FHJE%3D,Line,58,,2014-04-23 22:55:03,"I don't like that we're relying on pip to tell us what version of the guest is running. What if our upgrade strategy screws up and leaves the old version running? In that case this method will end up telling us the wrong information.
+
+Instead the guest version should be hardcoded into the guest itself by the setup py or something. Additionally, we don't need the way to get the current version to be part of an ""upgrade"" strategy as it won't have anything to do with the upgrade process.",False,14
+85225,trove/guestagent/upgrade/upgradeagent.py,8415,1,AAAAWH%2F9eCo%3D,Line,75,,2014-04-04 09:56:05,is it really necassery ?,False,14
+59578,nova/exception.py,4395,17,7adec928_7fb0b98b,Line,643,7adec928_53acdca0,2014-05-09 05:58:32,ditto,False,14
+85225,trove/guestagent/strategies/upgrade/base.py,6162,1,AAAAWH%2F9ZHM%3D,Line,63,AAAAWH%2F9eFo%3D,2014-04-04 20:39:48,originally I was going to keep track of the pid which is not returned by the wrapper.  I'll go ahead and use the processutils.execute for now.,False,14
+59578,nova/exception.py,748,17,7adec928_53acdca0,Line,643,,2014-05-09 00:35:50,ditto,False,14
+85225,trove/guestagent/upgrade/upgradeagent.py,8415,4,AAAAWH%2F9TPg%3D,Line,47,,2014-04-07 09:17:48,please avoid use of \,False,14
+98286,specs/juno/restructure-for-plugins.rst,6783,6,1ae5cdf2_79ec70f4,Line,42,,2014-06-16 13:26:15,"Out of curiosity, what benefit does this provide over just calling something like getPlugin() and calling the required methods on the plugin? I have not seen this pattern before.",False,14
+59578,nova/exception.py,4395,17,7adec928_1fc255e9,Line,623,7adec928_73bab8df,2014-05-09 05:58:32,meh,False,14
+59578,nova/exception.py,4395,17,7adec928_ff63e917,Line,623,7adec928_1fc255e9,2014-05-09 06:01:00,okay i agree :),False,14
+59578,nova/exception.py,4395,17,7adec928_3f3c71e2,Line,623,,2014-05-09 06:06:27,"On second thought it requires changing all of these too. 
+
+nova/tests/api/openstack/compute/plugins/v3/test_servers.py:            raise exception.NetworkRequiresSubnet(network_uuid=network)
+nova/tests/api/openstack/compute/test_servers.py:            raise exception.NetworkRequiresSubnet(network_uuid=network)
+nova/tests/network/test_neutronv2.py:        self.assertRaises(exception.NetworkRequiresSubnet,
+nova/api/openstack/compute/plugins/v3/servers.py:                exception.NetworkRequiresSubnet,
+nova/api/openstack/compute/servers.py:                exception.NetworkRequiresSubnet,
+nova/network/neutronv2/api.py:                        raise exception.NetworkRequiresSubnet(",False,14
+59578,nova/exception.py,748,17,7adec928_73bab8df,Line,623,,2014-05-09 00:35:50,"I wonder if the name of the exception class should be renamed to something more suited to the error message, like InvalidNetworkState and then specify a reason; just a suggestion.",False,14
+85225,trove/guestagent/upgrade/upgradeagent.py,6162,4,AAAAWH%2F9PeQ%3D,Line,47,AAAAWH%2F9TPg%3D,2014-04-07 18:05:52,Done,False,14
+85225,trove/guestagent/upgrade/upgradeagent.py,694,38,9ad9bd40_52c82b22,Line,51,,2014-05-02 21:22:32,"Since these are both staticmethods, maybe they could just be free-standing functions instead?",False,14
+59578,nova/exception.py,4395,10,AAAAWH%2F9aQg%3D,Line,617,AAAAWH%2F9wdg%3D,2014-04-04 17:53:54,Done,False,14
+59578,nova/exception.py,261,10,AAAAWH%2F9wdg%3D,Line,617,,2014-04-02 10:53:02,"""in order to""
+
+sorry for the pedantry",False,14
+85225,trove/guestagent/upgrade/upgradeagent.py,6162,1,AAAAWH%2F9ZEY%3D,Line,75,AAAAWH%2F9eCo%3D,2014-04-04 20:39:48,"I probably not, I'll remove it.",False,14
+98286,specs/juno/restructure-for-plugins.rst,7973,6,1ae5cdf2_3a163fa8,Line,44,,2014-06-17 01:25:20,"I think it would be better to keep plugin logic inside the plugin namespace.  Maybe this could be plugin/managers.py instead?  I'm not a fan of the catch-all ""common"" namespace.",False,14
+85580,jenkins_jobs/builder.py,11011,5,AAAAXH%2F%2Fpbw%3D,Line,580,,2014-04-18 15:27:58,"Oops, 10 is hard-coded here, I'll fix this to substitute in the value of `batch`.",False,14
+98286,specs/juno/restructure-for-plugins.rst,7973,6,1ae5cdf2_da1e3bbb,Line,54,,2014-06-17 01:25:20,"This is just bike shedding, but I think ""plugin"" singular would be better here, as described on line 17",False,14
+59578,nova/network/neutronv2/api.py,5754,23,1ae5cdf2_8dbe44ad,Line,353,,2014-06-24 07:06:55,"looks like at line 688 already check the case of ""port_security_enabled == true and not network['subnets']"" whatever security_groups is empty or not.",False,14
+85225,trove/guestagent/datastore/mysql/service.py,694,21,AAAAXH%2F%2FHas%3D,Line,206,,2014-04-23 22:50:02,Why wasn't BaseDbStatus's update method changed instead?,False,14
+85225,trove/guestagent/datastore/mysql/service.py,694,22,AAAAXH%2F%2FHJw%3D,Line,198,,2014-04-23 22:55:03,The logic to get the current version of the guest should not be tied to the update strategy.,False,14
+85225,trove/guestagent/datastore/mysql/service.py,6162,22,AAAAXX%2F%2F%2BYw%3D,Line,198,AAAAXH%2F%2FHJw%3D,2014-04-24 23:21:26,Done,False,14
+85225,trove/guestagent/datastore/mysql/service.py,694,22,AAAAXH%2F%2FHJs%3D,Line,202,,2014-04-23 22:55:03,Why wasn't BaseDbStatus's update method changed instead?,False,14
+85225,trove/guestagent/datastore/mysql/service.py,6162,22,AAAAXX%2F%2F%2BY8%3D,Line,202,AAAAXH%2F%2FHJs%3D,2014-04-24 23:21:26,Done,False,14
+85225,trove/guestagent/datastore/mysql/service.py,8415,24,AAAAXH%2F%2FDJM%3D,Line,193,,2014-04-24 11:44:22,localization is required,False,14
+85225,trove/guestagent/datastore/mysql/service.py,6162,24,AAAAXX%2F%2F9z0%3D,Line,193,AAAAXH%2F%2FDJM%3D,2014-04-24 23:51:54,removing this.,False,14
+85225,trove/guestagent/datastore/mysql/manager.py,6162,1,AAAAWH%2F9ZMo%3D,Line,213,AAAAWH%2F9eHc%3D,2014-04-04 20:39:48,Done,False,14
+85225,trove/guestagent/datastore/mysql/manager.py,8415,1,AAAAWH%2F9eHc%3D,Line,213,,2014-04-04 09:56:05,"i don't think this formatting would work with the translation, string should be formatted through dict.",False,14
+59578,nova/tests/network/test_neutronv2.py,748,17,7adec928_d3db8c19,Line,901,,2014-05-09 00:35:50,t,False,14
+59578,nova/tests/network/test_neutronv2.py,4395,17,7adec928_9f8665b8,Line,901,7adec928_d3db8c19,2014-05-09 05:58:32,80 char limit :'(,False,14
+66882,tempest/scenario/test_multiple_az_ops.py,1420,14,AAAAW3%2F%2Ft30%3D,Line,89,,2014-04-10 21:51:46,Agree /w David. Seems strange adding a new test case that doesn't assert anything more than its base.,False,14
+59578,nova/tests/network/test_neutronv2.py,7,20,5adbc538_1f5fde0f,Line,895,,2014-05-25 20:33:38,"here and below, s/eanbled/enabled/ :)",False,14
+85225,trove/guestagent/datastore/service.py,694,21,AAAAXH%2F%2FHZY%3D,Line,118,,2014-04-23 22:50:02,"This should be calling something else to know it's version. For example, there could be an upgrade module that could determine this.",False,14
+66882,tempest/scenario/test_multiple_az_ops.py,1192,14,AAAAW3%2F%2Fu1M%3D,Line,89,,2014-04-10 19:00:17,Should we be making sure the server was actually created in the right place?,False,14
+66882,tempest/scenario/test_multiple_az_ops.py,5689,14,AAAAW3%2F%2FsLc%3D,Line,89,AAAAW3%2F%2Ft30%3D,2014-04-11 05:26:01,Done,False,14
+59578,nova/network/neutronv2/api.py,4395,17,7adec928_7f8999c9,Line,646,7adec928_b379a031,2014-05-09 05:58:32,Only because line 644 did  it.,False,14
+85225,trove/common/cfg.py,6162,22,AAAAXH%2F%2FHHE%3D,Line,223,AAAAXH%2F%2FHKA%3D,2014-04-24 23:21:26,I'll look into it.  It is pretty noisy.,False,14
+85225,trove/common/cfg.py,694,22,AAAAXH%2F%2FHKA%3D,Line,223,,2014-04-23 22:55:03,Could some of these configs be moved to their respective strategy directories? Or maybe even nested under another config namespace? It would help compartmentalize the overwhelming number of config options we're getting in the guest.,False,14
+85225,trove/common/cfg.py,694,21,AAAAXH%2F%2FHcA%3D,Line,223,,2014-04-23 22:50:02,Could some of these configs be moved to their respective strategy directories? Or maybe even nested under another config namespace? It would help compartmentalize the overwhelming number of config options we're getting in the guest.,False,14
+85225,trove/guestagent/datastore/mysql/service.py,694,21,AAAAXH%2F%2FHaU%3D,Line,200,,2014-04-23 22:50:02,Why would the upgrade_strategy return the current version? Shouldn't it be possible to bake this into the guest?,False,14
+59578,nova/network/neutronv2/api.py,5754,23,1ae5cdf2_4d719cdd,Line,339,,2014-06-24 07:06:55,"just question: Is there any chance we can move those securitygroup checking into validate_networks, then those will be check at nova-api side. a little confuse we checking something at nova-api, then checking something at nova-compute.",False,14
+85225,trove/guestagent/datastore/mysql/service.py,694,21,AAAAXH%2F%2FHZo%3D,Line,198,,2014-04-23 22:50:02,"Also, the logic for determining this should live in an update module instead of being put here.",False,14
+85225,trove/guestagent/datastore/mysql/service.py,6162,4,AAAAWH%2F9P8I%3D,Line,191,AAAAWH%2F9TSs%3D,2014-04-07 18:05:52,Done,False,14
+85225,trove/guestagent/strategies/upgrade/virtualenv.py,8415,1,AAAAWH%2F9eDs%3D,Line,43,,2014-04-04 09:56:05,"this method is common to both strategies (pip and venv), please move it to the mixing",False,14
+85225,trove/guestagent/strategies/upgrade/virtualenv.py,6162,1,AAAAWH%2F9ZEs%3D,Line,43,AAAAWH%2F9eDs%3D,2014-04-04 20:39:48,"I will directly subclass Pip instead of the ""base"" class.  I think they are going to be similar enough to warrant this although it pains me to use inheritance so much.",False,14
+85225,trove/guestagent/strategies/upgrade/virtualenv.py,8415,4,AAAAWH%2F9TP8%3D,Line,56,,2014-04-07 09:17:48,"utils.execute(cmd=cmd, shell=True)",False,14
+85225,trove/guestagent/strategies/upgrade/virtualenv.py,8415,24,AAAAXH%2F%2FDII%3D,Line,45,,2014-04-24 11:44:22,try except required,False,14
+47937,doc/source/review-security.rst,1,17,1ae5cdf2_bf72d847,Line,66,,2014-06-18 21:53:46,Why tag?,False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,7,1ae5cdf2_4862493e,Line,115,1ae5cdf2_7c17d054,2014-06-17 15:58:05,"Sounds good. I figure the follow on CRs for this will refine this a bit, but the basic folder structure above is looking solid enough for this blueprint I think.",False,14
+85225,trove/guestagent/datastore/mysql/service.py,8415,4,AAAAWH%2F9TSs%3D,Line,191,,2014-04-07 09:17:48,"if this doc.string talks about method, it should be like:
+
+Finds and reports status of the DB on this machine.",False,14
+85225,trove/guestagent/datastore/mysql/service.py,6162,1,AAAAWH%2F9ZMI%3D,Line,204,AAAAWH%2F9eGo%3D,2014-04-04 20:39:48,Done,False,14
+85225,trove/guestagent/datastore/mysql/service.py,8415,1,AAAAWH%2F9eGo%3D,Line,204,,2014-04-04 09:56:05,"_()
+
+translation is required",False,14
+85225,trove/guestagent/datastore/mysql/service.py,6162,1,AAAAWH%2F9ZMM%3D,Line,187,AAAAWH%2F9eHE%3D,2014-04-04 20:39:48,"This actually overrides the update method used to send heartbeats from the agent --> conductor.
+
+I updated the comment to try to describe it.",False,14
+85225,trove/common/cfg.py,8415,8,AAAAW3%2F%2F0hE%3D,Line,219,,2014-04-10 07:42:02,"i guess this can be the part of the service catalog, so, can be retrieved from it, but service catalog didn't land yet, so, until that i'm fine with this.",False,14
+85225,trove/guestagent/datastore/mysql/service.py,8415,1,AAAAWH%2F9eHE%3D,Line,187,,2014-04-04 09:56:05,update or upgrade ?,False,14
+85225,trove/guestagent/datastore/mysql/manager.py,694,22,AAAAXH%2F%2FHJ4%3D,Line,215,,2014-04-23 22:55:03,"**kwargs should be captured here and sent to the upgrade strategy. For example, location only makes sense if you're using pip or virtualenv, and not if you're going to be upgrading with Debian.",False,14
+85225,trove/guestagent/datastore/mysql/manager.py,694,21,AAAAXH%2F%2FHbc%3D,Line,215,,2014-04-23 22:50:02,"I think **kwargs should be captured here and sent to the upgrade strategy. For example, location only makes sense if you're using pip or virtualenv, and not if you're going to be upgrading with Debian.",False,14
+85225,trove/guestagent/datastore/mysql/manager.py,8415,4,AAAAWH%2F9TTU%3D,Line,211,,2014-04-07 09:17:48,do not use \ in multiple string formatting,False,14
+59578,nova/network/neutronv2/api.py,4395,20,7adec928_169ea954,Line,665,7adec928_cb71fda9,2014-05-22 17:20:44,"Hi Paul, 
+
+Sorry, I don't quite follow how this patch is breaking ALL subnet-less network in your env. Currently, your not able to boot an instance on a network that does not have a subnet through nova. With this patch it will allow you to do that if the network is marked as port_security_enabled=False. 
+
+About your reference to here: https://github.com/openstack/nova/blob/b8dace6a9ca6dda8fbf72435be274b2848bbcbb3/nova/network/security_group/neutron_driver.py#L385
+
+This is slightly a different case in that case it's handling the scenario where a security group is being 'Added' to an instance. In this case we're validating that a network has a subnet and the right port security settings before nova creates a port (with the default security group that nova adds).",False,14
+59578,nova/network/neutronv2/api.py,9623,20,1ae5cdf2_a54b26af,Line,665,7adec928_c6e0eb98,2014-05-30 16:47:55,"Sorry for the delay, but I think I'm getting a clearer picture now.  In havana, there was NOT a check for subnets in neutronv2/api.py:validate_networks():
+
+https://github.com/openstack/nova/blob/stable/havana/nova/network/neutronv2/api.py#L581
+
+However, in icehouse that check was added in this patch:
+
+https://review.openstack.org/#/c/79801/
+
+This changed the behavior of subnet-less networks in icehouse vs havana (ie, disallowed them).  For us, we were broken because we create DHCP networks as subnet-less networks.  To work around this, we overrode the validate_networks method (cut and pasted it and just removed that subnets check)... which is messy and just waiting for problems since we'll not get new community changes in the overridden method.  Thus, we were hoping we'd be able to revert back to community code with THIS patch, based on your commit message in the prior patch (79801 linked to above):
+
+""Note: a patch to fix the neutron port-security-enabled extension will
+follow which allows one to boot instances on networks without subnets
+and ports without fixedips.""
+
+Which sounded promising, but didn't quite pan out that way.  It doesn't work because our networks, created on havana, didn't have the port_security_enabled attribute set (since we're using a non-port_security_enabled plugin - ML2... I misspoke in my last response when I said OVS...) and thus the default of ""True"" here is causing it to fail.  Using a default of True is not compatible with subnet-less networks created in havana that never set the port_security_enabled attribute.
+
+This is why I say it seems a migration script is needed.  If you don't set port_security_enabled to False in these havana-created networks, they'll fail on icehouse.  This is an inconsistency between icehouse and havana.",False,14
+59578,nova/network/neutronv2/api.py,9623,20,7adec928_c6e0eb98,Line,665,7adec928_c4f2c49a,2014-05-23 18:43:32,"You bring up good points, Aaron.  I'm going to play with this in our env some more to get a clearer picture.  FYI - we're using OVS.",False,14
+59578,nova/network/neutronv2/api.py,4395,20,7adec928_e4da6016,Line,665,7adec928_ac85a45a,2014-05-22 20:18:21,"Hi Paul, 
+
+By default when you create a port on a neutron network: ip/mac spoofing is automatically on this is the reason why if the port_security_enabled attribute on the network is not found (i.e one is using a plugin that does not support it) we set it to True. This should not need any kind of migration script as to do anything as the default has always been true.",False,14
+59578,nova/network/neutronv2/api.py,9623,20,7adec928_ac85a45a,Line,665,7adec928_169ea954,2014-05-22 18:08:33,"I understand what you're saying....however (at least our team) had not specified 'port_security_enabled' on our networks.  Therefore the default of True is coming into play here, and does not yet seem consistent with other defaults with regard to this.
+
+By setting it to true as the default, we are now tightening up the code, but will potentially break networks that were existing.  Perhaps there needs to be a peer changeset that goes through the existing networks as part of the update and explicitly sets this so we don't accidentally break deployments that are going through an upgrade path?",False,14
+59578,nova/network/neutronv2/api.py,4395,20,7adec928_c4f2c49a,Line,665,7adec928_e4da6016,2014-05-22 20:19:56,Also - i'm confused how this could break anything for you especially since there are only a few vendor plugins that implement the port-security-enabled extension in tree right now. Which plugin are you using out of curiosity?,False,14
+59578,nova/network/neutronv2/api.py,5754,23,1ae5cdf2_0d01546a,Line,321,,2014-06-24 07:06:55,"How about use security_group_info.append({uuid_match.get('name'):
+			                                        uuid_match.get('id')})
+
+then you can save loop at line 343 and line 376",False,14
+85225,trove/guestagent/datastore/mysql/manager.py,6162,22,AAAAXH%2F%2FHGY%3D,Line,215,AAAAXH%2F%2FHJ4%3D,2014-04-24 23:21:26,"yep, will change to take kwargs",False,14
+98286,specs/juno/restructure-for-plugins.rst,6783,6,1ae5cdf2_d90d84ea,Line,52,,2014-06-16 13:26:15,+1,False,14
+85225,etc/trove/trove-guestagent.conf.sample,6162,54,1ae5cdf2_e32c0105,Line,102,,2014-06-02 21:34:01,Will consolidate on the namespace following discussion with grapex.,False,14
+85225,etc/trove/trove-guestagent.conf.sample,8415,24,AAAAXH%2F%2FDJ0%3D,Line,79,,2014-04-24 11:44:22,"use another password, that differes from backup_aes_cbc_key",False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,7,1ae5cdf2_4611765c,Line,97,,2014-06-17 04:12:33,"Arvind, I think the master key you speak of in the Barbican conf file is only used for the default insecure default plugin. If the HSM was enabled/configured, that would be used for secret storage instead.",False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,7,1ae5cdf2_282a5de7,Line,48,1ae5cdf2_9cbe5c63,2014-06-17 15:58:05,"Will do, I'll change plugins -> plugin, and interfaces -> interface",False,14
+98286,specs/juno/restructure-for-plugins.rst,6783,7,1ae5cdf2_9cbe5c63,Line,48,1ae5cdf2_663f52d7,2014-06-17 13:12:04,I'm good either way. Interfaces is plural too.,False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,7,1ae5cdf2_663f52d7,Line,48,,2014-06-17 04:12:33,"Douglas, regarding 'plugins' vs 'plugin', I'm ok with either. We only have two pluralized package at this level (tests, tasks) vs the others, so maybe 'plugin' is best? Any one object to using 'plugin' here?",False,14
+85225,trove/guestagent/datastore/service.py,694,54,1ae5cdf2_f6d75d21,Line,115,,2014-06-02 22:07:13,"This class is intended to find the status of the datastore. Adding code to get the version of the guest agent itself violated the single responsibility principle. 
+
+The other thing is I don't trust using pkg_resoruces for this.
+
+So, can you make a new class to do this?",False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,7,1ae5cdf2_e67c42b8,Line,45,,2014-06-17 04:12:33,"Douglas, I've moved the plugin manager stuff down into the plugins package below now.",False,14
+98286,specs/juno/restructure-for-plugins.rst,6783,7,1ae5cdf2_1c06cc21,Line,43,1ae5cdf2_86753ece,2014-06-17 13:12:04,I commented below.,False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,7,1ae5cdf2_86753ece,Line,43,,2014-06-17 04:12:33,"Sorry Nate, I uploaded a patch for Douglas' comment before I noticed yours. Regarding the getPlugin() comment, is that in regards to the resources.py module, vs calling the plugin directly from the api/resource.py? If so, the code in common/resources.py is shared between the API and Worker nodes (which also have generated as well as store secrets).",False,14
+98286,specs/juno/restructure-for-plugins.rst,994,6,1ae5cdf2_a52ecbf8,Line,112,,2014-06-16 14:44:09,I think we should avoid much implementation details in specs,False,14
+66882,tempest/scenario/test_multiple_az_ops.py,5689,14,AAAAW3%2F%2FsO8%3D,Line,89,AAAAW3%2F%2Fu1M%3D,2014-04-11 05:26:01,Done,False,14
+66882,tempest/scenario/test_multiple_az_ops.py,7139,15,AAAAXH%2F%2F1B8%3D,Line,29,,2014-04-17 07:42:11,load tests had a change in Ib635f8b895f6642f78a3af644170700f72259d46. Need sync with it.,False,14
+59578,nova/network/neutronv2/api.py,748,17,7adec928_b379a031,Line,646,,2014-05-09 00:35:50,"why did you add , None, in the get('fixed_ips')?",False,14
+59578,nova/network/neutronv2/api.py,642,16,7adec928_71c1de7f,Line,315,,2014-05-08 15:24:38,"The comment is probably superfluous, but it doesn't matter",False,14
+59578,nova/network/neutronv2/api.py,4395,16,7adec928_93966493,Line,302,7adec928_11f41af1,2014-05-09 00:00:20,Outside of my patch but I'll update it :P,False,14
+59578,nova/network/neutronv2/api.py,642,16,7adec928_11f41af1,Line,302,,2014-05-08 15:24:38,"""must has"" :-(",False,14
+85225,trove/guestagent/datastore/service.py,694,54,1ae5cdf2_b6a9557d,Line,129,,2014-06-02 22:07:13,"So unfortunately, this needs to be moved.
+
+This class is all about the datastore status, but now its sending a message that has general heartbeat info, which means other things such as the agent version. 
+
+At this point, there needs to be a heartbeat class which has two variables: an instance of this, plus an instance of a class to get the version of the agent.
+
+Then that heartbeat class should send the message instead of this one.",False,14
+85225,trove/guestagent/upgrade/__init__.py,694,38,9ad9bd40_d2543b56,Line,20,,2014-05-02 21:22:32,Would it be that bad if users of the upgrade function below just created this class themselves instead? Creating an instance as the file is being parsed could lead to issues down the line if the class grows complex.,False,14
+85225,trove/guestagent/upgrade/__init__.py,8415,38,9ad9bd40_9c9d625c,Line,20,9ad9bd40_d2543b56,2014-05-03 07:12:36,Agreed,False,14
+59578,nova/network/neutronv2/api.py,261,10,AAAAWH%2F9wV0%3D,Line,319,,2014-04-02 10:53:02,"I have a feeling you might just use remove_security_groups in place of all_default_security_groups.
+
+what do you reckon?
+
+or maybe, considering the subsquent logic you can just remove security groups named 'default' as soon as you find them",False,14
+98286,specs/juno/restructure-for-plugins.rst,6783,6,1ae5cdf2_b9b998cd,Line,111,,2014-06-16 13:26:15,Same as comment above.,False,14
+98286,specs/juno/restructure-for-plugins.rst,994,6,1ae5cdf2_a9b178e1,Line,93,,2014-06-13 20:15:48,"Wondering if it is good idea to have plug-in to address below requirement ?
+
+https://blueprints.launchpad.net/barbican/+spec/store-master-encryption-key-in-hsm
+
+If yes, does it deserve separate package?",False,14
+85225,trove/guestagent/datastore/service.py,8415,38,9ad9bd40_fcad8e89,Line,118,,2014-05-03 07:12:36,Localization is required _(),False,14
+98286,specs/juno/restructure-for-plugins.rst,994,7,1ae5cdf2_79599534,Line,97,1ae5cdf2_081a01c6,2014-06-17 18:35:49,"Thanks John,
+
+I would appreciate Paul's thoughts on this use case as this is the one we will need.",False,14
+59578,nova/network/neutronv2/api.py,4912,19,7adec928_e71d6910,Line,308,,2014-05-19 21:09:17,"I *think* I may understand your comment here. It could use some punctuation and rewording though.
+
+Ex. for if?
+
+Maybe some commas or periods would be helpful? I'm just having trouble parsing the sentence.",False,14
+98286,specs/juno/restructure-for-plugins.rst,994,7,1ae5cdf2_c5756434,Line,97,1ae5cdf2_4611765c,2014-06-17 15:34:46,"In case of large scale cloud deployment (e.g. public cloud) with lots (e.g. 10 to the power 8 or more) of users and each user can have at least 2 or more secret (access key, rsa keys). Storing all these secrets in HSM not possible as HSM has limit, it will not allow lots of keys to store on behalf of users.
+
+Usual pattern is to some store master encryption keys (MEK) in HSM and encrypt per tenant encryption keys (KEK) with MEK.  KEK will be stored in key manager database. 
+Indeed you have to use production grade crypto library to develop plugin for secrets and KEK generation.
+
+Thoughts?",False,14
+85225,etc/trove/trove-guestagent.conf.sample,6162,24,AAAAXX%2F%2F90A%3D,Line,73,AAAAXH%2F%2FDJ4%3D,2014-04-24 23:51:54,"k, also going to make some of these constants in there respective strategy classes as per Tim.",False,14
+85225,etc/trove/trove-guestagent.conf.sample,8415,24,AAAAXH%2F%2FDJ4%3D,Line,73,,2014-04-24 11:44:22,"please write the small descrption about all strategies which are mentioned in this patch (pip, venv)",False,14
+85225,etc/trove/trove-guestagent.conf.sample,6162,8,AAAAW3%2F%2FvfM%3D,Line,80,AAAAW3%2F%2F0hg%3D,2014-04-10 17:36:21,"k, I'll research that.",False,14
+85225,etc/trove/trove-guestagent.conf.sample,8415,8,AAAAW3%2F%2F0hg%3D,Line,80,,2014-04-10 07:42:02,"i suggest to place this attributes to the anothe configuration group, because they are not strictly required, and can be avoided by the deployer.",False,14
+85225,trove/guestagent/datastore/service.py,694,22,AAAAXH%2F%2FHJU%3D,Line,118,,2014-04-23 22:55:03,"The logic to determine the version should be called from here, rather than forcing subclasses to call this method with the current version.",False,14
+85225,trove/guestagent/datastore/service.py,6162,22,AAAAXX%2F%2F%2BYY%3D,Line,118,AAAAXH%2F%2FHJU%3D,2014-04-24 23:21:26,Done,False,14
+85225,trove/guestagent/datastore/service.py,694,38,9ad9bd40_722feff6,Line,114,,2014-05-02 21:22:32,"Try to make this come from a hard set global variable which we know won't change while the process is running. If that isn't possible, make a config value which will determine the strategy of how the guest finds its own version (this can just be a simple function, imported with good 'ole import utils, which when called returns the version string).",False,14
+85225,trove/guestagent/datastore/service.py,8415,38,9ad9bd40_fc766e3d,Line,114,9ad9bd40_722feff6,2014-05-03 07:12:36,"A bit disagree. I'd suggest to define version as a @property, described with singleton pattern. Because, as already said, version won't change within one deployment. Adding another config attribute that defines a strategy of how version is discovered seems to be complex and IMHO not really what a guest needs. Current implementation almost ideal for given case.",False,14
+85225,trove/guestagent/datastore/service.py,6268,38,9ad9bd40_4924d5c4,Line,114,9ad9bd40_fc766e3d,2014-05-05 18:53:15,I completely disagree with Tim. Basically the pkg_resources already does exactly what you envision without having to write this function. pkg_resources searches the python path and discovers all the 'egg_info' for all packages which is a simple ini file in the package. This cannot be changed during run time without monkey patching the pkg_resources module itself (which we don't do). In short this is the correct way to find out what version of a python package you have installed.,False,14
+85225,etc/trove/trove-guestagent.conf.sample,6162,1,AAAAWH%2F9ZMw%3D,Line,73,AAAAWH%2F9eIM%3D,2014-04-04 20:39:48,agreed,False,14
+85225,etc/trove/trove-guestagent.conf.sample,6162,24,AAAAXX%2F%2F9z8%3D,Line,79,AAAAXH%2F%2FDJ0%3D,2014-04-24 23:51:54,k,False,14
+85225,etc/trove/trove-guestagent.conf.sample,8415,1,AAAAWH%2F9eIM%3D,Line,73,,2014-04-04 09:56:05,"to be more presice, i think we should mention here all possible (at this point of time and future) strategies",False,14
+85225,/COMMIT_MSG,10725,6,AAAAW3%2F%2F9jc%3D,Line,8,,2014-04-09 08:21:55,And what is the strategy? Is it written in any place?,False,14
+84218,pbr/util.py,4190,1,1ae5cdf2_e9032e74,Line,397,,2014-06-09 18:08:10,This blank line should not be here (PEP-0257).,False,14
+59578,nova/network/neutronv2/api.py,9623,20,7adec928_cb71fda9,Line,665,,2014-05-22 15:14:34,"By assuming a default of True for port_security_enabled, we're breaking ALL subnet-less networks here (which is happening in our env with this patch).  If we need to assume a default of True for port_security_enabled (which I understand), then I think this check needs to take into account fixed_ips, not subnets, similar to this code:
+
+https://github.com/openstack/nova/blob/b8dace6a9ca6dda8fbf72435be274b2848bbcbb3/nova/network/security_group/neutron_driver.py#L385",False,14
+59578,nova/network/neutronv2/api.py,4395,19,7adec928_1398c91a,Line,308,7adec928_e71d6910,2014-05-21 00:27:26,Done,False,14
+84218,pbr/util.py,4190,1,1ae5cdf2_c9d752ec,Line,395,,2014-06-09 18:08:10,"Could you please document the return value? e.g.
+
+:return: None or the pbr base class.",False,14
+84218,pbr/util.py,4190,1,1ae5cdf2_a9da0615,Line,384,,2014-06-09 18:08:10,"There's no need to late-emit this, you can test it in the same block you detect the conflict, and then you don't need the conflicts list at all.",False,14
+84218,pbr/util.py,4190,1,1ae5cdf2_89cd4a60,Line,375,,2014-06-09 18:08:10,Wouldn't this be easier to test by just checking if the class is one of the classes in pbr.hooks.commands?,False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,7,1ae5cdf2_1a033e0e,Line,115,,2014-06-17 04:12:33,"So Nate, you'd would prefer for the code block above to be executed directly from the API and Worker nodes? I think with your secret store approach that would probably be possible...the 'shared' logic would now be in plugin implementations such as 'plugins/store_crypto.py'. Does that make sense?",False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,7,1ae5cdf2_081a01c6,Line,97,1ae5cdf2_e59180f2,2014-06-17 15:58:05,"Arvind, Paul is looking into HSM functionality with reduce key space. I'll defer to him regarding this subject.At any rate, if a new interface is needed, it should be able to find a home in this structure.",False,14
+98286,specs/juno/restructure-for-plugins.rst,994,7,1ae5cdf2_e59180f2,Line,97,1ae5cdf2_c5756434,2014-06-17 15:38:25,some store = store some,False,14
+85225,/COMMIT_MSG,6162,6,AAAAW3%2F%2F4D4%3D,Line,8,AAAAW3%2F%2F9jc%3D,2014-04-09 18:44:19,"Hey Sergey,
+
+The strategy pattern was introduced in trove for a number of features that required different implementations.  This patch follows suit with that pattern.
+
+The default strategy uses pip to install trove guest agent code.
+Swift is the default location for the package as was decided during the mid-cycle meetup.",False,14
+47937,doc/source/review-security.rst,5263,17,1ae5cdf2_d1fa07b9,Line,44,1ae5cdf2_9f799c31,2014-06-27 19:01:23,"Yes, the workflows the VMT has discussed involve either adding an explicit remote or keeping a separate local clone with gerrit remote pointing here (to make git-review use slightly easier).",False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,7,1ae5cdf2_5a24e6ae,Line,116,,2014-06-17 04:12:33,"Arvind, I would agree with you normally about too much implementation detail, but this blueprint speaks to a significant refactor of Barbican. That said, I think if we can agree on the question above, we should be able to move forward quickly.",False,14
+47937,doc/source/review-security.rst,1,17,1ae5cdf2_9f799c31,Line,44,,2014-06-18 21:53:46,We should probably have the instructions be to add a remote and then to use git-review with a specific remote.  That should reduce complexity and hopefully reduce the risk of accidentally pushing to the open one.,False,14
+73387,nova/virt/libvirt/driver.py,1779,6,1ae5cdf2_1b958586,Line,4805,,2014-06-04 16:16:39,"This is not right. There are more than two possible disk_types allowed by libvirt - you have file, block, network and volume. Also even if type=block, this does not imply that it is an LVM logical  volume path - it could be a iSCSI device path.",False,14
+96877,modules/livegrep/manifests/init.pp,6554,27,1ae5cdf2_ba5106db,Line,57,,2014-06-18 22:20:52,Is there a puppet package provider for go? i couldn't find one in ten seconds of googling but it would surprise me if it hasn't been developed yet.,False,14
+96877,modules/livegrep/manifests/init.pp,7680,27,1ae5cdf2_630c643a,Line,29,1ae5cdf2_3aa256fc,2014-06-25 17:35:21,Duplicate from what?,False,14
+96877,modules/livegrep/manifests/init.pp,6554,27,1ae5cdf2_3aa256fc,Line,29,,2014-06-18 22:20:52,Are we going to get duplicate definition errors here?,False,14
+96877,modules/livegrep/manifests/init.pp,7680,26,1ae5cdf2_6947c277,Line,77,1ae5cdf2_714340af,2014-06-11 16:41:40,Done,False,14
+87090,jenkins_jobs/cmd.py,2475,2,AAAAXH%2F%2F0N4%3D,Line,58,,2014-04-17 08:20:05,"To be consistent with the update command, I would use the plurals form (i.e. 'names'). And adjust the help description to 'name(s) of job(s)'.
+
+Should default to None to trigger a whole match in the generateXML() code.
+
+Did a similar comment on parent change which added the browse command.",False,14
+87090,jenkins_jobs/cmd.py,2475,2,AAAAXH%2F%2F0Mo%3D,Line,151,,2014-04-17 08:20:05,"With a default of None above, you can drop this and just pass options.name to list_jobs() as a glob_name parameter.",False,14
+87090,jenkins_jobs/cmd.py,1054,4,AAAAXX%2F%2F11Q%3D,Line,67,,2014-04-25 21:12:27,If the default is 'None' is there any need to specify it? I know that parser_delete does for the '--path'  option but that seems like the minority.,False,14
+87090,jenkins_jobs/cmd.py,11011,4,9ad9bd40_e6132fb6,Line,67,AAAAXX%2F%2F11Q%3D,2014-05-05 02:37:44,"Oh yeah, this seems to not be necessary. Thanks!",False,14
+87090,jenkins_jobs/cmd.py,1054,4,AAAAXX%2F%2F11E%3D,Line,69,,2014-04-25 21:12:27,s/Path/path/ to be consistent with the others.,False,14
+87090,jenkins_jobs/cmd.py,11011,4,9ad9bd40_a62127fd,Line,69,AAAAXX%2F%2F11E%3D,2014-05-05 02:37:44,Good catch. Thanks!,False,14
+87882,swift/container/server.py,7233,2,1ae5cdf2_5d554ac0,Line,184,,2014-06-12 07:25:08,"Should this say something like: 
+
+ERROR all accounts are missing
+OR
+ERROR no accounts were found",False,14
+88646,jenkins_jobs/builder.py,1054,3,AAAAXX%2F%2F1mA%3D,Line,551,,2014-04-25 21:29:51,Think renaming to 'delete_jobs()' makes more sense.,False,14
+88646,jenkins_jobs/builder.py,11011,3,AAAAXX%2F%2F0%2F0%3D,Line,551,AAAAXX%2F%2F1mA%3D,2014-04-25 23:44:34,Done,False,14
+73387,nova/virt/libvirt/driver.py,7746,6,1ae5cdf2_9910b85a,Line,4805,1ae5cdf2_1b958586,2014-06-04 20:37:01,"In devstack, at least, blockdev --getsize64 <iscsi path> returns the correct volume size.",False,14
+88646,jenkins_jobs/builder.py,6987,6,7adec928_f3596b8f,Line,563,,2014-05-21 22:04:44,I think would be better to deprecate rather than change function name. Other tools rely on jjb methods and I'm guessing this might be one of them.,False,14
+88646,jenkins_jobs/builder.py,6987,7,7adec928_0002df3d,Line,506,,2014-05-22 16:29:24,should this one be deprecated as well?  replaced with delete_jobs?,False,14
+88646,jenkins_jobs/builder.py,1054,7,1ae5cdf2_709383a4,Line,506,7adec928_0002df3d,2014-06-24 11:47:24,"There's no 'delete_jobs' in this class, so unless we should be re-factoring the delete_jobs method in the Builder class to be in the Jenkins class and just have a simple wrapper there I don't think there's any need for that.
+
+Seems like the current approach is to keep the logic in the Builder class and have this as just a simple interface to manage the connection to jenkins and retrieve/perform basic operations.",False,14
+88646,jenkins_jobs/builder.py,6987,7,7adec928_c00c7797,Line,587,,2014-05-22 16:29:24,should this call delete_jobs instead?,False,14
+88646,jenkins_jobs/builder.py,1054,7,1ae5cdf2_1d4df899,Line,587,7adec928_c00c7797,2014-06-24 11:47:24,"Makes sense as otherwise we get a DeprecationWarning for an internal API call. Could be replaced with:
+
+ self.delete_jobs([job['name'] for job in jobs])",False,14
+88646,jenkins_jobs/cmd.py,1054,3,AAAAXX%2F%2F1pA%3D,Line,141,,2014-04-25 21:29:51,Rename to 'delete_jobs()' seems appropriate?,False,14
+88646,jenkins_jobs/cmd.py,11011,3,AAAAXX%2F%2F1AY%3D,Line,141,AAAAXX%2F%2F1pA%3D,2014-04-25 23:44:34,Done,False,14
+89529,elements/ssh-hosts/os-refresh-config/pre-configure.d/1-ssh-hosts,6969,3,AAAAXH%2F%2FD4Y%3D,Line,8,,2014-04-24 09:52:01,if [ ! -d /mnt/state/etc/ssh ] or -e would be nicer :-),False,14
+89529,elements/ssh-hosts/os-refresh-config/pre-configure.d/1-ssh-hosts,951,3,AAAAXH%2F%2FDzk%3D,Line,8,AAAAXH%2F%2FD4Y%3D,2014-04-24 09:58:23,This is a slightly different check to seeing if it's a directory or it exists. I want to verify that the directory is not empty (i.e contains ssh keys),False,14
+89529,elements/ssh-hosts/os-refresh-config/pre-configure.d/1-ssh-hosts,6488,4,7adec928_966c9238,Line,1,,2014-05-22 00:41:09,"This is _almost_ complex enough to require a license header. I think it's is on the fence because it has no variables, but I tend to err on the side of having one.",False,14
+89529,elements/ssh-hosts/os-refresh-config/pre-configure.d/1-ssh-hosts,951,4,1ae5cdf2_830a0b88,Line,1,7adec928_966c9238,2014-06-12 15:09:21,Done,False,14
+89529,elements/ssh-hosts/os-refresh-config/pre-configure.d/1-ssh-hosts,6488,4,7adec928_36cc9e35,Line,12,,2014-05-22 00:41:09,"What you've done here is basically duplicated register-state-path from the use-ephemeral element.
+
+So I think you can add use-ephemeral to the element-deps and replace this with
+
+    register-state-path --leave-symlink /etc/ssh",False,14
+89529,elements/ssh-hosts/os-refresh-config/pre-configure.d/1-ssh-hosts,951,4,1ae5cdf2_34606f00,Line,12,1ae5cdf2_a06feb90,2014-06-13 10:54:26,install.d is during image build but the ssh hosts are only created during the cloudinit run during image boot. Should we still setup register-state-path during install.d and then keep the lines below???,False,14
+89529,elements/ssh-hosts/os-refresh-config/pre-configure.d/1-ssh-hosts,6488,4,1ae5cdf2_a06feb90,Line,12,1ae5cdf2_fe6fe28f,2014-06-12 23:22:14,"Right, the point is, you should call register-state-path _during install.d_ and then it does exactly what you've done above, moves the backed up files into /mnt/state/etc/ssh.",False,14
+89529,elements/ssh-hosts/os-refresh-config/pre-configure.d/1-ssh-hosts,951,4,1ae5cdf2_fe6fe28f,Line,12,7adec928_36cc9e35,2014-06-12 15:09:21,Not sure if I can use register-state-path. I move the contents of /etc/ssh to /mnt/state/etc/ssh. Where register-state-path copies it to a backup and leaves the newly created /mnt/state/etc/ssh empty. Meaning we'll end up with no keys in /etc/ssh,False,14
+88646,jenkins_jobs/builder.py,11011,6,7adec928_cb5d7d7b,Line,563,7adec928_f3596b8f,2014-05-22 15:33:19,Good point! I will add in a `delete_job` method that raises a DeprecationWarning and then calls `delete_jobs`...,False,14
+96877,modules/livegrep/manifests/init.pp,7233,26,1ae5cdf2_714340af,Line,77,,2014-06-11 06:23:07,Path attribute here as well.,False,14
+73387,nova/virt/libvirt/driver.py,1779,6,1ae5cdf2_3bbc0106,Line,4943,,2014-06-04 16:16:39,"This seems like it would break migration when the image backend is lvm, but the instance has been booted from cinder with no local LVM images used, because ""/dev"" prefix is going to match the cinder iSCSI volume paths.",False,14
+73387,nova/virt/libvirt/driver.py,1653,8,1ae5cdf2_25ef3f88,Line,4907,,2014-06-22 13:43:15,"missing translation
+should be _(""Migration is not supported ..."")",False,14
+81410,trove/common/apischema.py,8415,15,AAAAXH%2F%2FwNE%3D,Line,457,AAAAXH%2F%2Fwaw%3D,2014-04-17 17:41:33,Please give me the case when it's being something else than UR?,False,14
+81410,trove/common/apischema.py,6162,15,AAAAXH%2F%2FuTs%3D,Line,457,AAAAXH%2F%2FwNE%3D,2014-04-17 22:12:00,"A deployer may choose to push out a package to each guest agent.  Effectively 'staging' the new package for install.
+
+In this scenario the artifact or package may already be local to the guest instance.  Pip install would just need to know where the file lives on disk.
+
+Furthermore, that regexp for url_ref only allows for http[s].
+What if I choose ftp?  I'd rather not restrict the location to http at this point.",False,14
+81410,trove/common/apischema.py,8415,15,AAAAXH%2F%2Fwqk%3D,Line,457,,2014-04-17 16:41:54,"""location"": url_ref",False,14
+81410,trove/common/apischema.py,6162,13,AAAAW3%2F%2FwRM%3D,Line,455,AAAAW3%2F%2FwuU%3D,2014-04-10 15:57:26,"I was thinking about this also.  I left it this way because it looked weird to have a root element upgrade => properties => upgrade.
+
+I'll consider this some more though.",False,14
+81410,trove/common/apischema.py,8415,13,AAAAW3%2F%2FwuU%3D,Line,455,,2014-04-10 15:41:23,"what if it will look like previous examples:
+
+upgrade = {
+			    ""create"": {
+			        ""type"": ""object"",
+			        ""required"": [""upgrade""],
+			        ""additionalProperties"": True,
+			        ""properties"": {
+			            ""upgrade"":
+			                ""instance_id"": uuid,
+			                ""instance_version"": non_empty_string,
+			                ""strategy"": non_empty_string,
+			                ""location"": non_empty_string,
+			                ""metadata"": {}
+			        }
+			    }",False,14
+81410,/COMMIT_MSG,8415,22,AAAAXH%2F%2FDBM%3D,Line,19,,2014-04-24 11:53:31,"Only one type(!!!) of change is allowed, but not both!
+
+Please choose which one to leave and which one to drop",False,14
+76197,git_review/tests/test_git_review.py,8124,5,5adbc538_1795f93f,Line,219,,2014-05-26 12:17:27,"it's more pythonic to write:
+
+  self.assertFalse('first topic commit' in change_list)
+
+than:
+
+  self.assertNotEqual(change_list.find('first topic commit'), -1)
+
+I am not sure but you can perhaps use also self.assertIn/assertNotIn",False,14
+76197,git_review/tests/test_git_review.py,4146,4,AAAAXX%2F%2F%2BXg%3D,Line,149,,2014-04-24 22:29:02,"Why is this set of tests removed? I like the change otherwise, but we shouldn't be removing tests. If you need to skip test_query_option here like test_git_review_d was skipped.",False,14
+76197,git_review/cmd.py,8124,5,5adbc538_b7bfe5cf,Line,428,,2014-05-26 12:17:27,Please provide also http(s) implementation,False,14
+76197,git_review/cmd.py,8124,5,5adbc538_57f141cc,Line,406,,2014-05-26 12:17:27,Why default querystmt are not the same for the 3 query_reviews_* functions ?,False,14
+76197,git_review/cmd.py,8124,5,5adbc538_d7263168,Line,425,,2014-05-26 12:17:27,"While reviewing your change, i realize that git review -l over http(s) returned all open changes for ALL projects. https://review.openstack.org/95483 corrects it",False,14
+96877,modules/openstack_project/manifests/livegrep.pp,7680,27,1ae5cdf2_20b3169b,Line,7,1ae5cdf2_80230a04,2014-06-18 17:43:58,"Yeah, I think that's the right way to do it, what's the prefered way to do the proxying?",False,14
+96877,modules/openstack_project/manifests/livegrep.pp,4146,27,1ae5cdf2_80230a04,Line,7,,2014-06-18 17:39:15,Why not 80? and proxy to the local service listening on 8080?,False,14
+96877,modules/openstack_project/manifests/livegrep.pp,1,27,1ae5cdf2_782defa7,Line,7,,2014-06-25 17:28:08,Apache mad_proxy -- we use it almost everywhere else.,False,14
+73387,nova/virt/libvirt/driver.py,7746,6,1ae5cdf2_14e54f37,Line,4943,1ae5cdf2_3bbc0106,2014-06-04 20:37:01,"I believe, get_instance_disk_info() should be filtering volumes out using block_device_mapping (lines 4795-4798).
+
+But this is all kind of moot because I just found an existing _is_booted_from_volume() method in LibvirtDriver, which is what should be used here.",False,14
+96877,modules/livegrep/manifests/init.pp,6554,27,1ae5cdf2_9af60ad6,Line,78,,2014-06-18 22:20:52,I think this would make a lot of sense as a parameter passed in.,False,14
+96877,modules/livegrep/manifests/init.pp,6554,27,1ae5cdf2_fa370eae,Line,67,,2014-06-18 22:20:52,"Do we really have to build it? Can't we run some binary from somewhere?
+
+These kinds of chains of execs in puppet get nasty fast, especially around upgrade time.
+
+If I'm reading this right, we'll be pulling every commit off of master and rebuilding at that time. I'm not sure we need to track upstream that closely. Seems that tracking a known-working tag would be sufficient.",False,14
+96877,modules/livegrep/manifests/init.pp,7680,27,1ae5cdf2_831b3072,Line,57,1ae5cdf2_ba5106db,2014-06-25 17:35:21,I'm not aware of one.,False,14
+87090,jenkins_jobs/builder.py,11011,4,9ad9bd40_068d7331,Line,590,AAAAXX%2F%2F1wI%3D,2014-05-05 02:37:44,"Don't know if I gave much thought when creating the signature.
+
+I kind of feel like maybe in the future the signatures might be more consistent with each other - that seems like it would be a good thing.
+
+It does seem potentially useful to list the jobs on the server now that you mention it.",False,14
+87090,jenkins_jobs/builder.py,1054,4,AAAAXX%2F%2F1vM%3D,Line,595,,2014-04-25 21:12:27,"This seems like a copy/paste from delete_job() but doesn't seem to make sense for the current application.
+
+Only use case I can see is if you don't specify a file that list jobs would list the jobs on the jenkins instance and apply the glob matching to the returned list.
+
+Which might in turn be useful in refactoring the delete_job method.",False,14
+87090,jenkins_jobs/builder.py,11011,4,9ad9bd40_269b5768,Line,595,AAAAXX%2F%2F1vM%3D,2014-05-05 02:37:44,"Yeah that could be nice to have this be able to get jobs on the server, without looking in files, and that could be used by delete. Might look at that in the future.",False,14
+73387,nova/tests/virt/libvirt/test_driver.py,1653,8,1ae5cdf2_e5e1d79b,Line,8389,,2014-06-22 13:43:15,not really related to this patch set,False,14
+73387,nova/tests/virt/libvirt/test_driver.py,7746,8,1ae5cdf2_40f9754d,Line,8389,1ae5cdf2_e5e1d79b,2014-06-23 19:55:01,Done,False,14
+73387,nova/tests/virt/libvirt/test_driver.py,1653,8,1ae5cdf2_05dde3dc,Line,8436,,2014-06-22 13:43:15,ditto,False,14
+73387,nova/tests/virt/libvirt/test_driver.py,7746,8,1ae5cdf2_00ff6d36,Line,8436,1ae5cdf2_05dde3dc,2014-06-23 19:55:01,Done,False,14
+73387,nova/tests/virt/libvirt/test_driver.py,1653,8,1ae5cdf2_c5d69bc2,Line,8547,,2014-06-22 13:43:15,whitespace,False,14
+73387,nova/tests/virt/libvirt/test_driver.py,7746,8,1ae5cdf2_e0ea8173,Line,8547,1ae5cdf2_c5d69bc2,2014-06-23 19:55:01,Done,False,14
+73387,nova/tests/virt/libvirt/test_driver.py,6062,8,1ae5cdf2_c7e13b9c,Line,8573,,2014-06-23 04:08:29,new cases might need mock instead of stub,False,14
+73387,nova/tests/virt/libvirt/test_driver.py,7746,8,1ae5cdf2_c0e585a5,Line,8573,1ae5cdf2_c7e13b9c,2014-06-23 19:55:01,My understanding was that only changes to a large number of unit tests required converting to mock. It seems that a hodgepodge of mock and stub tests will be harder to maintain.,False,14
+73387,nova/virt/libvirt/driver.py,7746,8,1ae5cdf2_005bed55,Line,4907,1ae5cdf2_25ef3f88,2014-06-23 19:55:01,Done,False,14
+96877,modules/livegrep/manifests/init.pp,4146,27,1ae5cdf2_6026fe17,Line,76,,2014-06-18 17:39:15,Is it normal for a Go project to use make and go build to build? Seems weird when in theory make can just do it all for you even if it calls go build...,False,14
+90498,ceilometer/compute/virt/libvirt/inspector.py,9562,4,AAAAXX%2F%2FyG4%3D,Line,172,,2014-04-27 19:44:20,Could you please check if the memory usage value retrieved from libvirt is the same that the one provided by VMware?,False,14
+102197,jenkins_jobs/cmd.py,6987,2,baada198_925dacec,Line,76,,2014-06-30 16:47:17,I would add an example to the help like you did in the commit message.,False,14
+90498,ceilometer/compute/virt/libvirt/inspector.py,6537,4,AAAAXX%2F%2FuBs%3D,Line,183,,2014-04-28 13:38:42,should be units.k if you're going from KB to MB,False,14
+94295,nova/virt/images.py,8787,4,7adec928_ee3b16c6,Line,128,7adec928_17095995,2014-05-23 03:13:50,"The way that patch looks at the moment, it doesn't need a rebase, there's no conflict, yet. It's also a relatively separate problem: clone or no clone, non-raw image is a problem, and if image is already raw, clone will work fine.
+
+Implementation wise, I'm not sure I like to have another ""if rbd"" conditional here, I'll try wrap my head around the logic here and see if it can be streamlined, and comment on the other patch.",False,14
+95329,jenkins_jobs/modules/publishers.py,6987,1,1ae5cdf2_43a1bf92,Line,1955,,2014-06-05 17:12:18,Should we maybe check that the user supplied a valid build result state?,False,14
+95329,jenkins_jobs/modules/publishers.py,6987,1,1ae5cdf2_a866e027,Line,1943,,2014-06-05 17:12:18,Should we maybe check that the user supplied a valid build result state?,False,14
+95329,jenkins_jobs/modules/publishers.py,1054,1,1ae5cdf2_443ec9db,Line,1933,,2014-06-24 14:43:55,"These are already defined in jenkins_jobs/modules/hudson_model.py, and it seems like the definition from there could be reused here.",False,14
+95329,jenkins_jobs/modules/publishers.py,1054,1,1ae5cdf2_7fc42c41,Line,1913,,2014-06-24 14:43:55,Don't suppose there is any way to sensibly condense this while retaining the meaning?,False,14
+94295,nova/virt/images.py,2271,6,3ae8d1ca_5c833dcc,Line,66,,2014-05-26 23:36:52,"Double quotes, one line please.",False,14
+95035,zuul/rpclistener.py,5263,2,7adec928_739c545e,Line,90,,2014-05-22 23:17:29,I think a call to removeChange() would be better here (cancels the running Jenkins jobs as well).,False,14
+94295,nova/virt/libvirt/rbd_utils.py,8787,4,7adec928_4e740a9c,Line,77,7adec928_971c8915,2014-05-23 03:13:50,Done,False,14
+94295,nova/virt/libvirt/rbd_utils.py,5511,4,7adec928_971c8915,Line,77,,2014-05-22 08:07:42,So this needs to go in the previous patch as it is used there along with it's tests.,False,14
+94295,nova/virt/libvirt/rbd_utils.py,8787,4,7adec928_6e9e26ba,Line,65,7adec928_17d87952,2014-05-23 03:13:50,Done,False,14
+94295,nova/virt/libvirt/rbd_utils.py,5511,4,7adec928_17d87952,Line,65,,2014-05-22 08:07:42,As commented on the previous patch this should be dropped.,False,14
+94295,nova/virt/libvirt/rbd_utils.py,2271,3,7adec928_3f6e31ca,Line,173,,2014-05-22 04:19:01,We don't translate debug log messages any more. This is true for the other debug messages in this patchset.,False,14
+100369,nova/virt/libvirt/lvm.py,10115,1,1ae5cdf2_75ddd16f,Line,146,,2014-06-18 22:42:31,"Changed the function name to ""get_volume_size"" because ""volume_size"" is used as a variable at other place.",False,14
+100369,nova/virt/libvirt/lvm.py,10115,1,1ae5cdf2_95ac1def,Line,133,1ae5cdf2_d6f60a90,2014-06-18 22:42:31,I agree. The return format is quite hard to understand. I added data format example. Please confirm the comment is enough to understand.,False,14
+100381,trove/common/cfg.py,10725,2,1ae5cdf2_ad300408,Line,240,,2014-06-26 05:55:55,"This parameter is used today as a template for ""guest_config"", its name is misleading (see taskmanager.py). But you probably have to revert the removal of "".sample"" because:
+
+1. The template file still contains .sample suffix (see under trove/etc/trove/trove-guestagent.conf.sample). I know that installers probably can or should remove that .sample during installation process or users just override this parameter in configuration - I don't know, but this change potentially breaks some working installations 
+
+2. This change is not related to the subject and not described in the commit message.",False,14
+100369,nova/virt/libvirt/lvm.py,1779,1,1ae5cdf2_d6f60a90,Line,133,,2014-06-17 10:00:57,Please document the returned data format here - it is really hard to guess it from the code,False,14
+100369,nova/virt/libvirt/lvm.py,1779,1,1ae5cdf2_5603da75,Line,122,,2014-06-17 10:00:57,Be nice to document the return data format too,False,14
+100369,nova/virt/libvirt/lvm.py,10115,1,1ae5cdf2_552295a3,Line,119,1ae5cdf2_96e642e7,2014-06-18 22:42:31,"I removed ""logical"" from all method name in lvm.py.?Fixed all function calls related to this change.",False,14
+100369,nova/virt/libvirt/lvm.py,1779,1,1ae5cdf2_96e642e7,Line,119,,2014-06-17 10:00:57,I'd remove the word 'logical' from this method and all the others below. ie Just 'list_volumes' is sufficient IMHO.,False,14
+100369,nova/virt/libvirt/lvm.py,10115,1,1ae5cdf2_5a14824c,Line,49,1ae5cdf2_f6c30637,2014-06-18 22:42:31,"I changed ""create_lvm_image"" to ""create_volume"".?Fixed all function calls related to this change.",False,14
+100369,nova/virt/libvirt/lvm.py,1779,1,1ae5cdf2_f6c30637,Line,49,,2014-06-17 10:00:57,s/create_lvm_image/create_volume/,False,14
+100369,nova/virt/libvirt/imagebackend.py,10115,1,1ae5cdf2_da517231,Line,35,1ae5cdf2_36ec8ebb,2014-06-18 22:42:31,I removed the 'as libvirt_lvm' and used 'lvm'.?Fixed all function calls related to this change.,False,14
+100369,nova/virt/libvirt/imagebackend.py,1779,1,1ae5cdf2_36ec8ebb,Line,35,,2014-06-17 10:00:57,IMHO the 'as libvirt_lvm' bit is not really needed - just use the bare 'lvm' name as is so it is less verbose.,False,14
+100369,nova/virt/libvirt/driver.py,10115,1,1ae5cdf2_ba7d86b4,Line,93,1ae5cdf2_b60ede8a,2014-06-18 22:42:31,I removed the 'as libvirt_lvm' and used 'lvm'.?Fixed all function calls related to this change.,False,14
+100369,nova/virt/libvirt/driver.py,1779,1,1ae5cdf2_b60ede8a,Line,93,,2014-06-17 10:00:57,Remove the 'as libvirt_lvm' here - just use bare 'lvm',False,14
+100369,nova/tests/virt/libvirt/test_utils.py,10115,2,1ae5cdf2_103c842e,Line,248,1ae5cdf2_27514c62,2014-06-19 13:07:49,I missed too. Thank you for your indication. I will move this to test_lvm.py.,False,14
+100369,nova/tests/virt/libvirt/test_utils.py,1779,2,1ae5cdf2_27514c62,Line,248,,2014-06-19 11:44:59,"Sorry I missed this before - since we're moving the functions out of utils.py into lvm.py, we should do the same with the tests too. eg create a test_lvm.py for the functions that now like in lvm.poy",False,14
+94295,nova/virt/libvirt/imagebackend.py,8787,4,7adec928_0e4be259,Line,614,7adec928_97fe4937,2014-05-23 03:13:50,Done,False,14
+94295,nova/virt/libvirt/imagebackend.py,5511,4,7adec928_97fe4937,Line,614,,2014-05-22 08:07:42,Hmmm - we have these kind of checks in cache/create already dont't we? Do we need it here to in the fetch function?,False,14
+98286,specs/juno/restructure-for-plugins.rst,6783,7,1ae5cdf2_7c17d054,Line,115,1ae5cdf2_1a033e0e,2014-06-17 13:12:04,"Ya, that's what I was thinking. I was concerned that if common/resources.py has methods like store_key(), get_key(), etc. that is is essentially the same interface as SecretStore, but I'm not sure if that will be the case.
+
+I think a factory method could be good in common/resources.py for retrieving a SecretStore. It could be something like get_secret_store(..) and the parameters would be properties of the secret store that you would like supported.",False,14
+100369,nova/virt/libvirt/lvm.py,10115,1,1ae5cdf2_b53039ea,Line,122,1ae5cdf2_5603da75,2014-06-18 22:42:31,Added. Please confirm the comment is enough to understand.,False,14
+100381,trove/common/cfg.py,9749,2,1ae5cdf2_ff870010,Line,240,1ae5cdf2_ad300408,2014-06-26 14:15:11,"I disagree, this default is a bit dangerous. This seems directly related to the injection of  the guest conf file from the taskmanager, but I could move this to a separate bug and patch if folks prefer. 
+
+The primary issue with the current default is not the .sample extension but rather the $pybasedir. The taskmanager injection of this conf file is optional: it checks if the specified guest_config file exists, and if so injects it into the guest image at boot. 
+
+However we are defaulting to a file in the trove src tree that /always/ exists (and is intended as a template only). If you were to create a guest image with its own guest conf properly configured, the current default would cause your conf to be overwritten by the sample.
+
+I suggest:
+ - the sample file remains where it is with the same extension
+ - the default option should be changed as I've proposed
+
+This means that:
+ - If the user tailors all the /etc/trove/*conf files on their controller node, the right thing will happen and the tailored guest conf will be injected. 
+ - If the user chooses to only tailor guest conf on their images, they don't have to worry about a sample file being injected over the top.",False,14
+100381,trove/common/cfg.py,10725,2,1ae5cdf2_da4172a7,Line,240,1ae5cdf2_ff870010,2014-06-26 16:00:25,"Ok, make sense.",False,14
+95329,tests/publishers/fixtures/sounds002.yaml,6987,1,1ae5cdf2_639ebb64,Line,3,,2014-06-05 17:12:18,you failure in all of the examples.  how about use a different one here?,False,14
+102197,/COMMIT_MSG,6987,2,baada198_f2e6e843,Line,11,,2014-06-30 16:47:17,"My preference is to patch python jenkins.  That's just my preference others might disagree though.  
+
+So if it's done in JJB I don't think this would require multiple config files.  I think you can accomplish by adding a sections to jenkins_jobs.ini",False,14
+90498,ceilometer/compute/virt/libvirt/inspector.py,6537,4,AAAAXX%2F%2FtvI%3D,Line,183,AAAAXX%2F%2FuBs%3D,2014-04-28 14:06:13,errr.. i'm not sure why i typed this.,False,14
+96877,modules/livegrep/manifests/init.pp,7680,26,1ae5cdf2_49420669,Line,65,1ae5cdf2_514644c1,2014-06-11 16:41:40,Done,False,14
+90498,ceilometer/tests/compute/virt/libvirt/test_inspector.py,6537,4,bad4c104_12c18a80,Line,252,,2014-04-29 14:05:00,"are we writing nested with statements to support py2.6?
+
+i'm wondering if it's just cleaner to use contextlib.nested and fix them all together later",False,14
+91753,swift/common/manager.py,10209,1,1ae5cdf2_d0360552,Line,353,,2014-06-02 07:02:34,"Hi, Just curious is this for the use case wherein server is 'container', 'account', 'object' ?",False,14
+93200,/COMMIT_MSG,7730,2,7adec928_c491e49b,Line,9,,2014-05-11 14:05:08,It is really nice to fix all of these points but you should separate in different commits.,False,14
+93200,/COMMIT_MSG,7730,2,7adec928_a4969892,Line,12,,2014-05-11 14:05:08,"You need to add a tag to link the bug with LP
+
+Closes-Bug: #XXX or Partial-Bug... please take a look at: https://wiki.openstack.org/wiki/Gerrit_Workflow#Committing_Changes",False,14
+93338,climateclient/v2/leases.py,9331,1,7adec928_2576103f,Line,77,,2014-05-22 14:38:39,Yes. Put this in a method.,False,14
+94295,nova/tests/virt/libvirt/test_rbd_utils.py,8412,12,1ae5cdf2_34f60690,Line,106,,2014-06-11 06:40:34,"You don't need use context manager, use decorator:
+
+    @mock.patch.object(rbd_utils, 'rbd')
+    @mock.patch.object(rbd_utils, 'rados')
+    @mock.patch.object(rbd_utils.RBDDriver, '_get_fsid')
+    def test_cloneable(self, mock_get_fsid, mock_rados, mock_rbd):",False,14
+94295,nova/tests/virt/libvirt/test_rbd_utils.py,8787,12,1ae5cdf2_0c31be59,Line,106,1ae5cdf2_34f60690,2014-06-12 21:44:55,Done,False,14
+94295,nova/tests/virt/libvirt/test_rbd_utils.py,8412,12,1ae5cdf2_942c3a04,Line,115,,2014-06-11 06:40:34,ditto,False,14
+94295,nova/tests/virt/libvirt/test_rbd_utils.py,8787,12,1ae5cdf2_4c37464d,Line,115,1ae5cdf2_942c3a04,2014-06-12 21:44:55,Done,False,14
+94295,nova/tests/virt/libvirt/test_rbd_utils.py,8412,12,1ae5cdf2_b431365c,Line,126,,2014-06-11 06:40:34,ditto,False,14
+94295,nova/tests/virt/libvirt/test_rbd_utils.py,8787,12,1ae5cdf2_ec1492a1,Line,126,1ae5cdf2_b431365c,2014-06-12 21:44:55,Done,False,14
+94295,nova/tests/virt/libvirt/test_rbd_utils.py,8412,12,1ae5cdf2_d432425d,Line,138,,2014-06-11 06:40:34,ditto,False,14
+94295,nova/tests/virt/libvirt/test_rbd_utils.py,8787,12,1ae5cdf2_2f34ac48,Line,138,1ae5cdf2_d432425d,2014-06-12 21:44:55,Done,False,14
+94295,nova/virt/images.py,2271,3,7adec928_9f3d85be,Line,66,,2014-05-22 04:19:01,"We use double quotes for doc comments, and put the closing quotes at the end of the previous line.",False,14
+94295,nova/virt/images.py,5511,4,7adec928_17095995,Line,128,,2014-05-22 08:07:42,This will probably trip you up - see: https://review.openstack.org/#/c/94322/ that tries to fix it and maybe get him to rebase on top of you.,False,14
+96877,modules/livegrep/files/livegrep.json,4146,27,1ae5cdf2_a01c86c3,Line,9,,2014-06-18 17:39:15,Why not 80 and proxy to this local service?,False,14
+96877,modules/livegrep/files/livegrep.json,6554,27,1ae5cdf2_ba47464b,Line,9,1ae5cdf2_8086aab7,2014-06-18 22:20:52,Listen on 127.0.0.1:8080 with livegrep-web then set up apache to mod_proxy from 0.0.0.0:80 to 127.0.0.1:8080,False,14
+96877,modules/livegrep/files/livegrep.json,7680,27,1ae5cdf2_8086aab7,Line,9,1ae5cdf2_a01c86c3,2014-06-18 17:43:58,"What do you mean? If livegrep listens on <1024 that's a big hassle. Right now the public port is just 8080, which is wrong. How do other projects expose a public 80 port?",False,14
+96877,modules/livegrep/manifests/init.pp,7233,26,1ae5cdf2_31f61890,Line,47,,2014-06-11 06:23:07,Can't you just add golang to the above list of packages?,False,14
+100381,trove/taskmanager/models.py,1925,1,1ae5cdf2_81a7f5a6,Line,331,,2014-06-24 03:32:53,Why don't we move this file to /etc/trove as well?,False,14
+81410,trove/common/apischema.py,6162,15,AAAAXH%2F%2Fwaw%3D,Line,457,AAAAXH%2F%2Fwqk%3D,2014-04-17 17:16:36,It might not always be a url_ref.  There are cases where we will just point to a location on disk.,False,14
+100381,trove/taskmanager/models.py,9749,1,1ae5cdf2_bca07d43,Line,331,1ae5cdf2_81a7f5a6,2014-06-24 15:04:39,"Agreed, had raised that idea on the bug too. 
+
+I didn't make that change because it also requires changes in trove-integration (the upstart scripts) and things were in flux there -- but I'll take a look at it now.",False,14
+100381,trove/taskmanager/models.py,9749,2,1ae5cdf2_1f8d8c31,Line,577,1ae5cdf2_2821429e,2014-06-26 14:15:11,"Sure, will do.",False,14
+100381,trove/taskmanager/models.py,10725,2,1ae5cdf2_885df618,Line,580,,2014-06-26 05:55:55,"1. you can use the same const here.
+
+2. ""guest_config"" in line 579 and full hardcoded path in the next line is confusing. I understand semantic differences between them but its still confusing.",False,14
+96877,modules/livegrep/manifests/init.pp,7680,26,1ae5cdf2_49b4c681,Line,47,1ae5cdf2_31f61890,2014-06-11 16:41:40,Done,False,14
+96877,modules/livegrep/manifests/init.pp,7233,26,1ae5cdf2_313d382c,Line,56,,2014-06-11 06:23:07,"I prefer to set the path attribute to make the command easier to read and maintain. 
+
+path        => '/usr/local/bin:/usr/bin:/bin/',",False,14
+96877,modules/livegrep/manifests/init.pp,7680,26,1ae5cdf2_c97e16af,Line,56,1ae5cdf2_313d382c,2014-06-11 16:41:40,Done,False,14
+96877,modules/livegrep/manifests/init.pp,7233,26,1ae5cdf2_514644c1,Line,65,,2014-06-11 06:23:07,"Path attribute here too.
+
+The array when sent to a package resource rule will expand out into a package resource for each element in the array, So Package['golang'] will still match even in the array. (according to my private tests I just ran).",False,14
+100381,trove/taskmanager/models.py,10725,2,1ae5cdf2_2821429e,Line,577,,2014-06-26 05:55:55,"Can you create a constant, please?
+
+TROVE_CONFIG_DIR or something like that.",False,14
+81410,trove/common/apischema.py,1925,19,AAAAXH%2F%2FPsM%3D,Line,454,,2014-04-23 03:07:57,"It seems that the strategy is defined by a CONF value according to: https://review.openstack.org/#/c/85225/16/trove/guestagent/upgrade/upgradeagent.py
+
+What's the reason for passing it in as an API argument?",False,14
+96877,modules/livegrep/manifests/init.pp,7680,27,1ae5cdf2_00c29ae8,Line,76,1ae5cdf2_6026fe17,2014-06-18 17:43:58,"The C++ portions use Make, and the go portions use go build.",False,14
+81410,trove/extensions/mgmt/upgrade/service.py,8415,30,1ae5cdf2_9659b95c,Line,46,,2014-06-02 22:23:28,"As for me, i feel a bit uncomfortable with naming here.
+Notifications is totally different thing inside OpenStack. Take a look at https://github.com/openstack/trove/blob/master/trove/taskmanager/models.py#L73-L133
+
+I'd really suggest to rename class and its usage to avoid terms collision/mis-understanding.",False,14
+81410,trove/extensions/mgmt/upgrade/service.py,6162,34,1ae5cdf2_735f08e5,Line,37,1ae5cdf2_b3a7d54f,2014-06-24 14:13:03,I need to read up on how we are doing this.,False,14
+85580,jenkins_jobs/cmd.py,11011,7,AAAAXH%2F%2Fm%2BA%3D,Line,56,AAAAXH%2F%2FnzY%3D,2014-04-18 20:40:12,I think I'll keep the default of '.'  here and solve the problem below...,False,14
+85580,jenkins_jobs/cmd.py,6987,7,AAAAXH%2F%2FnzY%3D,Line,56,,2014-04-18 18:46:05,i think you want default=None here? otherwise your logic for options.path will always be true.,False,14
+85580,jenkins_jobs/cmd.py,11011,5,AAAAXH%2F%2Fpc0%3D,Line,144,AAAAXH%2F%2F0Ow%3D,2014-04-18 15:27:58,"I don't think so, though I had to look at this for a little bit to remember how it works as well (maybe a sign that refactoring is needed...). It passes the first parameter of `job` which are pulled from `options.name` (`options.names` with the new modifications).
+
+This is because the user can specify multiple glob expressions on the command-line and options.names is a list. This is just like the existing `delete` command, from which I copied code.
+
+So I think this is OK, but let me know if it isn't.",False,14
+85580,jenkins_jobs/cmd.py,2475,5,AAAAXH%2F%2F0Ow%3D,Line,144,,2014-04-17 08:14:16,You apparently forgot to pass glob_name=options.name :-),False,14
+81410,trove/extensions/mgmt/upgrade/service.py,5293,34,dab895d6_c8f4d789,Line,37,1ae5cdf2_735f08e5,2014-06-29 09:45:37,"You just need to remove the leading _ for the LOG.debug messages. That's what does the translation, and debug logs don't need translation.",False,14
+81410,trove/extensions/mgmt/upgrade/service.py,8415,34,1ae5cdf2_b3a7d54f,Line,37,,2014-06-24 12:31:37,debug should come without translation,False,14
+81410,trove/extensions/mgmt/upgrade/service.py,6162,30,1ae5cdf2_542ba92f,Line,46,1ae5cdf2_9659b95c,2014-06-02 23:30:25,I see your point.  Notifications is used in another part of the code.  How about UpgradeMessage?,False,14
+97533,gear/__init__.py,7069,3,1ae5cdf2_bffb61bf,Line,2447,,2014-06-06 07:12:46,ditto,False,14
+97533,gear/__init__.py,7069,3,1ae5cdf2_3f0831d9,Line,2430,,2014-06-06 07:12:46,Removing this doesn't seem to have anything to do with your commit?,False,14
+97533,gear/__init__.py,4146,2,1ae5cdf2_00251108,Line,68,,2014-06-04 18:45:56,"Can you format this docstring like this:
+
+  """"""select.poll emulation using select.select
+
+  Only register and poll are needed at the moment.
+  """"""
+
+The alignment of the current doc string is funny.",False,14
+97533,gear/__init__.py,4146,2,1ae5cdf2_e0274510,Line,54,,2014-06-04 18:45:56,Not sure I would stand behind the last part of this comment :) Performance should be important...,False,14
+85580,jenkins_jobs/cmd.py,11011,5,AAAAXH%2F%2FpTw%3D,Line,142,AAAAXH%2F%2F0O4%3D,2014-04-18 15:27:58,"but then it wouldn't pass the name?
+
+I'm realizing that this is confusing.
+
+options.name, contrary to what it sounds like from the name, is not a job name. It's a glob pattern. Not all obvious from the name and makes it hard to understand the code. Should we rename it to options.job_name_globs? And then also `job` in the for loop above would be renamed to `job_name_glob`...
+
+What do you think?
+
+I hesitate to do that here though, because then it would be inconsistent with other commands. It seems like it should be done across the board in another changeset...?",False,14
+85580,jenkins_jobs/cmd.py,2475,5,AAAAXH%2F%2F0O4%3D,Line,142,,2014-04-17 08:14:16,The name can be a glob such as 'project*' so I would just invoke builder.browse_jobs(),False,14
+66882,tempest/scenario/test_multiple_az_ops.py,5689,15,AAAAXH%2F%2Fy7g%3D,Line,29,AAAAXH%2F%2F1B8%3D,2014-04-17 12:04:55,Done,False,14
+81410,trove/extensions/routes/mgmt.py,1925,15,AAAAXH%2F%2Fvlc%3D,Line,84,,2014-04-17 19:04:45,"Thanks for adding 'instances' to this route.  Now the only question i have is why is the instance_id part of the body, and not the route?  
+
+The backend code seems to upgrade a single instance.  In that case, the ID should be in the URI i'd think.",False,14
+81410,trove/extensions/routes/mgmt.py,6162,15,AAAAXH%2F%2FuA0%3D,Line,84,AAAAXH%2F%2Fvlc%3D,2014-04-17 22:58:56,We can do this but if we wanted to include a list of guest agents one day what would the URL look like?,False,14
+81410,trove/guestagent/api.py,1925,15,AAAAXH%2F%2Fvmo%3D,Line,274,,2014-04-17 19:04:45,"We should be using just a _cast() here I think.  The cast_with_consumer actually creates an additional consumer for this instance.  The guest agent is our consumer, and we shouldn't need to create another one on the producer side.",False,14
+81410,trove/guestagent/api.py,6162,15,AAAAXH%2F%2FuRo%3D,Line,274,AAAAXH%2F%2Fvmo%3D,2014-04-17 22:12:00,"I need to check with hub_cap on this because this was what the original implementation had.  I'm okay with changing it, just have to confirm.",False,14
+87090,jenkins_jobs/builder.py,1054,4,AAAAXX%2F%2F1xM%3D,Line,589,,2014-04-25 21:12:27,Is there a reason to split this and 'list_jobs()' into two separate functions? Planning to refactor other areas to make use of it?,False,14
+87090,jenkins_jobs/builder.py,11011,4,9ad9bd40_e6bb2fe3,Line,589,AAAAXX%2F%2F1xM%3D,2014-05-05 02:37:44,"Yep, exactly. I figured getting the matching jobs is a pretty generic thing that a lot of commands could use. ""list"" is one. ""browse"" is another (see https://review.openstack.org/85580)",False,14
+87090,jenkins_jobs/builder.py,1054,4,AAAAXX%2F%2F1wI%3D,Line,590,,2014-04-25 21:12:27,"Also thinking that since I can't see how you can return jobs without loading files that it makes more sense to follow the update_job() signature than the delete_job() signature.
+
+Unless of course you decide to retrieve the list of jobs from the jenkins instance if there is no file specified?",False,14
+98286,specs/juno/restructure-for-plugins.rst,6783,3,1ae5cdf2_fa5e69e8,Line,61,1ae5cdf2_3354cec9,2014-06-10 13:26:14,+1 I just reread it using that formatting and it makes more sense now :),False,14
+81410,trove/guestagent/api.py,1925,15,AAAAXH%2F%2Fvpc%3D,Line,288,,2014-04-17 19:04:45,Should this method be removed?  I see upgrade and update_guest() in this API.  No implementation exists for either in the guest manager.  Should we remove one of them to clean this up?,False,14
+81410,trove/guestagent/api.py,6162,15,AAAAXH%2F%2FuRk%3D,Line,288,AAAAXH%2F%2Fvpc%3D,2014-04-17 22:12:00,"I think this might be used somewhere, I'll check again.",False,14
+81410,trove/extensions/mgmt/upgrade/service.py,8415,22,AAAAXH%2F%2FDBk%3D,Line,44,,2014-04-24 11:52:21,"None is not required, because get returns None if dict has no such attribute",False,14
+81410,trove/extensions/mgmt/upgrade/service.py,6162,14,AAAAW3%2F%2FSgQ%3D,Line,34,AAAAW3%2F%2FY0M%3D,2014-04-15 14:52:51,I prefer the simpler URL that is presented.  There is a blueprint and wiki page that accompanies this review.,False,14
+81410,trove/guestagent/api.py,1925,19,AAAAXH%2F%2FPrg%3D,Line,275,,2014-04-23 03:07:57,instance_id seems unnecessary to pass to the Guest.  Doesn't seem like we do anything with it downstream.  The guest already should know it based on agent.config,False,14
+81410,trove/guestagent/api.py,6162,19,AAAAXH%2F%2FKlU%3D,Line,275,AAAAXH%2F%2FPrg%3D,2014-04-23 15:46:51,Done,False,14
+81410,trove/extensions/mgmt/upgrade/service.py,1925,14,AAAAW3%2F%2FPKA%3D,Line,34,AAAAW3%2F%2FSgQ%3D,2014-04-15 21:15:49,"Sorry, i missed that in the original BP.  The issue i have with this URL is that it isn't clear that you're upgrading a instance resource.  If this URL actually upgraded all resources for a tenant, then it would make a lot more sense.",False,14
+97533,/COMMIT_MSG,7069,3,1ae5cdf2_1f4ff534,Line,7,,2014-06-06 07:12:46,If Clark's input was significant consider using Co-Authored by: name <email> in the commit message (on it's own line down the bottom). As per https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references,False,14
+81410,trove/extensions/routes/mgmt.py,8415,13,AAAAW3%2F%2FwsA%3D,Line,84,,2014-04-10 15:41:23,i think the route should be like {tenant_id}/mgmt/guest_upgrade,False,14
+81410,trove/extensions/routes/mgmt.py,6162,13,AAAAW3%2F%2FwSk%3D,Line,84,AAAAW3%2F%2FwsA%3D,2014-04-10 15:57:26,"I think I will leave it like this for now as it was already agreed upon in the bp.  Also, it maps closer to the RPC method that is invoked.",False,14
+87090,jenkins_jobs/builder.py,2475,2,AAAAXH%2F%2F0NI%3D,Line,583,,2014-04-17 08:20:05,glob_name should default to None.,False,14
+98286,specs/juno/restructure-for-plugins.rst,994,3,1ae5cdf2_8efd7e71,Line,61,,2014-06-06 21:33:42,"Looks good, just one nit.
+can we put one more tab for all .py files, will be good to read.",False,14
+98286,specs/juno/restructure-for-plugins.rst,6783,3,1ae5cdf2_438928c9,Line,54,1ae5cdf2_af01f307,2014-06-10 21:20:00,I would be good with that.,False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,3,1ae5cdf2_af01f307,Line,54,1ae5cdf2_7d3fb325,2014-06-10 19:41:17,"So could we simplify the structure as follows?:
+
+plugins/
+    interfaces/
+          (abstract plugin contracts here)
+    (plugin implementation modules here)",False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,3,1ae5cdf2_e9aa7cd1,Line,61,1ae5cdf2_8efd7e71,2014-06-06 21:54:25,"Do you mean showing the existing .py files alongside the revised/new ones?
+Or just adding a flat list of the revised/new .py files after the indented up there now?",False,14
+98286,specs/juno/restructure-for-plugins.rst,9234,3,1ae5cdf2_3354cec9,Line,61,1ae5cdf2_e9aa7cd1,2014-06-07 01:32:08,"I think he means indenting the .py files so they don't appear to be at the same level as their containing folders.
+
+Like:
+
+folder1/
+          file1.py
+          file2.py
+folder2/
+          file3.py",False,14
+98286,specs/juno/restructure-for-plugins.rst,6783,4,1ae5cdf2_72a16c93,Line,53,,2014-06-11 15:39:38,This is listed twice.,False,14
+87082,nova/tests/api/openstack/compute/contrib/test_attach_interfaces.py,5754,8,1ae5cdf2_89d8ea80,Line,305,1ae5cdf2_903c8fc1,2014-06-17 07:56:58,Done,False,14
+87082,nova/tests/api/openstack/compute/contrib/test_attach_interfaces.py,6167,8,1ae5cdf2_903c8fc1,Line,305,,2014-06-17 05:50:52,s/fake_attach_interface_invalid_state/fake_detach_interface_invalid_state/,False,14
+87082,nova/tests/api/openstack/compute/contrib/test_attach_interfaces.py,5754,7,1ae5cdf2_665e7278,Line,304,1ae5cdf2_efb6093e,2014-06-17 03:56:39,"thanks, this is copy-paste mistake.",False,14
+87082,nova/tests/api/openstack/compute/contrib/test_attach_interfaces.py,4690,7,1ae5cdf2_efb6093e,Line,304,,2014-06-16 02:06:46,"This test is misnamed as you're not testing ""not found"" (copy paste?). There's already a test_delete_interface_not_found at line 195.",False,14
+98286,specs/juno/restructure-for-plugins.rst,9914,3,1ae5cdf2_7d3fb325,Line,54,1ae5cdf2_7aca5950,2014-06-10 13:47:29,"Having the implementations under each interface is problematic for plugins that want to implement more than one type of interface (like dogtag for instance) - which currently implements store and generate and will end up implementing certificate.  Under your layout, files for the dogtag plugin would have to be duplicated - at least insofar as initialization code.
+
+interfaces seems like a nice place to put the contracts that plugins might choose to enforce.
+
+As to default/external - I'm open to different names.  Those were just the first ones that popped to mind.
+
+But the idea of default is for it to be the existing barbican infrastructure (with its second level of stevedore)  The idea would be to take what is currently in crypto and duplicate it essentially unchanged in that location.  That will make the transition to this new structure easier.  Its the ""default"" implementation if you don't have dogtag or kmip servers.",False,14
+81410,trove/common/apischema.py,6162,19,AAAAXH%2F%2FKlg%3D,Line,454,AAAAXH%2F%2FPsM%3D,2014-04-23 15:46:51,Done,False,14
+98286,specs/juno/restructure-for-plugins.rst,6783,3,1ae5cdf2_7aca5950,Line,54,,2014-06-10 13:26:14,"Why external? It seems like if external then where is internal.
+
+What about store/? There could be another SecretStore in the future that runs in software but does not store keys externally.
+
+I was envisioning the layout to be something like:
+
+store/ -- contains secret store interface and all implementations
+  store.py -- SecretStore definition
+  barbican_hsm.py
+  dogtag.py
+  kmip.py
+  symantec.py
+generate/ -- contains generate.py and all implementations for generate
+certificate???/ -- probably not best name but probably name of interface
+
+I think my biggest hiccup is with default and external dir names. I don't think those are the most intuitive.",False,14
+98286,specs/juno/restructure-for-plugins.rst,9234,3,1ae5cdf2_73cf36b4,Line,28,,2014-06-07 01:32:08,types *of* plugins,False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,2,1ae5cdf2_8e0e5ee4,Line,165,1ae5cdf2_d59e3c54,2014-06-06 21:26:42,"Good point, will modify this accordingly.",False,14
+98286,specs/juno/restructure-for-plugins.rst,994,2,1ae5cdf2_d59e3c54,Line,165,,2014-06-06 16:55:15,But there will be some test code change is the package structure will be change.,False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,2,1ae5cdf2_4ea0d6a5,Line,61,1ae5cdf2_b0529e66,2014-06-06 21:26:42,"I've seen some projects declare that non-core implementations should be placed in another repository than Barbican. See this Heat wiki for example: https://wiki.openstack.org/wiki/Heat/Plugins  
+
+So we've been thinking there are some plugins that come packaged with Barbican but are still optional and turned off by default...Dogtag is a good example of such a plugin implementation. 
+
+Does that address your concerns though?",False,14
+85580,jenkins_jobs/cmd.py,6987,7,AAAAXH%2F%2Fn0I%3D,Line,141,,2014-04-18 18:46:05,options.path will always be true,False,14
+85580,jenkins_jobs/cmd.py,11011,7,AAAAXH%2F%2Fm9s%3D,Line,141,AAAAXH%2F%2Fn0I%3D,2014-04-18 20:40:12,"Yes, good point. I am going to upload another change with a refactoring that gets rid of both this `if` statement and the `for` loop. It works by passing a list of glob patterns in instead of one by one and letting YamlParser.generateXML use its built-in filtering (which operates on a list of glob patterns).",False,14
+87082,nova/compute/api.py,4393,9,1ae5cdf2_e2bc9b6e,Line,2853,,2014-06-27 16:21:24,"I don't think that you can do this in SHELVED_OFFLOADED state because the virt driver no longer knows about it and thus the action will fail I think. The same may be for SHELVED as well, but I'm not sure.
+
+Have you tested that this actually works for each of the states?",False,14
+87082,nova/tests/api/openstack/compute/plugins/v3/test_attach_interfaces.py,5754,8,1ae5cdf2_49cee2b5,Line,395,1ae5cdf2_10eddf25,2014-06-17 07:56:58,Done,False,14
+87082,nova/tests/api/openstack/compute/plugins/v3/test_attach_interfaces.py,6167,8,1ae5cdf2_10eddf25,Line,395,,2014-06-17 05:50:52,ditto,False,14
+87082,nova/tests/api/openstack/compute/plugins/v3/test_attach_interfaces.py,5754,8,1ae5cdf2_29c996ac,Line,389,1ae5cdf2_d08b7766,2014-06-17 07:56:58,Done,False,14
+81410,trove/extensions/mgmt/upgrade/service.py,1925,14,AAAAW3%2F%2FY0M%3D,Line,34,,2014-04-14 23:12:53,"Seems like the more restful approach, since we're upgrading a instance at a time would be to extend the MgmtInstanceController.  A the upgrade path could look like /mgmt/instances/{id}/upgrade",False,14
+87082,nova/tests/api/openstack/compute/plugins/v3/test_attach_interfaces.py,6167,8,1ae5cdf2_d08b7766,Line,389,,2014-06-17 05:50:52,ditto,False,14
+87082,nova/tests/api/openstack/compute/plugins/v3/test_attach_interfaces.py,6167,2,AAAAW3%2F%2FYP0%3D,Line,380,,2014-04-15 01:41:49,Please use FAKE_NET_ID1 or something instead of 'id' for net_id because 'id' is not a uuid format. That will be BadRequest not Conflict if adding the format check code. I am working for it on https://review.openstack.org/#/c/70353/,False,14
+87082,nova/tests/api/openstack/compute/contrib/test_attach_interfaces.py,5754,8,1ae5cdf2_a9e5a639,Line,311,1ae5cdf2_b060abd0,2014-06-17 07:56:58,Done,False,14
+87082,nova/tests/api/openstack/compute/contrib/test_attach_interfaces.py,6167,8,1ae5cdf2_b060abd0,Line,311,,2014-06-17 05:50:52,s/fake_attach_interface_invalid_state/fake_detach_interface_invalid_state/,False,14
+97533,gear/__init__.py,7069,3,1ae5cdf2_9fdf8539,Line,118,,2014-06-06 07:12:46,Shouldn't this be a method call?,False,14
+97533,gear/__init__.py,7069,3,1ae5cdf2_9f286534,Line,119,,2014-06-06 07:12:46,"This debug message could be more verbose. eg ""Using eventlet instead of select.poll""",False,14
+98286,specs/juno/restructure-for-plugins.rst,994,2,1ae5cdf2_b0529e66,Line,61,,2014-06-06 16:55:15,"Wondering is it good idea to have an ""extension"" package. Vendor might want to have a plugin which they don't want to push to upstream? Or external is the right place for such plugin?
+
+Thoughts?",False,14
+87082,nova/tests/api/openstack/compute/plugins/v3/test_attach_interfaces.py,5754,2,AAAAW3%2F%2FXqA%3D,Line,380,AAAAW3%2F%2FYP0%3D,2014-04-15 08:09:46,Done,False,14
+81410,trove/extensions/mgmt/upgrade/service.py,8415,12,AAAAWn%2F%2F49A%3D,Line,41,,2014-04-08 17:43:02,"i think this attributes should be retrieved in the more restrict way, because they are required
+
+body[key]",False,14
+98286,specs/juno/restructure-for-plugins.rst,994,3,1ae5cdf2_d3129c57,Line,61,1ae5cdf2_3354cec9,2014-06-10 16:38:04,Correct,False,14
+81410,trove/common/apischema.py,6156,23,facab960_08908beb,Line,453,,2014-04-28 21:39:16,I am not sure what this is supposed to do. there should be a type specified here,False,14
+81410,trove/extensions/mgmt/upgrade/models.py,1925,29,9ad9bd40_3ec15c54,Line,29,,2014-05-06 22:59:16,"I would echo Justin's comments on Patchset 23.  If there is a need to validate here, why not also perform the same validation in the json schema?
+
+And if you do that validation there.. doesn't this validation just become redundant since the values are being copied from the request body to the guest message?",False,14
+81410,trove/extensions/mgmt/upgrade/models.py,5390,26,bad4c104_00e4e639,Line,16,,2014-04-29 00:51:27,"Instead of directly importing the guestagent API, use the remote.create_guest_client. It does the same as what you are doing but having it accessed it from remote keeps it centralized.",False,14
+85580,jenkins_jobs/cmd.py,2475,5,AAAAXH%2F%2F0PI%3D,Line,141,,2014-04-17 08:14:16,You can drop it and let it be none,False,14
+85580,jenkins_jobs/cmd.py,11011,5,AAAAXH%2F%2Fpdk%3D,Line,51,AAAAXH%2F%2F0PM%3D,2014-04-18 15:27:58,Done,False,14
+85580,jenkins_jobs/builder.py,11011,10,AAAAXH%2F%2FUC4%3D,Line,595,AAAAXH%2F%2FccI%3D,2014-04-22 15:15:04,"The reason for the fn='.' is that you can then do stuff in a directory full of .yaml files and it works without you specifying a filename or directory.
+
+fn could be None if some calling code passes fn=None. It doesn't look like this can happen in normal usage of jenkins-jobs, but it could happen if someone writes a tool on top of jjb (and actually we have a tool at SurveyMonkey that uses jjb).",False,14
+85580,jenkins_jobs/cmd.py,2475,5,AAAAXH%2F%2F0PM%3D,Line,51,,2014-04-17 08:14:16,"Would rename it 'names' (plural) just like the 'update' commands and adjust the help to 'name(s) of job(s)' to be consistent.
+
+Per my comment on the other file, should default to None. Then that will be passed to the YamlParser as a job/glob filter.",False,14
+81410,trove/extensions/mgmt/upgrade/models.py,6156,23,9ad9bd40_49551ec5,Line,30,facab960_96259cad,2014-04-30 18:52:17,no the validation only works for paths that go through the api layer.  however if there are validations on the messages shouldn't they also be in the api schema?,False,14
+81410,trove/extensions/mgmt/upgrade/models.py,6162,23,facab960_96259cad,Line,30,facab960_28bc6f6c,2014-04-28 22:39:22,"The validation above is meant to be here to provide a check before the database column lengths are exceeded.
+
+Having validation at the API level would be nice too but if the code is called from elsewhere in the code it would still get validated right?",False,14
+85580,jenkins_jobs/cmd.py,2475,1,AAAAW3%2F%2F7eg%3D,Line,140,,2014-04-09 12:40:12,Just pass options.name to browse_jobs() which then will pass it down to generateXML().,False,14
+98286,specs/juno/restructure-for-plugins.rst,9914,5,1ae5cdf2_2d9046ec,Line,50,,2014-06-12 14:01:19,"More likely than not, we expect to be able to define a base PluginManager that reads a config parameter that determines which plugins are configured, and contains logic to select a plugin for an operation based on whether that plugin supports the relevant operation.
+
+SecretStorePluginManager et, al, are just subclasses of this base class with different config parameters and different operations.  It may make more sense for the definition of these interface -specific plugin managers to occur in the interface file - secret_store.py, certificates.py etc.  This is after all where the various operations are defined.",False,14
+81410,trove/common/apischema.py,6162,23,facab960_0b2c05ab,Line,453,facab960_08908beb,2014-04-28 22:39:22,metadata is meant to be generic to provide the details that strategy will know how to deal with.,False,14
+81410,trove/extensions/mgmt/upgrade/models.py,6162,29,9ad9bd40_46b7363a,Line,29,9ad9bd40_3906d61d,2014-05-07 04:54:07,"So after some poking around it appears that is already happens.
+
+non_empty_string = {
+    ""type"": ""string"",
+    ""minLength"": 1,
+    ""maxLength"": 255,
+    ""pattern"": ""^.*[0-9a-zA-Z]+.*$""
+}
+
+
+upgrade = {
+
+...
+
+""properties"": {
+                    ""instance_version"": non_empty_string,
+                    ""location"": non_empty_string,
+...
+
+}
+
+
+Instance id, can't be validated using the apischema because you ask to have it moved into the URL instead of the POST body.",False,14
+81410,trove/common/apischema.py,11316,29,7adec928_d46f3d29,Line,452,,2014-05-19 20:40:13,"Should the 'location' type be 'url_ref' instead? From the BP, it seems that this would be a url",False,14
+81410,trove/common/apischema.py,6162,34,1ae5cdf2_33b74023,Line,449,1ae5cdf2_3342e568,2014-06-24 14:13:03,"Hey Denis, I know this looks a bit odd but there was a need to keep this generic because not everyone will use the instance_version and location.
+
+They actually are not required but if they are provided we just check that they are not valid strings.",False,14
+81410,trove/common/apischema.py,8415,34,1ae5cdf2_3342e568,Line,449,,2014-06-24 12:31:37,"According to following code, instance_version and location are required attributes, but here they're mentioned as non-required.
+We need to be consistent.",False,14
+81410,trove/common/apischema.py,8415,29,3ae8d1ca_dbf2c199,Line,452,7adec928_d46f3d29,2014-05-28 07:56:43,Agreed,False,14
+98286,specs/juno/restructure-for-plugins.rst,7789,5,1ae5cdf2_036c3607,Line,50,1ae5cdf2_2d9046ec,2014-06-12 17:11:23,"It seems like we discussed doing that before though, and I recall you had a good argument for placing these lookups in common code (my only concern was never trying to import the crypto or plugin package stuff into common). At any rate, I do like the idea of placing all plugin-related code in the plugins package space.",False,14
+85580,jenkins_jobs/cmd.py,11011,1,AAAAWH%2F9N%2BA%3D,Line,138,AAAAWH%2F9O3Q%3D,2014-04-07 21:24:32,"What is ""test mode""? Only thing I see is the test command and when that is run, options.command == 'test', so this wouldn't be triggered. Is there some other test mode I missed?",False,14
+85580,jenkins_jobs/cmd.py,6987,1,AAAAWn%2F%2F5ro%3D,Line,138,AAAAWH%2F9N%2BA%3D,2014-04-08 16:11:38,"Yes, what i meant was test command.  For some reason i thought the usage of browse was in conjunction with the other commands.   Like you may want to browse to the project immediately updating a job.  I see that's it's a separate command now.",False,14
+85580,jenkins_jobs/cmd.py,6987,1,AAAAWH%2F9O3Q%3D,Line,138,,2014-04-07 19:24:15,should browse be a noop when run JJB in test mode?,False,14
+85580,jenkins_jobs/builder.py,11011,10,AAAAXH%2F%2FUF4%3D,Line,588,AAAAXH%2F%2FZuk%3D,2014-04-22 15:15:04,"I think my thought here was that the user could specify --batch=0 to turn off batching. Without the check, if the user did that would result in a ZeroDivisionError.",False,14
+85580,jenkins_jobs/cmd.py,10731,1,AAAAW3%2F%2F824%3D,Line,53,,2014-04-09 09:43:55,"Nit: (also in the other help texts) the capitalisation of the help texts is inconsistent.  Some begin with upper case, some don't.",False,14
+81410,trove/common/apischema.py,6162,29,3ae8d1ca_7e834656,Line,452,7adec928_d46f3d29,2014-05-28 17:46:18,"I have already discussed this with Denis M.  The url_ref is too strict for what we are trying to build here.
+
+If you look at the regexp it only allows http[s].  I'm trying to keep things more generic.",False,14
+85580,jenkins_jobs/cmd.py,2475,1,AAAAW3%2F%2F7fE%3D,Line,51,,2014-04-09 12:40:12,"Make sure it default to None, would then be passed to YamlParser.generateXML() as a job_filter, if it is None that skips filtering entirely and thus yields all jobs.",False,14
+81410,trove/extensions/mgmt/upgrade/models.py,6156,23,facab960_28bc6f6c,Line,30,,2014-04-28 21:39:16,the validation in the json schema does not specify length yet there is validation here.  Suggest moving validation to json schema,False,14
+85580,jenkins_jobs/cmd.py,11011,5,AAAAXH%2F%2FpRM%3D,Line,141,AAAAXH%2F%2F0PI%3D,2014-04-18 15:27:58,"Just tried this and it stopped working when I removed those 2 lines.
+
+I think YamlParser.generateXML is not working as expected.",False,14
+85580,jenkins_jobs/builder.py,6987,10,AAAAXH%2F%2FccI%3D,Line,595,,2014-04-22 03:22:46,wouldn't this  always evaluate to true because by default fn='.'   Should fn=None in the function prototype instead?,False,14
+81410,trove/tests/unittests/upgrade/test_controller.py,8415,12,AAAAWn%2F%2F47E%3D,Line,158,,2014-04-08 17:43:02,"As said before, in the controller class you getting body attributes like they are not required, but here you're doing totally opposite thing. Please update the controller class",False,14
+81410,trove/extensions/mgmt/upgrade/service.py,8415,12,AAAAWn%2F%2F49k%3D,Line,37,,2014-04-08 17:43:02,_(),False,14
+81410,trove/guestagent/datastore/mysql/manager.py,8415,12,AAAAWn%2F%2F47o%3D,Line,213,,2014-04-08 17:43:02,list formatting is not acceptable for the localization,False,14
+81410,trove/guestagent/datastore/mysql/manager.py,8415,12,AAAAWn%2F%2F48E%3D,Line,212,,2014-04-08 17:43:02,_(),False,14
+81410,trove/guestagent/datastore/mysql/manager.py,1925,14,AAAAW3%2F%2FY6k%3D,Line,206,,2014-04-14 23:12:53,Is this still a work in progress?  not seeing any actual upgrade happening here.,False,14
+81410,trove/tests/unittests/upgrade/test_controller.py,6156,23,facab960_48c1b3e3,Line,144,,2014-04-28 21:39:16,Nice tests,False,14
+81410,trove/guestagent/datastore/mysql/manager.py,6162,14,AAAAW3%2F%2FSjY%3D,Line,206,AAAAW3%2F%2FY6k%3D,2014-04-15 14:52:51,"There is another patch that 'picks up' where this one leaves off.
+It allows for this review to be more straight forward to the reviewer.",False,14
+81410,trove/extensions/mgmt/upgrade/service.py,8415,12,AAAAWn%2F%2F49o%3D,Line,36,,2014-04-08 17:43:02,_(),False,14
+81410,trove/tests/unittests/upgrade/test_models.py,5390,26,bad4c104_a0941a45,Line,48,,2014-04-29 00:51:27,"Hey Dan, im not sure all these four tests are doing much. The assert is testing what you are already mocking. And the assert_called_with just tests the param you are passing. Not sure if these tests is useful. Looking at the logic for UpgradeNotification.create, it is mostly validating the params. So i would change this test to test the exceptions thrown depending on the params but you already covered this in test_validate.
+
+I say just remove these tests since they are not doing anything useful and the logic for create doesnt really need tests.
+
+The only test i would have here is the test_validate",False,14
+81410,trove/extensions/mgmt/upgrade/models.py,6162,29,9ad9bd40_3906d61d,Line,29,9ad9bd40_3ec15c54,2014-05-06 23:28:40,"k, after our discussion, we will add the length restrictions to the API schema to appease everyone.
+
+We'll leave the validation here to avoid issues where another method may one day call create directly.",False,14
+81410,trove/tests/unittests/upgrade/test_models.py,8415,34,1ae5cdf2_5315b147,Line,1,,2014-06-24 12:31:37,Please add tests for empty/non-empty instance_version and location.,False,14
+81410,trove/tests/unittests/upgrade/test_models.py,6162,34,1ae5cdf2_b3b510ef,Line,1,1ae5cdf2_5315b147,2014-06-24 14:13:03,"That's not a bad idea.  I'd like to get this in first and follow up with another patch as this one has gone on way too long.
+
+There is still a bit of work on our end to implement the virtualenv upgrade path and I think others will want to do the same.  The reference implementation here is intended to be a guide.",False,14
+84218,pbr/util.py,4190,1,1ae5cdf2_69d0fef7,Line,369,,2014-06-09 18:08:10,I think this is intended to read 'instead' instead of 'however'. Because with 'however' it implise that it is clobbering those command classes. But the code doesn't do that.,False,14
+85580,jenkins_jobs/builder.py,11011,5,AAAAXH%2F%2Fp5U%3D,Line,586,AAAAXH%2F%2F0Q8%3D,2014-04-18 15:27:58,"This sounds good, but I just tried it and with the following code, I get an unfiltered list of all jobs:
+
+```python
+            self.load_files(fn)
+            self.parser.generateXML(glob_name)
+            jobs = [j.name for j in self.parser.jobs]
+```
+
+User error? Or a bug in generateXML?
+
+It also occurs to me that it's not obvious that generateXML would populate self.jobs (a side effect) or that it would apply filtering. So I feel like probably some refactoring might be nice. I hesitate to make my code depend on generateXML populating self.jobs because that is an undocumented side effect and that could easily go away if someone refactors that function. I would rather use a functional style where I use the return values of functions only and not side effects. Ideally, I wouldn't even call generateXML because I don't really need to generate XML just to browse or list jobs.",False,14
+85580,jenkins_jobs/builder.py,6987,10,AAAAXH%2F%2FZuk%3D,Line,588,,2014-04-22 03:22:46,would batch ever be false here since default is 10?  It seems like the only case that it would be false is if the user passes batch=0 which i don't think a user would ever do.,False,14
+81410,trove/extensions/mgmt/upgrade/models.py,1925,29,9ad9bd40_064d2e3e,Line,29,9ad9bd40_46b7363a,2014-05-07 05:02:52,Ah ok.  Thanks for the clarification.,False,14
+85580,jenkins_jobs/builder.py,11011,5,AAAAXH%2F%2FoGo%3D,Line,586,AAAAXH%2F%2Fp5U%3D,2014-04-18 17:59:30,"Ah, I figured it out. generateXML takes *a list* of globs. So I need this:
+
+    self.parser.generateXML([glob_name])
+
+This code is tricky!",False,14

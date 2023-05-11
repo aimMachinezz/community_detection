@@ -1,0 +1,2 @@
+change_id,filename,author,patch_set,id,comment_type,line,in_reply_to,updated,message,unresolved,quarter
+48,keystone/backends/memcache/api/token.py,4,1,AAAAA3%2F%2F%2F6A%3D,Line,33,,2011-07-26 21:09:06,"Is this configurable somewhere? If not, I'd create a new constant in keystone.config that both backends can reference",False,3

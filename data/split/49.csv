@@ -1,0 +1,18 @@
+change_id,filename,author,patch_set,id,comment_type,line,in_reply_to,updated,message,unresolved,quarter
+784212,/COMMIT_MSG,2424,25,c0da691e_616ef8fc,Line,12,92d0a2e7_c6f977f4,2023-03-15 13:02:14,Ack,True,49
+784808,test/unit/common/middleware/test_proxy_logging.py,7847,2,24291caa_3abaf3ce,Line,864,,2023-03-15 19:12:54,"in this case we can't differentiate between proxy_logging_status and client disconnect in the log line - which should win, 499 or proxy_logging_status?",True,49
+830670,zuul.d/integrated-gate.yaml,8556,1,36cbf67c_70db22f6,Line,339,6ea2112e_3f717b9e,2023-03-17 22:41:32,"forgot to comment, but this is fixed by https://review.opendev.org/c/openstack/grenade/+/842799",True,49
+784808,swift/common/middleware/proxy_logging.py,1179,3,e295cdee_d0a1cfa6,Line,391,,2023-03-20 15:35:40,that's simple enough,True,49
+784808,/PATCHSET_LEVEL,1179,3,595c0084_eca89b01,File,-1,,2023-03-20 15:35:40,"this all seems reasonable enough, since it's a new interface I'll hold until I better understand the 499 translation case 
+
+is the idea we're returning 503 to the client but don't want to LOG it as a server error if the generator gets a ChunkWriteTimeout?  We mostly return 499 on PUT right, do we really ever expect a 503 (with a proxy_logging_status 429) to have a generator body?",False,49
+784808,/PATCHSET_LEVEL,7847,2,18826b5b_3c7a27af,File,-1,,2023-03-15 19:12:54,@Clay I revived and reduced the scope of this patch,False,49
+784212,unit_tests/test_ceph_hooks.py,2424,25,7e0b404f_f3aed598,Line,179,e868a850_b379ff8d,2023-03-15 13:02:14,"I think no reason, just a oversight when copying fixtures around, I will remove it.",False,49
+784212,hooks/ceph_hooks.py,2424,25,8cda7d83_444bc599,Line,162,ead7aee4_580a0c1a,2023-03-15 13:02:14,"Ack, I went with a separate function, I think makes things more obvious.",True,49
+784212,/PATCHSET_LEVEL,2424,31,8e813b2e_87e9d36c,File,-1,,2023-03-17 19:52:42,"charm-recheck
+
+https://github.com/openstack-charmers/zaza-openstack-tests/pull/558/commits/270490b1b494ec3d05946aadebc5368866bfd718",False,49
+784808,test/unit/common/middleware/test_proxy_logging.py,1179,2,f4107faf_0f9d8b5a,Line,864,24291caa_3abaf3ce,2023-03-20 15:35:40,"the correct answer probably depends on the use-case
+
+it's hard to argue with the mw interface returning the proxy_logging_status environ value, but if there's a situation where we might set the value in the req environ and only later discover we want to return a different value we may have to change the interface which sounds annoying.",True,49
+784212,unit_tests/test_ceph_hooks.py,2424,25,20a2e6cc_d6c1e978,Line,186,628ab478_f05bf257,2023-03-15 13:02:14,"Good catch, I added asserts after the call.",True,49

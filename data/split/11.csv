@@ -1,0 +1,4 @@
+change_id,filename,author,patch_set,id,comment_type,line,in_reply_to,updated,message,unresolved,quarter
+37781,swift/common/utils.py,597,7,AAAARH%2F%2F8qU%3D,Line,2234,,2013-08-14 19:10:25,"great opportunity to use lambda here, IMHO",False,11
+42521,nova/virt/libvirt/volume.py,2759,1,AAAAR3%2F%2F%2F%2FI%3D,Line,116,AAAARn%2F%2FvYI%3D,2013-08-22 18:00:12,Done,False,11
+42521,nova/virt/libvirt/volume.py,5652,1,AAAARn%2F%2FvYI%3D,Line,116,,2013-08-22 13:54:50,"This should probably be a set rather than a list, since you only use it for membership testing.  (It's small enough that it doesn't *really* matter for performance, but I still think it would be cleaner.)",False,11

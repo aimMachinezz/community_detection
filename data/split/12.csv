@@ -1,0 +1,97 @@
+change_id,filename,author,patch_set,id,comment_type,line,in_reply_to,updated,message,unresolved,quarter
+47937,modules/openstack_project/manifests/review_security.pp,5263,13,AAAATn%2F9FgY%3D,Line,80,,2013-12-16 22:40:58,It might make some sense to rename these if doing so doesn't over-complicate the puppetry.,False,12
+47937,modules/openstack_project/manifests/review_security.pp,5263,13,AAAATn%2F9Ffo%3D,Line,102,,2013-12-16 22:40:58,Definitely want this false (or taken out entirely if it defaults to false already).,False,12
+47937,modules/openstack_project/manifests/review_security.pp,5263,13,AAAATn%2F9Fg0%3D,Line,109,,2013-12-16 22:40:58,The contactstore_.* and script_.* parameters should be empty defaults since they won't be used (or left out entirely if they already have empty defaults in the class being instantiated).,False,12
+47937,modules/openstack_project/manifests/review_security.pp,5263,13,AAAATn%2F9Fgs%3D,Line,115,,2013-12-16 22:40:58,Empty the github_.* parameters too.,False,12
+47937,modules/openstack_project/manifests/review_security.pp,5263,13,AAAATn%2F9FfQ%3D,Line,101,,2013-12-16 22:40:58,We probably want to start with Gerrit 2.8 so there's not yet another server we have to upgrade when the time comes?,False,12
+47937,modules/openstack_project/manifests/review_security.pp,5263,13,AAAATn%2F9FgQ%3D,Line,68,,2013-12-16 22:40:58,"If we switch to a Trove DB, then this class is unneeded.",False,12
+47937,manifests/site.pp,2,9,AAAATH%2F%2FnHs%3D,Line,34,,2013-10-12 21:38:56,I betcha we don't want any swift config either.,False,12
+54030,modules/seafile/templates/ccnet/mykey.peer,6609,7,AAAATn%2F%2F2SY%3D,Line,2,,2013-10-27 18:18:10,"Since this is a private key, instead of including this empty-ish file, you'll want to have puppet create the file based on hiera data. For example, see how we handle the private ssh key $reviewday_rsa_key_contents here:
+
+https://git.openstack.org/cgit/openstack-infra/config/tree/modules/reviewday/manifests/site.pp",False,12
+47937,modules/openstack_project/manifests/review_security.pp,5263,10,AAAATn%2F%2Bqw8%3D,Line,1,AAAATn%2F%2Bulc%3D,2013-11-21 19:38:56,"I think it's probably fine. We should be trying simplify this by moving as much stuff as we can into the common gerrit class or the gerrit module itself, and then review, review_dev and review_security classes just continue to inherit from openstack_project::gerrit as we do now. Adding more depth to the inheritance makes more places we have to be careful to pass variables through all the right classes.",False,12
+47937,modules/openstack_project/manifests/review_security.pp,5263,13,AAAATn%2F9Fhk%3D,Line,132,,2013-12-16 22:40:58,Not needed. This is from the bad old days of synchronizing user account info from LP.,False,12
+59578,nova/network/neutronv2/api.py,748,3,AAAATn%2F%2BB8A%3D,Line,319,,2013-12-03 09:29:35,I don't see why we need this comment and this if. Can you elaborate?,False,12
+59578,nova/network/neutronv2/api.py,4395,3,AAAATn%2F93yI%3D,Line,315,AAAATn%2F94sM%3D,2013-12-05 00:42:04,Done,False,12
+54030,modules/openstack_project/manifests/seafile.pp,2,7,AAAATn%2F%2F2SQ%3D,Line,13,,2013-10-27 18:15:11,You don't define a thing called modules/seafile/manifests/site.pp anywhere. All of the code you've got is in seafil/manifests/init.pp - did you forget to git add something?,False,12
+54030,modules/openstack_project/manifests/seafile.pp,6316,7,AAAATn%2F%2F2ME%3D,Line,13,AAAATn%2F%2F2Pw%3D,2013-10-27 21:15:13,I have a modules/seafile/manifests/site.pp again.,False,12
+54030,modules/openstack_project/manifests/seafile.pp,6316,7,AAAATn%2F%2F2Pw%3D,Line,13,AAAATn%2F%2F2SQ%3D,2013-10-27 20:19:13,"When I had a modules/owncloud/manifests/site.pp with owncloud, Clark commented that the content of modules/owncloud/manifests/site.pp should go in root manifests/site.pp so I did: https://review.openstack.org/#/c/53868/5/modules/owncloud/manifests/site.pp",False,12
+54030,modules/seafile/manifests/init.pp,6316,5,AAAATn%2F%2F2UM%3D,Line,2,,2013-10-27 16:57:24,"Once we agree on where the app should live on the server, I will give values to owner, group and mode.",False,12
+54030,modules/seafile/manifests/init.pp,2,7,AAAATn%2F%2F2SM%3D,Line,11,,2013-10-27 18:15:11,"Where are you defining $root_directory? Also, I think if you want to have it substituted, you need to use ""s",False,12
+54030,modules/seafile/templates/ccnet/mykey.peer,6316,7,AAAATn%2F%2F2PA%3D,Line,2,AAAATn%2F%2F2SY%3D,2013-10-27 20:19:13,Okay thanks. I will follow this.,False,12
+59578,nova/network/neutronv2/api.py,4395,3,AAAATn%2F98wo%3D,Line,319,AAAATn%2F%2BB8A%3D,2013-12-04 05:10:31,"Sure, If a network is set to port_security_enabled=False we don't want the port to be created on that network with the default security group. Unfortinately, nova-api automatically adds the default security group. Thus here we keep track and drop it. Once the port-creation is moved out of nova-compute this code can be dropped as neutron will be deciding if a port should have a security group or not.",False,12
+47937,modules/openstack_project/templates/review.projects.yaml.erb,2,9,AAAATH%2F%2FnHo%3D,Line,15,,2013-10-12 21:38:56,Have you tested how this works or doesn't work with manage-projects?,False,12
+59578,nova/network/neutronv2/api.py,4395,3,AAAATn%2F93yE%3D,Line,319,AAAATn%2F94sQ%3D,2013-12-05 00:42:04,Done,False,12
+60492,/COMMIT_MSG,1297,1,AAAATn%2F9swk%3D,Line,9,,2013-12-07 00:56:13,Probably want to reference the blueprint here?,False,12
+54030,modules/openstack_project/manifests/seafile.pp,6316,7,AAAATn%2F%2F2Ps%3D,Line,10,AAAATn%2F%2F2Sw%3D,2013-10-27 20:19:13,okay,False,12
+54030,modules/openstack_project/manifests/seafile.pp,6609,7,AAAATn%2F%2F2Sw%3D,Line,10,,2013-10-27 18:18:10,"This is within the openstack_project module already, so not neccesary",False,12
+54030,modules/openstack_project/manifests/seafile.pp,6316,7,AAAATn%2F%2F2Pk%3D,Line,2,AAAATn%2F%2F2Ro%3D,2013-10-27 20:19:13,I can do that.,False,12
+54030,modules/openstack_project/manifests/seafile.pp,6609,7,AAAATn%2F%2F2Ro%3D,Line,2,,2013-10-27 18:18:10,"As a general comment, there are a lot of lonely variables floating around templates and the seafile module, you'll want to define them in this file, whether it's pointing to their actual locations here or referencing data in hiera.",False,12
+53322,tempest/cli/__init__.py,8415,1,AAAATn%2F92As%3D,Line,92,,2013-12-05 10:35:48,trailing tab,False,12
+57539,/COMMIT_MSG,860,4,AAAATn%2F9viI%3D,Line,7,,2013-12-06 14:38:35,1st line cannot span two lines (many git tools use the first line of a commit),False,12
+57539,/COMMIT_MSG,860,4,AAAATn%2F9vho%3D,Line,9,,2013-12-06 14:38:35,"Probably needs a ""DocImpact""",False,12
+57539,keystoneclient/middleware/signature_validator.py,1916,4,AAAATn%2F%2BFF0%3D,Line,17,,2013-12-02 19:16:14,"no need to duplicate code, just import it from auth_token middleware",False,12
+57539,keystoneclient/middleware/signature_validator.py,1916,4,AAAATn%2F%2BFGA%3D,Line,25,,2013-12-02 19:16:14,"pep8, need 2 lines separator",False,12
+57539,keystoneclient/middleware/signature_validator.py,860,4,AAAATn%2F9vZU%3D,Line,164,,2013-12-06 14:38:35,"I'm not sure I'm 100% sure I understand the protocol of HTTP_X_IDENTITY_CONFIRMED. However, it looks like you won't set env['signature.validator']. I guess it depends on where tempurl, auth_token and this middleware sit in the pipeline. However, as-is my guess is that if you used by x-auth-token and signed the request with tempurl, that auth_token would set HTTP_X_IDENTITY_CONFIRMED. However, when the request attempts to pass through tempurl, the signature validation would fail.",False,12
+59578,nova/tests/network/test_neutronv2.py,6873,3,AAAATn%2F94pg%3D,Line,772,,2013-12-04 21:41:44,How about a test with nets5 (port_security_enabled=False) but a specific security group is requested and there is a subnet.,False,12
+59578,nova/tests/network/test_neutronv2.py,4395,3,AAAATn%2F93yA%3D,Line,772,AAAATn%2F94pg%3D,2013-12-05 00:42:04,Done,False,12
+47937,doc/source/review-security.rst,6987,12,AAAATn%2F%2Bp8E%3D,Line,39,,2013-11-21 23:16:45,This is my impression from of high level goals from.. http://lists.openstack.org/pipermail/openstack-infra/2013-October/000314.html,False,12
+59578,nova/network/neutronv2/api.py,748,3,AAAATn%2F96Mw%3D,Line,319,AAAATn%2F98wo%3D,2013-12-04 16:05:29,"I get it, but statement 319-320 adds nothing, so why do we have it? Documentation purposes only? The note is more than enough.",False,12
+59578,nova/network/neutronv2/api.py,4395,3,AAAATn%2F96Gc%3D,Line,319,AAAATn%2F96Mw%3D,2013-12-04 16:27:52,are you sure you mean 319-320? These lines do change the logic otherwise an exception would be raised on 324.,False,12
+59578,nova/network/neutronv2/api.py,6873,3,AAAATn%2F94sQ%3D,Line,319,AAAATn%2F96Gc%3D,2013-12-04 21:41:44,"I think the confusion is over the logic which requires the pass, maybe instead of a pass you log something at debug level?",False,12
+59578,nova/network/neutronv2/api.py,748,3,AAAATn%2F9fe4%3D,Line,319,AAAATn%2F93yE%3D,2013-12-11 00:21:59,"I should've been clearer: even though the block changes the logic, an empty block is a bit awkward and the whole if/else is actually difficult to read, especially understanding when the exception need to be raised. Could this be simplified by saying:
+
+  if port_security_enabled and security_groups and not network['subnets']:
+    raise exception.SecurityGroupCannotBeApplied()
+
+In any other case, just continue. Would that work?",False,12
+54030,modules/seafile/manifests/init.pp,6316,7,AAAATn%2F%2F2Nc%3D,Line,11,AAAATn%2F%2F2Pg%3D,2013-10-27 20:47:21,"Fungi says /srv/seafile, so that is going to be the root directory.",False,12
+59578,nova/network/neutronv2/api.py,261,3,AAAATn%2F9aiM%3D,Line,319,AAAATn%2F9fe4%3D,2013-12-11 19:15:29,"It seems there is a little tweak whether if you have subnet on the network and port security enabled, the exception should never be raised regardless of whether there are security groups or not.",False,12
+54030,modules/seafile/manifests/init.pp,2,7,AAAATn%2F%2F2SI%3D,Line,13,,2013-10-27 18:15:11,I would not set owner and group to empty string. I'd leave them unset if you don't have an opinion.,False,12
+59578,nova/network/neutronv2/api.py,6873,3,AAAATn%2F94rI%3D,Line,175,,2013-12-04 21:41:44,"The logic seems odd here, what if someone passes a list of security_group_ids and port_security_enabled=False?  Do we really need the parameter in the method to determine this?  In other words, couldn't we use the value of security_group_ids to determine the default value for port_security_enabled?",False,12
+47937,manifests/site.pp,5263,13,AAAATn%2F9FjY%3D,Line,35,,2013-12-16 22:40:58,"These two are for the ""openstackwatch RSS"" feed publishing to a Swift container, which this server isn't going to do, so get rid of them.",False,12
+54030,modules/seafile/templates/ccnet/seafile.ini,6316,7,AAAATn%2F%2F2O8%3D,Line,2,AAAATn%2F%2F2R8%3D,2013-10-27 20:19:13,Okay.,False,12
+47937,manifests/site.pp,2,9,AAAATH%2F%2FnH0%3D,Line,16,,2013-10-12 21:38:56,I think we don't want any github for this one,False,12
+47937,manifests/site.pp,5263,13,AAAATn%2F9FkQ%3D,Line,18,,2013-12-16 22:40:58,Github credentials are unneeded--this server won't ever talk to it.,False,12
+47937,manifests/site.pp,5263,13,AAAATn%2F9Fj8%3D,Line,20,,2013-12-16 22:40:58,We ought to try serving the database out of a Rackspave Trove DB.,False,12
+54030,modules/seafile/manifests/init.pp,6316,7,AAAATn%2F%2F2Pg%3D,Line,11,AAAATn%2F%2F2SM%3D,2013-10-27 20:19:13,"I haven't defined it yet, I don't know what it should be. What should be the root directory of this app? /etc/seafile ?",False,12
+54030,modules/seafile/templates/ccnet/ccnet.conf,6316,7,AAAATn%2F%2F2PE%3D,Line,16,AAAATn%2F%2F2SU%3D,2013-10-27 20:19:13,I have no idea. How would I find out? I don't need to open port 13418 on the vm.,False,12
+59578,nova/network/neutronv2/api.py,4395,3,AAAATn%2F93yU%3D,Line,175,AAAATn%2F94rI%3D,2013-12-05 00:42:04,Sure this could be refactored to if port_security_enabled == false and the security_group_ids == [only default security group] then drop the security groups otherwise keep them.,False,12
+54030,modules/seafile/templates/ccnet/ccnet.conf,6609,7,AAAATn%2F%2F2SU%3D,Line,16,,2013-10-27 18:18:10,Is this a port that needs to be externally accessible? (I'm not familiar with seafile),False,12
+59578,/COMMIT_MSG,4395,2,AAAATn%2F%2BDDM%3D,Line,22,AAAATn%2F%2BDIw%3D,2013-12-03 03:35:08,Done,False,12
+59578,/COMMIT_MSG,7040,2,AAAATn%2F%2BDIw%3D,Line,22,,2013-12-03 03:14:06,"The external link doesn't work, need to be fixed.",False,12
+47937,modules/openstack_project/manifests/review_security.pp,4162,10,AAAATn%2F%2Bulc%3D,Line,1,,2013-11-21 01:14:08,"I'm really not a fan of this being basically a copy of openstack_project::review.  I feel with some work, you would add logic into openstack_project:review to toggle logic based on the security flag.",False,12
+47937,modules/openstack_project/manifests/review.pp,5263,13,AAAATn%2F9FiI%3D,Line,170,,2013-12-16 22:40:58,"I think we actually want this replicating into gerrit2@review-security.openstack.org:review_site/git/ instead... though I also favor Monty's alternative suggestion that we should have a separate review_security.projects.yaml.erb instead and have ""upstream"" for each project in there looking at git.openstack.org and then turn on upstream project tracking for those.",False,12
+47937,modules/openstack_project/manifests/gerrit.pp,4162,10,AAAATn%2F%2BumA%3D,Line,175,,2013-11-21 01:14:08,same comment,False,12
+54030,modules/seafile/templates/ccnet/ccnet.conf,6316,7,AAAATn%2F%2F2PI%3D,Line,2,AAAATn%2F%2F2SA%3D,2013-10-27 20:19:13,Is it an erb template? Okay.,False,12
+47937,modules/openstack_project/manifests/gerrit.pp,4162,10,AAAATn%2F%2BumE%3D,Line,68,,2013-11-21 01:14:08,red blob,False,12
+47937,modules/openstack_project/manifests/gerrit.pp,4162,10,AAAATn%2F%2BumI%3D,Line,7,,2013-11-21 01:14:08,I believe you'll want to default to false here.,False,12
+47937,doc/source/review-security.rst,5263,13,AAAATn%2F9Fks%3D,Line,95,,2013-12-16 22:40:58,This special section can go away--we won't need separate ACL coverage for m-p branches (or for stable branches below... that section can go away too).,False,12
+59578,nova/network/neutronv2/api.py,6873,3,AAAATn%2F94p4%3D,Line,279,,2013-12-04 21:41:44,"Do we need to do any of this loop to fill out security_group_ids if we can determine that port security is not enabled on any given networks?  Like loop over the nets and build a mapping of network id to port_security_enabled and if none of the networks have port security enabled, we don't need to even process the security groups here do we?",False,12
+47937,manifests/site.pp,5263,13,AAAATn%2F9Fjo%3D,Line,32,,2013-12-16 22:40:58,Contactstore creds are also unneeded--this won't participate in CLA validation.,False,12
+59578,nova/network/neutronv2/api.py,6873,3,AAAATn%2F94sM%3D,Line,315,,2013-12-04 21:41:44,"Should be NOTE(arosen), but if this is a TODO, it should be TODO(arosen) instead, or maybe in addition to?",False,12
+59578,nova/network/neutronv2/api.py,4395,3,AAAATn%2F93yM%3D,Line,279,AAAATn%2F94p4%3D,2013-12-05 00:42:04,Done,False,12
+47937,doc/source/review-security.rst,5263,13,AAAATn%2F9Ss4%3D,Line,13,,2013-12-16 22:40:58,to familiarize (infinitive),False,12
+47937,doc/source/review-security.rst,6987,12,AAAATn%2F%2Bp7s%3D,Line,51,,2013-11-21 23:16:45,This is NOT done.  Need to iterate with a Vulnerability Manager to get this right.,False,12
+47937,doc/source/review-security.rst,5263,13,AAAATn%2F9Sts%3D,Line,17,,2013-12-16 22:40:58,"Minor, but probably want to move this down after the At a Glance section since that's the tl;dr ToC linkfarm to management info for us.",False,12
+47937,doc/source/review-security.rst,5263,13,AAAATn%2F9Fn4%3D,Line,78,,2013-12-16 22:40:58,I don't think the VMT needs to be able to tag things here.,False,12
+54030,modules/seafile/templates/ccnet/ccnet.conf,2,7,AAAATn%2F%2F2SA%3D,Line,2,,2013-10-27 18:15:11,"I believe instead of:
+
+$seafile_user_name
+
+here, you mean <%= seafile_user_name => or something. Also, this file should probably end in .erb since it's intended to be an erb template.",False,12
+54030,modules/seafile/manifests/init.pp,6316,7,AAAATn%2F%2F2PQ%3D,Line,48,AAAATn%2F%2F2Sg%3D,2013-10-27 20:19:13,"First I have to put it in the right directory, I don't think /home/user is a good choice, and then I will see what modes the files require to run.",False,12
+54030,modules/seafile/manifests/init.pp,6609,7,AAAATn%2F%2F2Sg%3D,Line,48,,2013-10-27 18:18:10,This will probably end up being 0755 since it will need to be executable.,False,12
+47937,doc/source/review-security.rst,5263,13,AAAATn%2F9Flw%3D,Line,86,,2013-12-16 22:40:58,Not needed here since merging patches will never really happen from the WebUI.,False,12
+54030,modules/seafile/manifests/init.pp,6316,7,AAAATn%2F%2F2PY%3D,Line,23,AAAATn%2F%2F2Sk%3D,2013-10-27 20:19:13,"Yes, 0000 is a place holder to appease puppet-lint. I can set it to 0600 until I know what it should actually be.",False,12
+47937,doc/source/review-security.rst,5263,13,AAAATn%2F9FlA%3D,Line,90,,2013-12-16 22:40:58,"Nor these three... we won't probably be using the VRFY and APRV columns at all, nor do bootstrappers have any real need to vote on changes in this workflow.",False,12
+54030,modules/seafile/manifests/init.pp,6609,7,AAAATn%2F%2F2Sc%3D,Line,13,,2013-10-27 18:18:10,"When considering owner or group here, is seafile a stand alone thing that will have a seafile user driving things?",False,12
+54030,modules/seafile/manifests/init.pp,6609,7,AAAATn%2F%2F2So%3D,Line,39,,2013-10-27 18:18:10,"Assuming a seafile user becomes owner, I tend to default conf files to be 0644 (or 0600 if they include secret info)",False,12
+54030,modules/seafile/manifests/init.pp,6316,7,AAAATn%2F%2F2Pc%3D,Line,13,AAAATn%2F%2F2Sc%3D,2013-10-27 20:19:13,In the manual the reader sets up seafile in their home directory. The seafile user is only used for the db. The person setting up seafile is the user driving things.,False,12
+54030,modules/seafile/manifests/init.pp,6609,7,AAAATn%2F%2F2Sk%3D,Line,23,,2013-10-27 18:18:10,"I saw you mentioned previously that this would be fixed, but for reference you probably want 0600 here.",False,12
+54030,modules/seafile/templates/ccnet/seafile.ini,6609,7,AAAATn%2F%2F2R8%3D,Line,2,,2013-10-27 18:18:10,"You'll need Ruby-style variables here, so if you want root_directory as defined in puppet:
+
+<%= root_directory %>
+
+And as a template, this should end in .erb (same goes for all templates)",False,12
+54030,modules/seafile/manifests/init.pp,2,7,AAAATn%2F%2F2SE%3D,Line,23,,2013-10-27 18:15:11,mode 0000 means this will be unreadable by anything,False,12
