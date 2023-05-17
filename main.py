@@ -6,8 +6,10 @@ import pandas as pd
 import collections
 import matplotlib.pyplot as plt
 import numpy as np
-from cdlib import algorithms, evaluation
 import networkx as nx
+from cdlib import algorithms, evaluation
+from cdlib import TemporalClustering
+
 import os
 
 
@@ -57,29 +59,71 @@ def split(df):
         group.to_csv(filename, index=False)
         print(f'{filename} saved successfully!')
 
+def init():
+    # 读取 CSV 文件
+    data = pd.read_csv('F:/pythonProject/Data/OpenStack/OpenStack_comment_list.csv', header=0)
+    # data = pd.read_excel('test.xlsx')
+    # 将"updated"列转换为datetime类型
+    data['updated'] = pd.to_datetime(data['updated'])
 
-# # 读取 CSV 文件
-# data = pd.read_csv('F:/pythonProject/Data/OpenStack/OpenStack_comment_list.csv', header=0)
-# # data = pd.read_excel('test.xlsx')
-# # 将"updated"列转换为datetime类型
-# data['updated'] = pd.to_datetime(data['updated'])
-#
-# # 自定义一个函数，实现将日期转换为季度的功能
-# def quarter_to_number(date):
-#     quarter = (date.month-1)//3+1 # 计算季度
-#     year = date.year-data['updated'].min().year
-#     return year*4+quarter # 计算季度对应的数字
-#
-# # 对"updated"列中的每一个日期应用上述函数
-# data['quarter'] = data['updated'].apply(quarter_to_number)
-#
-# data = data.sort_values('quarter')
-# data.to_csv('quarter.csv', index=False)
-# # 输出结果
-# print(data)
+    # 自定义一个函数，实现将日期转换为季度的功能
+    def quarter_to_number(date):
+        quarter = (date.month-1)//3+1 # 计算季度
+        year = date.year-data['updated'].min().year
+        return year*4+quarter # 计算季度对应的数字
 
-data = pd.read_csv('quarter.csv', header=0)
-split(data)
+    # 对"updated"列中的每一个日期应用上述函数
+    data['quarter'] = data['updated'].apply(quarter_to_number)
+
+    data = data.sort_values('quarter')
+    data.to_csv('quarter.csv', index=False)
+    # 输出结果
+    print(data)
+
+def get_match(tc):
+    jaccard = lambda x, y:  len(set(x) & set(y)) / len(set(x) | set(y))
+    matches = tc.community_matching(jaccard, two_sided=True)
+    print(matches)
+
+tc = TemporalClustering()
+for t in range(21, 24):
+    weights = list()
+    map_graph = {}
+    count = 0
+    data = pd.read_csv(f'./data/split/{t}.csv', header=0)
+    # 遍历数据集
+    for index, row in data.iterrows():
+        count += 1
+        reviewer_id = row['author']
+        file_name = 'F:/pythonProject/Data/OpenStack/changes/' + 'OpenStack_' + str(row['change_id']) + '_change.json'
+        if reviewer_id not in map_graph:
+            map_graph[reviewer_id] = {}
+        with open(file_name) as f:
+            json_file = json.load(f)
+            owner_id = json_file["owner"]["_account_id"]
+            if owner_id not in map_graph[reviewer_id]:
+                map_graph[reviewer_id][owner_id] = 1
+            else:
+                map_graph[reviewer_id][owner_id] = map_graph[reviewer_id][owner_id] + 1
+    G = nx.DiGraph()
+
+    for reviewer_id in map_graph.keys():
+        for owner_id in map_graph[reviewer_id].keys():
+            G.add_edge(reviewer_id, owner_id, weight=map_graph[reviewer_id][owner_id])
+            weights.append(map_graph[reviewer_id][owner_id])
+    coms = algorithms.rb_pots(G, weights=weights)  # here any CDlib algorithm can be applied
+    print(evaluation.newman_girvan_modularity(G, coms))
+    tc.add_clustering(coms, t)
+
+json_obj = json.loads(tc.to_json())
+with open('test.json','w',encoding='utf8') as f2:
+    # ensure_ascii=False才能输入中文，否则是Unicode字符
+    # indent=2 JSON数据的缩进，美观
+    json.dump(json_obj, f2, ensure_ascii=False, indent=2)
+    # f2.write(json.dumps(tc.to_json().strip('"'), ensure_ascii=False, indent=2))
+
+# data = pd.read_csv('quarter.csv', header=0)
+# split(data)
 
 # map_graph = {}
 # count = 0

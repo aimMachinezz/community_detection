@@ -1,0 +1,15 @@
+有向带权：
+rb_pots
+surprise_communities
+infomap
+threshold_clustering
+
+无向带权：
+agdl
+der
+chinesewhispers
+lswl
+lswl_plus
+pycombo
+paris
+mcode
