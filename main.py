@@ -111,7 +111,7 @@ for t in range(21, 24):
         for owner_id in map_graph[reviewer_id].keys():
             G.add_edge(reviewer_id, owner_id, weight=map_graph[reviewer_id][owner_id])
             weights.append(map_graph[reviewer_id][owner_id])
-    coms = algorithms.rb_pots(G, weights=weights)  # here any CDlib algorithm can be applied
+    coms = algorithms.tiles(G, weights=weights)  # here any CDlib algorithm can be applied
     print(evaluation.newman_girvan_modularity(G, coms))
     tc.add_clustering(coms, t)
 
