@@ -1,4 +1,6 @@
 import os
+import pickle
+
 import infomap
 import json
 
@@ -85,43 +87,121 @@ def get_match(tc):
     matches = tc.community_matching(jaccard, two_sided=True)
     print(matches)
 
-tc = TemporalClustering()
-for t in range(21, 24):
-    weights = list()
+def data_trans():
+    import pickle
     map_graph = {}
-    count = 0
-    data = pd.read_csv(f'./data/split/{t}.csv', header=0)
-    # 遍历数据集
-    for index, row in data.iterrows():
-        count += 1
-        reviewer_id = row['author']
-        file_name = 'F:/pythonProject/Data/OpenStack/changes/' + 'OpenStack_' + str(row['change_id']) + '_change.json'
-        if reviewer_id not in map_graph:
-            map_graph[reviewer_id] = {}
-        with open(file_name) as f:
-            json_file = json.load(f)
-            owner_id = json_file["owner"]["_account_id"]
-            if owner_id not in map_graph[reviewer_id]:
-                map_graph[reviewer_id][owner_id] = 1
-            else:
-                map_graph[reviewer_id][owner_id] = map_graph[reviewer_id][owner_id] + 1
-    G = nx.DiGraph()
+    for t in range(1, 10):
+        map_graph[t] = dict()
+        count = 0
+        data = pd.read_csv(f'F:/pythonProject/community_detection/data/split/{t + 20}.csv', header=0)
+        # 遍历数据集
+        for index, row in data.iterrows():
+            count += 1
+            reviewer_id = row['author']
+            file_name = 'F:/pythonProject/Data/OpenStack/changes/' + 'OpenStack_' + str(
+                row['change_id']) + '_change.json'
+            if reviewer_id not in map_graph[t]:
+                map_graph[t][reviewer_id] = {}
+            with open(file_name) as f:
+                json_file = json.load(f)
+                owner_id = json_file["owner"]["_account_id"]
+                if owner_id not in map_graph[t][reviewer_id]:
+                    map_graph[t][reviewer_id][owner_id] = 1
+                else:
+                    map_graph[t][reviewer_id][owner_id] = map_graph[t][reviewer_id][owner_id] + 1
 
-    for reviewer_id in map_graph.keys():
-        for owner_id in map_graph[reviewer_id].keys():
-            G.add_edge(reviewer_id, owner_id, weight=map_graph[reviewer_id][owner_id])
-            weights.append(map_graph[reviewer_id][owner_id])
-    coms = algorithms.tiles(G, weights=weights)  # here any CDlib algorithm can be applied
-    print(evaluation.newman_girvan_modularity(G, coms))
-    tc.add_clustering(coms, t)
+    # 保存字典对象到文件
+    with open('data.pkl', 'wb') as f:
+        pickle.dump(map_graph, f)
 
-json_obj = json.loads(tc.to_json())
-with open('test.json','w',encoding='utf8') as f2:
-    # ensure_ascii=False才能输入中文，否则是Unicode字符
-    # indent=2 JSON数据的缩进，美观
-    json.dump(json_obj, f2, ensure_ascii=False, indent=2)
-    # f2.write(json.dumps(tc.to_json().strip('"'), ensure_ascii=False, indent=2))
+def get_com_static():
+    tc = TemporalClustering()
+    for t in range(21, 24):
+        weights = list()
+        map_graph = {}
+        count = 0
+        data = pd.read_csv(f'./data/split/{t}.csv', header=0)
+        # 遍历数据集
+        for index, row in data.iterrows():
+            count += 1
+            reviewer_id = row['author']
+            file_name = 'F:/pythonProject/Data/OpenStack/changes/' + 'OpenStack_' + str(row['change_id']) + '_change.json'
+            if reviewer_id not in map_graph:
+                map_graph[reviewer_id] = {}
+            with open(file_name) as f:
+                json_file = json.load(f)
+                owner_id = json_file["owner"]["_account_id"]
+                if owner_id not in map_graph[reviewer_id]:
+                    map_graph[reviewer_id][owner_id] = 1
+                else:
+                    map_graph[reviewer_id][owner_id] = map_graph[reviewer_id][owner_id] + 1
+        G = nx.DiGraph()
 
+        for reviewer_id in map_graph.keys():
+            for owner_id in map_graph[reviewer_id].keys():
+                G.add_edge(reviewer_id, owner_id, weight=map_graph[reviewer_id][owner_id])
+                weights.append(map_graph[reviewer_id][owner_id])
+        coms = algorithms.rb_pots(G, weights=weights)  # here any CDlib algorithm can be applied
+        print(evaluation.newman_girvan_modularity(G, coms))
+        tc.add_clustering(coms, t)
+
+    json_obj = json.loads(tc.to_json())
+    with open('test_nomatching.json', 'w', encoding='utf8') as f2:
+        # ensure_ascii=False才能输入中文，否则是Unicode字符
+        # indent=2 JSON数据的缩进，美观
+        json.dump(json_obj, f2, ensure_ascii=False, indent=2)
+    jaccard = lambda x, y: len(set(x) & set(y)) / len(set(x) | set(y))
+    matches = tc.community_matching(jaccard, two_sided=True)
+
+    json_obj = json.loads(tc.to_json())
+    with open('test.json','w',encoding='utf8') as f2:
+        # ensure_ascii=False才能输入中文，否则是Unicode字符
+        # indent=2 JSON数据的缩进，美观
+        json.dump(json_obj, f2, ensure_ascii=False, indent=2)
+
+def get_com_dynamic():
+    import dynetx as dn
+    dg = dn.DynGraph()
+    map_graph = {}
+    with open('data.pkl', 'rb') as f:
+        map_graph = pickle.load(f)
+
+    for t in range(1, 10):
+        for reviewer_id in map_graph[t].keys():
+            for owner_id in map_graph[t][reviewer_id].keys():
+                dg.add_interaction(reviewer_id, owner_id, t)
+
+    coms = algorithms.tiles(dg)
+
+
+    json_obj = json.loads(coms.to_json())
+    with open('test_dynamic.json', 'w', encoding='utf8') as f2:
+        # ensure_ascii=False才能输入中文，否则是Unicode字符
+        # indent=2 JSON数据的缩进，美观
+        json.dump(json_obj, f2, ensure_ascii=False, indent=2)
+        # f2.write(json.dumps(tc.to_json().strip('"'), ensure_ascii=False, indent=2))
+
+    for t in range(1, 10):
+        set_total = set()
+        set_dynamic = set()
+        G = nx.DiGraph()
+        for reviewer_id in map_graph[t].keys():
+            set_total.add(reviewer_id)
+            for owner_id in map_graph[t][reviewer_id].keys():
+                G.add_edge(reviewer_id, owner_id, weight=map_graph[t][reviewer_id][owner_id])
+                set_total.add(owner_id)
+
+        coms_t = coms.get_clustering_at(t)
+        for com in coms_t.communities:
+            for userid in com.keys():
+                set_dynamic.add(userid)
+        print(len(dg.nodes(t=t)))
+        print(len(set_total), len(set_dynamic))
+
+
+        print(evaluation.newman_girvan_modularity(G, coms_t))
+
+get_com_dynamic()
 # data = pd.read_csv('quarter.csv', header=0)
 # split(data)
 
