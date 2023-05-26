@@ -15,10 +15,22 @@ for t in range(1, 10):
             dg.add_interaction(reviewer_id, owner_id, t)
 
 coms = tn.DCD.smoothed_louvain(dg)
+for t in range(1, 10):
+    set_total = set()
+    set_dynamic = set()
+    G = nx.DiGraph()
+    for reviewer_id in map_graph[t].keys():
+        set_total.add(reviewer_id)
+        for owner_id in map_graph[t][reviewer_id].keys():
+            G.add_edge(reviewer_id, owner_id, weight=map_graph[t][reviewer_id][owner_id])
+            set_total.add(owner_id)
 
+    coms_t = coms.communities(t)
+    for com in coms_t.keys():
+        for userid in coms_t[com]:
+            set_dynamic.add(userid)
+    print(len(set_total), len(set_dynamic))
 # 转换为标准字典
-dict_data = {str(key): value for key, value in coms.snapshots.items()}
-dict_data = {key: list(value) for key, value in dict_data.items()}
 sorted_dict = dict()
 sorted_dict = coms.snapshots
 dict_data = dict(sorted_dict)

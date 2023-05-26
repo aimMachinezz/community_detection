@@ -175,7 +175,7 @@ def get_com_dynamic():
 
 
     json_obj = json.loads(coms.to_json())
-    with open('test_dynamic.json', 'w', encoding='utf8') as f2:
+    with open('cdlib_tiles.json', 'w', encoding='utf8') as f2:
         # ensure_ascii=False才能输入中文，否则是Unicode字符
         # indent=2 JSON数据的缩进，美观
         json.dump(json_obj, f2, ensure_ascii=False, indent=2)
@@ -195,7 +195,7 @@ def get_com_dynamic():
         for com in coms_t.communities:
             for userid in com.keys():
                 set_dynamic.add(userid)
-        print(len(dg.nodes(t=t)))
+        #print(len(dg.nodes(t=t)))
         print(len(set_total), len(set_dynamic))
 
 
