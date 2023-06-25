@@ -14,7 +14,14 @@ for t in range(1, 10):
         for owner_id in map_graph[t][reviewer_id].keys():
             dg.add_interaction(reviewer_id, owner_id, t)
 
-coms = tn.DCD.smoothed_louvain(dg)
+coms = tn.DCD.smoothed_graph(dg)
+scores=[]
+scores, sizes = tn.DCD.quality_at_each_step(coms, dg)
+print(" ")
+print(scores)
+average = sum(scores) / len(scores)
+print(average)
+
 for t in range(1, 10):
     set_total = set()
     set_dynamic = set()
@@ -27,6 +34,7 @@ for t in range(1, 10):
 
     coms_t = coms.communities(t)
     for com in coms_t.keys():
+        com_set = set()
         for userid in coms_t[com]:
             set_dynamic.add(userid)
     print(len(set_total), len(set_dynamic))

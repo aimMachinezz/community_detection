@@ -90,18 +90,37 @@ def get_match(tc):
 def data_trans():
     import pickle
     map_graph = {}
-    for t in range(1, 10):
+    map_all = {}
+    for t in range(1, 2):
         map_graph[t] = dict()
+        map_all[t] = dict()
         count = 0
         data = pd.read_csv(f'F:/pythonProject/community_detection/data/split/{t + 20}.csv', header=0)
         # 遍历数据集
         for index, row in data.iterrows():
             count += 1
+            owner_id = 0
+            revision_id = ""
+            next_revision_id = ""
             reviewer_id = row['author']
             file_name = 'F:/pythonProject/Data/OpenStack/changes/' + 'OpenStack_' + str(
                 row['change_id']) + '_change.json'
+
+            comment_file = row['filename']
+            comment_id = row['id']
+            revision = row['patch_set']
+            line = row['line']
+            updated = row['updated']
+            message = row['message']
             if reviewer_id not in map_graph[t]:
                 map_graph[t][reviewer_id] = {}
+            if reviewer_id not in map_all[t]:
+                map_all[t][reviewer_id] = {}
+                map_all[t][reviewer_id]['comment_count'] = 1
+                map_all[t][reviewer_id]['comment_dict'] = {}
+            else:
+                map_all[t][reviewer_id]['comment_count'] = map_all[t][reviewer_id]['comment_count'] + 1
+
             with open(file_name) as f:
                 json_file = json.load(f)
                 owner_id = json_file["owner"]["_account_id"]
@@ -110,8 +129,28 @@ def data_trans():
                 else:
                     map_graph[t][reviewer_id][owner_id] = map_graph[t][reviewer_id][owner_id] + 1
 
+                for key in json_file['revisions'].keys():
+                    if str(json_file['revisions'][key]['_number']) == str(revision):
+                        revision_id = key
+                    if str(json_file['revisions'][key]['_number']) == str(revision+1):
+                        next_revision_id = key
+
+            map_all[t][reviewer_id]['comment_dict'][comment_id] = {}
+            map_all[t][reviewer_id]['comment_dict'][comment_id]['comment_file'] = comment_file
+            map_all[t][reviewer_id]['comment_dict'][comment_id]['revision'] = revision
+            map_all[t][reviewer_id]['comment_dict'][comment_id]['line'] = line
+            map_all[t][reviewer_id]['comment_dict'][comment_id]['message'] = message
+            map_all[t][reviewer_id]['comment_dict'][comment_id]['updated'] = updated
+
+            diff_name = 'G:/Data/OpenStack/all_diff/' + 'OpenStack_' + str(
+                row['change_id']) + '_diff.json'
+            with open(file_name) as f:
+                diff_json = json.load(f)
+                file_lines = diff_json[revision_id][comment_file]['meta_b']['lines']
+
+
     # 保存字典对象到文件
-    with open('data.pkl', 'wb') as f:
+    with open('data_21.pkl', 'wb') as f:
         pickle.dump(map_graph, f)
 
 def get_com_static():
@@ -193,15 +232,19 @@ def get_com_dynamic():
 
         coms_t = coms.get_clustering_at(t)
         for com in coms_t.communities:
+            com_set = set()
             for userid in com.keys():
+                com_set.add(userid)
                 set_dynamic.add(userid)
+            if len(com_set) > 0:
+                print(len(com_set))
         #print(len(dg.nodes(t=t)))
         print(len(set_total), len(set_dynamic))
 
-
         print(evaluation.newman_girvan_modularity(G, coms_t))
 
-get_com_dynamic()
+
+data_trans()
 # data = pd.read_csv('quarter.csv', header=0)
 # split(data)
 
